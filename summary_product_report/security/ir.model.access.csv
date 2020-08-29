@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_last_movement_product_report_group_system,Access Last Movement Product Report Group System,model_last_movement_product_report,base.group_system,1,0,0,0
+access_last_movement_product_report_group_sale,Access Last Movement Product Report Group Sale,model_last_movement_product_report,sales_team.group_sale_salesman,1,0,0,0
+access_product_sales_qty_report_group_system,Access Last Movement Product Report Group System,model_product_sales_qty_report,base.group_system,1,0,0,0
+access_product_sales_qty_report_group_sale,Access Last Movement Product Report Group Sale,model_product_sales_qty_report,sales_team.group_sale_salesman,1,0,0,0
+access_product_sale_daily_average_group_system,Access Last Movement Product Report Group System,model_product_sale_daily_average,base.group_system,1,0,0,0
+access_product_sale_daily_average_group_sale,Access Last Movement Product Report Group Sale,model_product_sale_daily_average,sales_team.group_sale_salesman,1,0,0,0

@@ -1,0 +1,79 @@
+<odoo>
+	<record model="ir.ui.view" id="last_movement_product_7_14_report_tree">
+		<field name="name">Last Movement Product Report Tree</field>
+		<field name="model">last.movement.product.report.7.14</field>
+		<field name="arch" type="xml">
+			<tree string="Tree" decoration-muted="active==False">
+				<field name="product_id" />
+				<field name="last_purchase_id" />
+				<field name="last_sale_id" />
+				<field name="days_diff_po" />
+				<field name="days_diff_so" />
+				<field name="active" />
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="lasdt_movement_product_7_14_report_form">
+		<field name="name">Last Movement Product Form</field>
+		<field name="model">last.movement.product.report.7.14</field>
+		<field name="arch" type="xml">
+			<form string="Form">
+				<header></header>
+				<sheet>
+					<group>
+						<!-- START HERE -->
+						<!-- YOU CAN ERASE THIS SYNTAX -->
+						<field name="product_id" />
+						<field name="last_purchase_id" />
+						<field name="last_sale_id" />
+						<field name="days_diff_po" />
+						<field name="days_diff_so" />
+					</group>
+				</sheet>
+				<!--<footer></footer>-->
+				
+				<!-- UNCOMMENT IF USING Mail Track SYSTEM -->
+				<!--<div class="oe_chatter">
+				    <field name="message_follower_ids" widget="mail_followers"/>
+				    <field name="activity_ids" widget="mail_activity"/>
+				    <field name="message_ids" widget="mail_thread"/>
+				</div>-->
+			</form>
+		</field>
+	</record>
+
+	<record id="last_movement_product_7_14_report_search" model="ir.ui.view">
+		<field name="name">Last Movement Product Report Search</field>
+		<field name="model">last.movement.product.report.7.14</field>
+		<field name="priority">11</field>
+		<field name="arch" type="xml">
+			<search string="Search">
+				<field name="product_id" />
+
+	
+				<!-- BELOW IS FILTER -->
+				<filter name="filter_lte_7_days" domain="[('days_diff_so','&lt;=',7)]" string="Less than 7" />
+				<filter name="filter_8_to_14_days" domain="[('days_diff_so','&gt;',7),('days_diff_so','&lt;=',14)]" string="8-14 days" />
+				<separator/>
+			</search>
+		</field>
+	</record>
+
+
+	<record model="ir.actions.act_window" id="action_last_movement_product_7_14_report">
+		<field name="name">Last Movement Product Report</field>
+		<field name="res_model">last.movement.product.report.7.14</field>
+		<field name="view_type">form</field>
+		<field name='view_mode'>tree,form</field>
+		<!-- <field name='view_id' ref='ref_view_id'/> -->
+		<!-- <field name="view_ids" eval="[
+				(5, 0, 0),
+				(0, 0, {'view_mode': 'kanban', 'view_id': ref('module.kanban_ref_id'), 'sequence':1}),
+				(0, 0, {'view_mode': 'tree', 'view_id': ref('module.tree_ref_id'), 'sequence':2}),
+				(0, 0, {'view_mode': 'form', 'view_id': ref('module.form_ref_id'), 'sequence':3})
+				]"/> -->
+	</record>
+
+	<menuitem action="action_last_movement_product_7_14_report" id="last_movement_product_7_14_report_menu" name="Last Movement Product 7-14" sequence="29" parent="stock.menu_warehouse_report" />
+</odoo>

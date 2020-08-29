@@ -1,0 +1,33 @@
+<odoo>
+	<record model="ir.ui.view" id="stock_picking_batch_has_return_form">
+		<field name="name">stock_picking_batch_has_return.form</field>
+		<field name="model">stock.picking.batch.has.return</field>
+		<field name="arch" type="xml">
+			<form string="Return">
+				<header>
+				</header>
+				<sheet>
+					<group>
+						<field name="batch_id" invisible="1"/>
+						<field name="picking_id" invisible="1" />
+						<field name="picking_name" readonly="1" />
+						<field name="partner_id" readonly="1" />
+						<field name="delivery_status" invisible="1" />
+						<field name="line_ids">
+							<tree editable="bottom" create="false" delete="false">
+								<field name="move_line_id" domain="[('picking_id','=',parent.picking_id)]" />
+								<field name="qty" readonly="1" />
+								<field name="qty_received" />
+							</tree>
+						</field>
+						<field name="notes" required="1" />
+					</group>
+				</sheet>
+				<footer>
+					<button type="object" name="confirm" string="Save" class="oe_highlight" />
+					<button type="object" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>

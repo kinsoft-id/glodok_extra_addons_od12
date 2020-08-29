@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+
+        <record id="product_template_only_form_view" model="ir.ui.view">
+            <field name="name">Product Template Quantity Alert Form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="same_for_all" invisible="1" />
+                    <field name="show_in_alert" />
+                    <field name="alert_qty" attrs="{'invisible':[('show_in_alert','=',False)]}" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_qty_alert_form_view" model="ir.ui.view">
+            <field name="name">Product Quantity Alert</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//page[4]"  position="after">
+                    <page string="Product Quantity Alert" attrs="{'invisible':[('type','!=','product')]}">
+                         <group>
+                            <field name="same_for_all" invisible="1" />
+                            <field name="alert_qty" attrs="{'invisible':[('same_for_all','!=',True)]}"/>
+                         </group>
+                         <field name="alert_product_ids" attrs="{'invisible':[('same_for_all','=',True)]}">
+                             <tree editable="bottom">
+                                <field name="location_id"/>
+                                <field name="alert_qty" />
+                             </tree>
+                         </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_mail_template_alert_qty" model="ir.ui.view">
+            <field name="name">user for Alert quantity</field>
+            <field name="model">mail.template</field>
+            <field name="inherit_id" ref="mail.email_template_form"/>
+            <field name="arch" type="xml">
+                 <field name="model_id"  position="after">
+                     <field name="use_for_alert_qty"/>
+                 </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

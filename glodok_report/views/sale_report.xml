@@ -1,0 +1,12 @@
+<odoo>
+	<record id="sale_report_client_order_ref_search" model="ir.ui.view">
+	    <field name="name">sale_report_client_order_ref.search</field>
+	    <field name="model">sale.report</field>
+	    <field name="inherit_id" ref="sale.view_order_product_search"/>
+	    <field name="arch" type="xml">
+	        <field name="date" position="before">
+	        	<field name="client_order_ref" />
+	        </field>
+	    </field>
+	</record>
+</odoo>

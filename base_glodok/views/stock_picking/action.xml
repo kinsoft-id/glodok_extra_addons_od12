@@ -1,0 +1,12 @@
+<odoo>
+	<record id="action_open_stock_picking_create_batch_wizard_form" model="ir.actions.server">
+		<field name="name">Create PickUp(Region)</field>
+		<field name="model_id" ref="model_stock_picking"/>
+	    <field name="binding_model_id" ref="model_stock_picking" />
+	    <field name="state">code</field>
+	    <field name="code">
+if records:
+	records.create_batch_per_region()
+	    </field>
+	</record>
+</odoo>

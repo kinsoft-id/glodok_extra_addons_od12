@@ -1,0 +1,13 @@
+<odoo>
+	<record model="ir.ui.view" id="view_warehouse_form">
+		<field name="name">view_warehouse.form</field>
+		<field name="model">stock.warehouse</field>
+		<field name="inherit_id" ref="stock.view_warehouse"/>
+		<field name="arch" type="xml">
+			<field name="wh_output_stock_loc_id" position="after">
+				<field name="external_loc" />
+				<field name="default_return_location_id" />
+			</field>
+		</field>
+	</record>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_region_all_user,Access Region to All User,model_region,,1,0,0,0
+access_region_group_sytem,Access Region to System Admin,model_region,base.group_system,1,1,1,1

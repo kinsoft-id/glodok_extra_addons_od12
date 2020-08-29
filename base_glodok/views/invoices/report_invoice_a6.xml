@@ -1,0 +1,74 @@
+<odoo>
+    <report
+        string="Invoice(A6)" 
+        id="action_report_invoice_a6" 
+        model="account.invoice" 
+        report_type="qweb-pdf"
+        name="base_glodok.report_invoice_a6" 
+        file="base_glodok.report_invoice_a6"
+        print_report_name="'INVOICE - %s' % (object.number)"
+        paperformat="paper_format_a6_landscape" 
+    />
+
+	<template id="report_invoice_a6">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="base_glodok.report_invoice_a6_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </template>
+
+
+
+    <template id="report_invoice_a6_document">
+        <t t-call="web.html_container">
+            <t t-call="base_glodok.inv_external_layout_2">
+            	<table class="table table-condensed">
+                    <tbody>
+                        <th>
+                            <strong>NOTA FAKTUR. #</strong>
+                            &amp;nbsp;
+                            <span t-esc="o.number" />
+                        </th>
+                    </tbody>
+                </table>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="width:15%;" class="text-center"><strong>Banyaknya</strong></th>
+                            <th class="text-center"><strong>Nama Barang</strong></th>
+                            <th class="text-center"><strong>Harga Satuan</strong></th>
+                            <th class="text-center"><strong>Jumlah</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.invoice_line_ids" t-as="line">
+                            <td class="text-center">
+                                <span t-field="line.quantity"/>
+                                <span t-field="line.uom_id"/>
+                            </td>
+                            <td>
+                                <span t-field="line.name"/>
+                            </td>
+                            <td>
+                                <span t-field="line.price_unit"/>
+                            </td>
+                            <td>
+                                <span t-field="line.price_total"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Terbilang: <span t-esc="o.get_words(o.amount_total)"/></td>
+                            <td class="text-right">TOTAL:</td>
+                            <td class="text-left"><span t-field="o.amount_total"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Catatan: <span t-esc="o.comment"/></td>
+                            <td class="text-right">&amp;nbsp;</td>
+                            <td class="text-left">&amp;nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </t>
+         </t>
+    </template>
+</odoo>

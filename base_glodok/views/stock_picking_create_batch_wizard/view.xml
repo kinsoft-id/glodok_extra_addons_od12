@@ -1,0 +1,32 @@
+<odoo>
+	<record id="action_stock_picking_create_batch_wizard" model="ir.actions.act_window">
+		<field name="name">Delivery PickUp</field>
+		<field name="res_model">stock.picking.create.batch.wizard</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+	</record>
+	<menuitem id="stock_picking_create_batch_wizard_menu" name="Create PickUp" parent="stock.menu_stock_warehouse_mgmt" action="action_stock_picking_create_batch_wizard" groups="stock.group_stock_manager"/>
+	<record model="ir.ui.view" id="stock_picking_create_batch_wizard_form">
+		<field name="name">stock_picking_create_batch_wizard.form</field>
+		<field name="model">stock.picking.create.batch.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Delivery Pickup">
+				<header>
+				</header>
+				<sheet>
+					<group>
+						<field name="user_id" required="1" domain="[('id','in',available_delivery_man_ids)]" options="{'no_quick_create':1,'no_create':1}" />
+						<field name="available_delivery_man_ids" invisible="1" />
+						<field name="available_region_ids" invisible="1" />
+						
+						<field name="region_ids" required="1" widget="many2many_tags" options="{'no_quick_create':1,'no_create':1}" domain="[('id','in',available_region_ids)]" />
+						<field name="picking_out_ids" required="1" />
+					</group>
+				</sheet>
+				<footer>
+					<button type="object" name="confirm" string="confirm" class="oe_highlight"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>

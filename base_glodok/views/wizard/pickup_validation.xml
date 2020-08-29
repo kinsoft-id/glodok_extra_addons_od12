@@ -1,0 +1,31 @@
+<odoo>
+	<record model="ir.ui.view" id="pickup_validation_wizard_form">
+		<field name="name">pickup.validation.wizard.form</field>
+		<field name="model">pickup.validation.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Pickup Validation">
+				<header>
+				</header>
+				<sheet>
+					<h1>
+						<field name="batch_id" /> - <field name="location_id" required="1" options="{'no_create':1,'no_quick_create':1}" />
+					</h1>
+					<separator string="Item(s)"/>
+					<field name="line_ids" mode="tree">
+						<tree editable="bottom" string="Items" create="false" delete="false">
+							<field name="move_line_id" invisible="1" />
+							<field name="product_id" />
+							
+							<field name="external_pickup_partner" />
+							<field name="qty_done" />
+							<field name="product_uom_id" />
+						</tree>
+					</field>
+				</sheet>
+				<footer>
+					<button name="validate" type="object" string="Validate" class="oe_highlight" />
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>

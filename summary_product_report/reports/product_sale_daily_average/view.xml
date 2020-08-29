@@ -1,0 +1,48 @@
+<odoo>
+	<record model="ir.ui.view" id="product_sale_daily_average_tree">
+		<field name="name">Product Sale Daily Average Tree</field>
+		<field name="model">product.sale.daily.average</field>
+		<field name="arch" type="xml">
+			<tree string="Product Sale Daily Average" decoration-success="daily_avg_qty>1.0" decoration-warning="daily_avg_qty&lt;0.2" decoration-danger="daily_avg_qty==0" decoration-info="daily_avg_qty>1">
+				<field name="product_id"/>
+				<field name="daily_avg_qty" />
+				<field name="uom_id" />
+				
+			</tree>
+		</field>
+	</record>
+
+	<record id="product_sale_daily_average_search" model="ir.ui.view">
+		<field name="name">Product Sale Daily Average Search</field>
+		<field name="model">product.sale.daily.average</field>
+		<field name="priority">11</field>
+		<field name="arch" type="xml">
+			<search string="Search">
+				<field name="product_id" />
+	
+				<!-- BELOW IS FILTER -->
+				<filter name="filter_0" domain="[('daily_avg_qty','=',0)]" string="Avg:0" />
+				<filter name="filter_1" domain="[('daily_avg_qty','=',1)]" string="Avg:1" />
+				<filter name="filter_less1" domain="[('daily_avg_qty','>',0),('daily_avg_qty','&lt;',1)]" string="Avg:&gt;0 &lt;1" />
+				<filter name="filter_gt1" domain="[('daily_avg_qty','>',1)]" string="Avg:>1" />
+				<separator/>
+			</search>
+		</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_product_sale_daily_average">
+		<field name="name">Average Daily Sale Qty on Product</field>
+		<field name="res_model">product.sale.daily.average</field>
+		<field name="view_type">form</field>
+		<field name='view_mode'>tree</field>
+		<!-- <field name='view_id' ref='ref_view_id'/> -->
+		<!-- <field name="view_ids" eval="[
+				(5, 0, 0),
+				(0, 0, {'view_mode': 'kanban', 'view_id': ref('module.kanban_ref_id'), 'sequence':1}),
+				(0, 0, {'view_mode': 'tree', 'view_id': ref('module.tree_ref_id'), 'sequence':2}),
+				(0, 0, {'view_mode': 'form', 'view_id': ref('module.form_ref_id'), 'sequence':3})
+				]"/> -->
+	</record>
+
+	<menuitem action="action_product_sale_daily_average" id="product_sale_daily_average_menu" name="Average Daily Sale Qty On Product " web_icon="module,static/routes/to/icon.png" sequence="31" parent="stock.menu_warehouse_report" />
+</odoo>

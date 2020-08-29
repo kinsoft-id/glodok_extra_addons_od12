@@ -1,0 +1,5 @@
+<odoo>
+	<record model="ir.ui.menu" id="base_glodok.stock_picking_create_batch_wizard_menu">
+		<field name="groups_id" eval="[(4, ref('glodok_security_rules.group_pickup_memo_staff'))]"/>
+	</record>
+</odoo>

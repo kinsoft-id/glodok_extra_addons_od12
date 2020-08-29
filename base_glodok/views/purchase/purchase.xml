@@ -1,0 +1,17 @@
+<odoo>
+	<record model="ir.ui.view" id="purchase_order_form">
+		<field name="name">purchase_order.form</field>
+		<field name="model">purchase.order</field>
+		<field name="inherit_id" ref="purchase.purchase_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form/sheet/notebook/page[1]/field[@name='order_line']/form/sheet/notebook" position="inside">
+				<page string="Taken Qty">
+					<group>
+						<field name="taken_qty" />
+					</group>
+					<field name="taken_move_line_ids" />
+				</page>
+			</xpath>
+		</field>
+	</record>
+</odoo>

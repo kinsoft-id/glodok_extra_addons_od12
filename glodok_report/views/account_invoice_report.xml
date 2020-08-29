@@ -1,0 +1,12 @@
+<odoo>
+	<record id="account_invoice_report_reference_search" model="ir.ui.view">
+	    <field name="name">account.invoice.report.search</field>
+	    <field name="model">account.invoice.report</field>
+	    <field name="inherit_id" ref="account.view_account_invoice_report_search"/>
+	    <field name="arch" type="xml">
+	        <field name="date" position="before">
+	        	<field name="invoice_reference" />
+	        </field>
+	    </field>
+	</record>
+</odoo>

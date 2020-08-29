@@ -1,0 +1,20 @@
+<odoo>
+	<record id="action_stockmovemanual" model="ir.actions.act_window">
+		<field name="name">StockMove</field>
+		<field name="res_model">stock.move</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<menuitem id="stockmovemanual_menu" name="StockMove" parent="stock.menu_stock_warehouse_mgmt" action="action_stockmovemanual" sequence="99"/>
+	<record model="ir.ui.view" id="view_stock_move_operations_form">
+		<field name="name">view_stock_move_operations.form</field>
+		<field name="model">stock.move</field>
+		<field name="inherit_id" ref="stock.view_stock_move_operations" />
+		<field name="arch" type="xml">
+			<field name="product_uom" position="after">
+				<button type="object" name="set_reserved_done" icon="fa-check" string="Reserved Ok" />
+				<button type="object" name="set_non_reserved_to_external" icon="fa-external-link" string="Set Not Reserved to External" />
+			</field>
+		</field>
+	</record>
+</odoo>

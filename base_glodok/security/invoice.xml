@@ -1,0 +1,65 @@
+<odoo>
+	<record id="model_access_salesman_account_bank_statement" model="ir.model.access">
+		<field name="name">account.bank.statement.group.salesman</field>
+		<field name="model_id" ref="account.model_account_bank_statement"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="0"/>
+		<field name="perm_create" eval="0"/>
+		<field name="perm_unlink" eval="0" />
+	</record>
+
+	<record id="model_access_salesman_account_bank_statement_line" model="ir.model.access">
+		<field name="name">account.bank.statement.line.group.salesman</field>
+		<field name="model_id" ref="account.model_account_bank_statement_line"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="0"/>
+		<field name="perm_create" eval="0"/>
+		<field name="perm_unlink" eval="0" />
+	</record>
+
+	<record id="model_access_salesman_account_move" model="ir.model.access">
+		<field name="name">account.move.group.salesman</field>
+		<field name="model_id" ref="account.model_account_move"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="1"/>
+		<field name="perm_create" eval="1"/>
+		<field name="perm_unlink" eval="1" />
+	</record>
+
+	<record id="model_access_salesman_account_move_line" model="ir.model.access">
+		<field name="name">account.move.line.group.salesman</field>
+		<field name="model_id" ref="account.model_account_move_line"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="1"/>
+		<field name="perm_create" eval="1"/>
+		<field name="perm_unlink" eval="1" />
+	</record>
+
+	<record id="model_access_salesman_account_partial_reconcile_line" model="ir.model.access">
+		<field name="name">account.partial.reconcile.group.salesman</field>
+		<field name="model_id" ref="account.model_account_partial_reconcile"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="1"/>
+		<field name="perm_create" eval="1"/>
+		<field name="perm_unlink" eval="0" />
+	</record>
+
+	<record id="model_access_salesman_account_account_type" model="ir.model.access">
+		<field name="name">account.account_type.group.salesman</field>
+		<field name="model_id" ref="account.model_account_account_type"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="0"/>
+		<field name="perm_create" eval="0"/>
+		<field name="perm_unlink" eval="0" />
+	</record>
+
+	<record id="model_access_salesman_account_analytic_line" model="ir.model.access">
+		<field name="name">account.account_analytic_line.group.salesman</field>
+		<field name="model_id" ref="account.model_account_analytic_line"/>
+		<field name="perm_read" eval="1"/>
+		<field name="perm_write" eval="1"/>
+		<field name="perm_create" eval="1"/>
+		<field name="perm_unlink" eval="1" />
+	</record>
+	
+</odoo>

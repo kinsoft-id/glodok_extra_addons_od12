@@ -1,0 +1,151 @@
+<odoo>
+
+	<record id="stock_picking_batch.stock_picking_batch_action" model="ir.actions.act_window">
+		<field name="context">{}</field>
+	</record>
+	<record model='ir.ui.view' id='memo_tree'>
+		<field name='name'>memo.tree</field>
+		<field name='model'>stock.picking.batch</field>
+		<field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_tree"/>
+		<field name='arch' type='xml'>
+			<field name="name" position="after">
+				<field name="send_time" />
+			</field>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="memo_kanban">
+		<field name="name">stock.picking.batch.kanban</field>
+		<field name="model">stock.picking.batch</field>
+		<field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_kanban"/>
+		<field name="arch" type="xml">
+			<field name="user_id" position="after">
+				<field name="send_time"/>
+				<field name="location_ids"/>
+				<field name="location_ids_caption"/>
+			</field>
+			
+			<xpath expr="//kanban/templates/t/div/div[2]/div[hasclass('oe_kanban_bottom_right')]/img[hasclass('oe_kanban_avatar')]" position="replace">
+				
+			</xpath>
+			<xpath expr="//kanban/templates/t/div/div[2]" position="before">
+				<div class="o_kanban_record_content">
+					<div>
+						<strong><span>Courier:</span></strong>&amp;nbsp;<span t-esc="record.user_id.value" />
+					</div>
+					<div>
+						<strong><span>Date/Time:</span></strong>&amp;nbsp;<span t-esc="record.send_time.value" />
+					</div>
+
+
+					<div>
+						<strong><span>Location:</span></strong>&amp;nbsp;<span t-esc="record.location_ids_caption.value" />
+					</div>
+				</div>
+			</xpath>
+		</field>
+	</record>
+	<record id="stock_picking_batch_filter_search" model="ir.ui.view">
+		<field name="name">stock.picking.batch.glodok.search</field>
+		<field name="model">stock.picking.batch</field>
+		<field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_filter" />
+		<field name="arch" type="xml">
+			<xpath expr="//search/filter[@name='in_progress']" position="after">
+				<filter name="filter_finish" string="Finish" domain="[('state','=','finish')]" />
+			</xpath>
+		</field>
+	</record>
+	<record model="ir.ui.view" id="stock_picking_batch_inherit_form">
+		<field name="name">stock_picking_batch_inherit_.form</field>
+		<field name="model">stock.picking.batch</field>
+		<field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form/header/button[@name='confirm_picking']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<header position="inside">
+				<button type="object" name="set_draft" string="Set as Draft" icon="fa-plane" class="btn btn-info" confirm="Set as Draft ?" attrs="{'invisible':[('state','in',['done','draft'])]}" groups="base.group_system,stock.group_stock_manager" />
+				
+				
+				<button name="force_done" string="Force Done" groups="base.group_no_one" type="object" />
+				<button name="force_finish" string="Force Finish" groups="base.group_no_one" type="object" />
+				<button name="force_in_progress" string="Force In Progress" groups="base.group_no_one" type="object" />
+
+				<button name="validate_wh" type="object" string="Validate PickUp" class="oe_highlight" states="in_progress"/>
+
+				<button name="post" type="object" string="POST" class="oe_highlight" states="checking" confirm="POST ?"/>
+
+			</header>
+			<xpath expr="//form/header/field[@name='state']" position="replace">
+				<field name="state" widget="statusbar" />
+			</xpath>
+			<button name="done" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</button>
+			<xpath expr="//form/header/button[@name='cancel_picking']" position="attributes" >
+				<attribute name="invisible">1</attribute>
+			</xpath>
+
+			<button name="print_picking" position="attributes">
+				<attribute name="groups">base_glodok.group_can_print_batch,base.group_system</attribute>
+			</button>
+			<xpath expr="//form/sheet/field[@name='picking_ids']" position="attributes">
+				<attribute name="mode">tree</attribute>
+			</xpath>
+			<xpath expr="//form/sheet/field[@name='picking_ids']/tree[1]" position="replace">
+				<tree>
+					<field name="name"/>
+					<field name="partner_id" string="Customer"/>
+					<field name="validated_invoice_list" />
+					<field name="origin"/>
+					<field name="scheduled_date" invisible="1"/>
+					
+					<field name="state" invisible="1"/>
+					<field name="delivery_status"/>
+					<field name="batch_state" invisible="1" />
+					
+					<button type="object" string="received" name="received" icon="fa-flag-checkered" class="text-success" attrs="{'invisible':[('batch_state','!=','checking')]}" />
+					<button type="object" string="has_return" name="has_return" icon="fa-exclamation-circle" class="text-danger" attrs="{'invisible':[('batch_state','!=','checking')]}"  />
+					<button type="object" string="failed" name="failed" icon="fa-exclamation-circle" class="text-danger" attrs="{'invisible':[('batch_state','!=','checking')]}" invisible="1" />
+					
+					
+				</tree>
+			</xpath>
+
+			<xpath expr="//form/sheet/field[@name='picking_ids']" position="attributes">
+				<attribute name="mode">tree</attribute>
+			</xpath>
+			<xpath expr="//form/sheet/field[@name='picking_ids']" position="after">
+				<separator string="Item(s)" />
+				<field name="move_line_ids" mode="tree">
+					<tree string="Items" decoration-danger="batch_state=='in_progress' and pickup_validated==False" decoration-info="batch_state=='in_progress' and pickup_validated==True">
+						<field name="picking_id" />
+						<field name="batch_state" invisible="1"/>
+
+						<field name="picking_partner" />
+						<field name="picking_origin" />
+						<field name="product_id" />
+						<field name="qty_done" />
+
+						<field name="location_id" />
+						<field name="external_pickup_partner" />
+						<field name="pickup_validated" />
+						<field name="pickup_qty" />
+						<field name="pickup_validated_by" />
+
+						<button name="change_supplier" type="object" string="Update" icon="fa-pencil" groups="base.group_system" attrs="{'readonly':[('batch_state','in',['done','cancel'])]}"/>
+					</tree>
+				</field>
+			</xpath>
+			<field name="user_id" position="attributes">
+				<attribute name="required">1</attribute>
+			</field>
+			<field name="user_id" position="after">
+				<field name="send_time" />
+				<field name="region_ids" widget="many2many_tags" />
+			</field>
+
+			
+		</field>
+	</record>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+	<record model="res.groups" id="group_delivery_man">
+		<field name="name">Delivery Man</field>
+		<field name="category_id" eval="False"/>
+	</record>
+
+	<record model="res.groups" id="group_can_print_batch">
+		<field name="name">Can Print Batch/Memo</field>
+		<field name="category_id" eval="False"/>
+	</record>
+
+
+	<record model="res.groups" id="group_can_validate_do">
+		<field name="name">Can Validate DO Picking</field>
+		<field name="category_id" eval="False"/>
+	</record>
+</odoo>

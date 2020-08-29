@@ -1,0 +1,1604 @@
+code,name,id
+31,DKI JAKARTA,adm_area_31
+31.01,KAB. ADM. KEP. SERIBU,adm_area_31_01
+31.01.01,Kepulauan Seribu Utara,adm_area_31_01_01
+31.01.01.1001,Pulau Panggang,adm_area_31_01_01_1001
+31.01.01.1002,Pulau Kelapa,adm_area_31_01_01_1002
+31.01.01.1003,Pulau Harapan,adm_area_31_01_01_1003
+31.01.02,Kepulauan Seribu Selatan.,adm_area_31_01_02
+31.01.02.1001,Pulau Untung Jawa,adm_area_31_01_02_1001
+31.01.02.1002,Pulau Tidung,adm_area_31_01_02_1002
+31.01.02.1003,Pulau Pari,adm_area_31_01_02_1003
+31.71,KOTA ADM. JAKARTA PUSAT,adm_area_31_71
+31.71.01,Gambir,adm_area_31_71_01
+31.71.01.1001,Gambir,adm_area_31_71_01_1001
+31.71.01.1002,Cideng,adm_area_31_71_01_1002
+31.71.01.1003,Petojo Utara,adm_area_31_71_01_1003
+31.71.01.1004,Petojo Selatan,adm_area_31_71_01_1004
+31.71.01.1005,Kebon Kelapa,adm_area_31_71_01_1005
+31.71.01.1006,Duri Pulo,adm_area_31_71_01_1006
+31.71.02,Sawah Besar,adm_area_31_71_02
+31.71.02.1001,Pasar Baru,adm_area_31_71_02_1001
+31.71.02.1002,Karang Anyar,adm_area_31_71_02_1002
+31.71.02.1003,Kartini,adm_area_31_71_02_1003
+31.71.02.1004,Gunung Sahari Utara,adm_area_31_71_02_1004
+31.71.02.1005,Mangga Dua Selatan,adm_area_31_71_02_1005
+31.71.03,Kemayoran,adm_area_31_71_03
+31.71.03.1001,Kemayoran,adm_area_31_71_03_1001
+31.71.03.1002,Kebon Kosong,adm_area_31_71_03_1002
+31.71.03.1003,Harapan Mulia,adm_area_31_71_03_1003
+31.71.03.1004,Serdang,adm_area_31_71_03_1004
+31.71.03.1005,Gunung Sahari Selatan,adm_area_31_71_03_1005
+31.71.03.1006,Cempaka Baru,adm_area_31_71_03_1006
+31.71.03.1007,Sumur Batu,adm_area_31_71_03_1007
+31.71.03.1008,Utan Panjang,adm_area_31_71_03_1008
+31.71.04,Senen,adm_area_31_71_04
+31.71.04.1001,Senen,adm_area_31_71_04_1001
+31.71.04.1002,Kenari,adm_area_31_71_04_1002
+31.71.04.1003,Paseban,adm_area_31_71_04_1003
+31.71.04.1004,Kramat,adm_area_31_71_04_1004
+31.71.04.1005,Kwitang,adm_area_31_71_04_1005
+31.71.04.1006,Bungur,adm_area_31_71_04_1006
+31.71.05,Cempaka Putih,adm_area_31_71_05
+31.71.05.1001,Cempaka Putih Timur,adm_area_31_71_05_1001
+31.71.05.1002,Cempaka Putih Barat,adm_area_31_71_05_1002
+31.71.05.1003,Rawasari,adm_area_31_71_05_1003
+31.71.06,Menteng,adm_area_31_71_06
+31.71.06.1001,Menteng,adm_area_31_71_06_1001
+31.71.06.1002,Pegangsaan,adm_area_31_71_06_1002
+31.71.06.1003,Cikini,adm_area_31_71_06_1003
+31.71.06.1004,Gondangdia,adm_area_31_71_06_1004
+31.71.06.1005,Kebon Sirih,adm_area_31_71_06_1005
+31.71.07,Tanah Abang,adm_area_31_71_07
+31.71.07.1001,Gelora,adm_area_31_71_07_1001
+31.71.07.1002,Bendungan Hilir,adm_area_31_71_07_1002
+31.71.07.1003,Karet Tengsin,adm_area_31_71_07_1003
+31.71.07.1004,Petamburan,adm_area_31_71_07_1004
+31.71.07.1005,Kebon Melati,adm_area_31_71_07_1005
+31.71.07.1006,Kebon Kacang,adm_area_31_71_07_1006
+31.71.07.1007,Kampung Bali,adm_area_31_71_07_1007
+31.71.08,Johar Baru,adm_area_31_71_08
+31.71.08.1001,Johar Baru,adm_area_31_71_08_1001
+31.71.08.1002,Kampung Rawa,adm_area_31_71_08_1002
+31.71.08.1003,Galur,adm_area_31_71_08_1003
+31.71.08.1004,Tanah Tinggi,adm_area_31_71_08_1004
+31.72,KOTA ADM. JAKARTA UTARA,adm_area_31_72
+31.72.01,Penjaringan,adm_area_31_72_01
+31.72.01.1001,Penjaringan,adm_area_31_72_01_1001
+31.72.01.1002,Kamal Muara,adm_area_31_72_01_1002
+31.72.01.1003,Kapuk Muara,adm_area_31_72_01_1003
+31.72.01.1004,Pejagalan,adm_area_31_72_01_1004
+31.72.01.1005,Pluit,adm_area_31_72_01_1005
+31.72.02,Tanjung Priok,adm_area_31_72_02
+31.72.02.1001,Tanjung Priok,adm_area_31_72_02_1001
+31.72.02.1002,Sunter Jaya,adm_area_31_72_02_1002
+31.72.02.1003,Papanggo,adm_area_31_72_02_1003
+31.72.02.1004,Sungai Bambu,adm_area_31_72_02_1004
+31.72.02.1005,Kebon Bawang,adm_area_31_72_02_1005
+31.72.02.1006,Sunter Agung,adm_area_31_72_02_1006
+31.72.02.1007,Warakas,adm_area_31_72_02_1007
+31.72.03,Koja,adm_area_31_72_03
+31.72.03.1001,Koja,adm_area_31_72_03_1001
+31.72.03.1002,Tugu Utara,adm_area_31_72_03_1002
+31.72.03.1003,Lagoa,adm_area_31_72_03_1003
+31.72.03.1004,Rawa Badak Utara,adm_area_31_72_03_1004
+31.72.03.1005,Tugu Selatan,adm_area_31_72_03_1005
+31.72.03.1006,Rawa Badak Selatan,adm_area_31_72_03_1006
+31.72.04,Cilincing,adm_area_31_72_04
+31.72.04.1001,Cilincing,adm_area_31_72_04_1001
+31.72.04.1002,Sukapura,adm_area_31_72_04_1002
+31.72.04.1003,Marunda,adm_area_31_72_04_1003
+31.72.04.1004,Kalibaru,adm_area_31_72_04_1004
+31.72.04.1005,Semper Timur,adm_area_31_72_04_1005
+31.72.04.1006,Rorotan,adm_area_31_72_04_1006
+31.72.04.1007,Semper Barat,adm_area_31_72_04_1007
+31.72.05,Pademangan,adm_area_31_72_05
+31.72.05.1001,Pademangan Timur,adm_area_31_72_05_1001
+31.72.05.1002,Pademangan Barat,adm_area_31_72_05_1002
+31.72.05.1003,Ancol,adm_area_31_72_05_1003
+31.72.06,Kelapa Gading,adm_area_31_72_06
+31.72.06.1001,Kelapa Gading Timur,adm_area_31_72_06_1001
+31.72.06.1002,Pegangsaan Dua,adm_area_31_72_06_1002
+31.72.06.1003,Kelapa Gading Barat,adm_area_31_72_06_1003
+31.73,KOTA ADM. JAKARTA BARAT,adm_area_31_73
+31.73.01,Cengkareng,adm_area_31_73_01
+31.73.01.1001,Cengkareng Barat,adm_area_31_73_01_1001
+31.73.01.1002,Duri Kosambi,adm_area_31_73_01_1002
+31.73.01.1003,Rawa Buaya,adm_area_31_73_01_1003
+31.73.01.1004,Kedaung Kali Angke,adm_area_31_73_01_1004
+31.73.01.1005,Kapuk,adm_area_31_73_01_1005
+31.73.01.1006,Cengkareng Timur,adm_area_31_73_01_1006
+31.73.02,Grogol Petamburan,adm_area_31_73_02
+31.73.02.1001,Grogol,adm_area_31_73_02_1001
+31.73.02.1002,Tanjung Duren Utara,adm_area_31_73_02_1002
+31.73.02.1003,Tomang,adm_area_31_73_02_1003
+31.73.02.1004,Jelambar,adm_area_31_73_02_1004
+31.73.02.1005,Tanjung Duren Selatan,adm_area_31_73_02_1005
+31.73.02.1006,Jelambar Baru,adm_area_31_73_02_1006
+31.73.02.1007,Wijaya Kusuma,adm_area_31_73_02_1007
+31.73.03,Taman Sari,adm_area_31_73_03
+31.73.03.1001,Taman Sari,adm_area_31_73_03_1001
+31.73.03.1002,Krukut,adm_area_31_73_03_1002
+31.73.03.1003,Maphar,adm_area_31_73_03_1003
+31.73.03.1004,Tangki,adm_area_31_73_03_1004
+31.73.03.1005,Mangga Besar,adm_area_31_73_03_1005
+31.73.03.1006,Keagungan,adm_area_31_73_03_1006
+31.73.03.1007,Glodok,adm_area_31_73_03_1007
+31.73.03.1008,Pinangsia,adm_area_31_73_03_1008
+31.73.04,Tambora,adm_area_31_73_04
+31.73.04.1001,Tambora,adm_area_31_73_04_1001
+31.73.04.1002,Kali Anyar,adm_area_31_73_04_1002
+31.73.04.1003,Duri Utara,adm_area_31_73_04_1003
+31.73.04.1004,Tanah Sereal,adm_area_31_73_04_1004
+31.73.04.1005,Krendang,adm_area_31_73_04_1005
+31.73.04.1006,Jembatan Besi,adm_area_31_73_04_1006
+31.73.04.1007,Angke,adm_area_31_73_04_1007
+31.73.04.1008,Jembatan Lima,adm_area_31_73_04_1008
+31.73.04.1009,Pekojan,adm_area_31_73_04_1009
+31.73.04.1010,Roa Malaka,adm_area_31_73_04_1010
+31.73.04.1011,Duri Selatan,adm_area_31_73_04_1011
+31.73.05,Kebon Jeruk,adm_area_31_73_05
+31.73.05.1001,Kebon Jeruk,adm_area_31_73_05_1001
+31.73.05.1002,Sukabumi Utara,adm_area_31_73_05_1002
+31.73.05.1003,Sukabumi Selatan,adm_area_31_73_05_1003
+31.73.05.1004,Kelapa Dua,adm_area_31_73_05_1004
+31.73.05.1005,Duri Kepa,adm_area_31_73_05_1005
+31.73.05.1006,Kedoya Utara,adm_area_31_73_05_1006
+31.73.05.1007,Kedoya Selatan,adm_area_31_73_05_1007
+31.73.06,Kalideres,adm_area_31_73_06
+31.73.06.1001,Kalideres,adm_area_31_73_06_1001
+31.73.06.1002,Semanan,adm_area_31_73_06_1002
+31.73.06.1003,Tegal Alur,adm_area_31_73_06_1003
+31.73.06.1004,Kamal,adm_area_31_73_06_1004
+31.73.06.1005,Pegadungan,adm_area_31_73_06_1005
+31.73.07,Pal Merah,adm_area_31_73_07
+31.73.07.1001,Palmerah,adm_area_31_73_07_1001
+31.73.07.1002,Slipi,adm_area_31_73_07_1002
+31.73.07.1003,Kota Bambu Utara,adm_area_31_73_07_1003
+31.73.07.1004,Jatipulo,adm_area_31_73_07_1004
+31.73.07.1005,Kemanggisan,adm_area_31_73_07_1005
+31.73.07.1006,Kota Bambu Selatan,adm_area_31_73_07_1006
+31.73.08,Kembangan,adm_area_31_73_08
+31.73.08.1001,Kembangan Utara,adm_area_31_73_08_1001
+31.73.08.1002,Meruya Utara,adm_area_31_73_08_1002
+31.73.08.1003,Meruya Selatan,adm_area_31_73_08_1003
+31.73.08.1004,Srengseng,adm_area_31_73_08_1004
+31.73.08.1005,Joglo,adm_area_31_73_08_1005
+31.73.08.1006,Kembangan Selatan,adm_area_31_73_08_1006
+31.74,KOTA ADM. JAKARTA SELATAN,adm_area_31_74
+31.74.01,Tebet,adm_area_31_74_01
+31.74.01.1001,Tebet Timur,adm_area_31_74_01_1001
+31.74.01.1002,Tebet Barat,adm_area_31_74_01_1002
+31.74.01.1003,Menteng Dalam,adm_area_31_74_01_1003
+31.74.01.1004,Kebon Baru,adm_area_31_74_01_1004
+31.74.01.1005,Bukit Duri,adm_area_31_74_01_1005
+31.74.01.1006,Manggarai Selatan,adm_area_31_74_01_1006
+31.74.01.1007,Manggarai,adm_area_31_74_01_1007
+31.74.02,Setiabudi,adm_area_31_74_02
+31.74.02.1001,Setia Budi,adm_area_31_74_02_1001
+31.74.02.1002,Karet Semanggi,adm_area_31_74_02_1002
+31.74.02.1003,Karet Kuningan,adm_area_31_74_02_1003
+31.74.02.1004,Karet,adm_area_31_74_02_1004
+31.74.02.1005,Menteng Atas,adm_area_31_74_02_1005
+31.74.02.1006,Pasar Manggis,adm_area_31_74_02_1006
+31.74.02.1007,Guntur,adm_area_31_74_02_1007
+31.74.02.1008,Kuningan Timur,adm_area_31_74_02_1008
+31.74.03,Mampang Prapatan,adm_area_31_74_03
+31.74.03.1001,Mampang Prapatan,adm_area_31_74_03_1001
+31.74.03.1002,Bangka,adm_area_31_74_03_1002
+31.74.03.1003,Pela Mampang,adm_area_31_74_03_1003
+31.74.03.1004,Tegal Parang,adm_area_31_74_03_1004
+31.74.03.1005,Kuningan Barat,adm_area_31_74_03_1005
+31.74.04,Pasar Minggu,adm_area_31_74_04
+31.74.04.1001,Pasar Minggu,adm_area_31_74_04_1001
+31.74.04.1002,Jati Padang,adm_area_31_74_04_1002
+31.74.04.1003,Cilandak Timur,adm_area_31_74_04_1003
+31.74.04.1004,Ragunan,adm_area_31_74_04_1004
+31.74.04.1005,Pejaten Timur,adm_area_31_74_04_1005
+31.74.04.1006,Pejaten Barat,adm_area_31_74_04_1006
+31.74.04.1007,Kebagusan,adm_area_31_74_04_1007
+31.74.05,Kebayoran Lama,adm_area_31_74_05
+31.74.05.1001,Kebayoran Lama Utara,adm_area_31_74_05_1001
+31.74.05.1002,Pondok Pinang,adm_area_31_74_05_1002
+31.74.05.1003,Cipulir,adm_area_31_74_05_1003
+31.74.05.1004,Grogol Utara,adm_area_31_74_05_1004
+31.74.05.1005,Grogol Selatan,adm_area_31_74_05_1005
+31.74.05.1006,Kebayoran Lama Selatan,adm_area_31_74_05_1006
+31.74.06,Cilandak,adm_area_31_74_06
+31.74.06.1001,Cilandak Barat,adm_area_31_74_06_1001
+31.74.06.1002,Lebak Bulus,adm_area_31_74_06_1002
+31.74.06.1003,Pondok Labu,adm_area_31_74_06_1003
+31.74.06.1004,Gandaria Selatan,adm_area_31_74_06_1004
+31.74.06.1005,Cipete Selatan,adm_area_31_74_06_1005
+31.74.07,Kebayoran Baru,adm_area_31_74_07
+31.74.07.1001,Melawai,adm_area_31_74_07_1001
+31.74.07.1002,Gunung,adm_area_31_74_07_1002
+31.74.07.1003,Kramat Pela,adm_area_31_74_07_1003
+31.74.07.1004,Selong,adm_area_31_74_07_1004
+31.74.07.1005,Rawa Barat,adm_area_31_74_07_1005
+31.74.07.1006,Senayan,adm_area_31_74_07_1006
+31.74.07.1007,Pulo,adm_area_31_74_07_1007
+31.74.07.1008,Petogogan,adm_area_31_74_07_1008
+31.74.07.1009,Gandaria Utara,adm_area_31_74_07_1009
+31.74.07.1010,Cipete Utara,adm_area_31_74_07_1010
+31.74.08,Pancoran,adm_area_31_74_08
+31.74.08.1001,Pancoran,adm_area_31_74_08_1001
+31.74.08.1002,Kalibata,adm_area_31_74_08_1002
+31.74.08.1003,Rawajati,adm_area_31_74_08_1003
+31.74.08.1004,Duren Tiga,adm_area_31_74_08_1004
+31.74.08.1005,Pengadegan,adm_area_31_74_08_1005
+31.74.08.1006,Cikoko,adm_area_31_74_08_1006
+31.74.09,Jagakarsa,adm_area_31_74_09
+31.74.09.1001,Jagakarsa,adm_area_31_74_09_1001
+31.74.09.1002,Srengseng Sawah,adm_area_31_74_09_1002
+31.74.09.1003,Ciganjur,adm_area_31_74_09_1003
+31.74.09.1004,Lenteng Agung,adm_area_31_74_09_1004
+31.74.09.1005,Tanjung Barat,adm_area_31_74_09_1005
+31.74.09.1006,Cipedak,adm_area_31_74_09_1006
+31.74.10,Pesanggrahan,adm_area_31_74_10
+31.74.10.1001,Pesanggrahan,adm_area_31_74_10_1001
+31.74.10.1002,Bintaro,adm_area_31_74_10_1002
+31.74.10.1003,Petukangan Utara,adm_area_31_74_10_1003
+31.74.10.1004,Petukangan Selatan,adm_area_31_74_10_1004
+31.74.10.1005,Ulujami,adm_area_31_74_10_1005
+31.75,KOTA ADM. JAKARTA TIMUR,adm_area_31_75
+31.75.01,Matraman,adm_area_31_75_01
+31.75.01.1001,Pisangan Baru,adm_area_31_75_01_1001
+31.75.01.1002,Utan Kayu Utara,adm_area_31_75_01_1002
+31.75.01.1003,Kayu Manis,adm_area_31_75_01_1003
+31.75.01.1004,Palmeriam,adm_area_31_75_01_1004
+31.75.01.1005,Kebon Manggis,adm_area_31_75_01_1005
+31.75.01.1006,Utan Kayu Selatan,adm_area_31_75_01_1006
+31.75.02,Pulogadung,adm_area_31_75_02
+31.75.02.1001,Pulo Gadung,adm_area_31_75_02_1001
+31.75.02.1002,Pisangan Timur,adm_area_31_75_02_1002
+31.75.02.1003,Cipinang,adm_area_31_75_02_1003
+31.75.02.1004,Jatinegara Kaum,adm_area_31_75_02_1004
+31.75.02.1005,Rawamangun,adm_area_31_75_02_1005
+31.75.02.1006,Kayu Putih,adm_area_31_75_02_1006
+31.75.02.1007,Jati,adm_area_31_75_02_1007
+31.75.03,Jatinegara,adm_area_31_75_03
+31.75.03.1001,Kampung Melayu,adm_area_31_75_03_1001
+31.75.03.1002,Bidara Cina,adm_area_31_75_03_1002
+31.75.03.1003,Bali Mester,adm_area_31_75_03_1003
+31.75.03.1004,Rawa Bunga,adm_area_31_75_03_1004
+31.75.03.1005,Cipinang Cempedak,adm_area_31_75_03_1005
+31.75.03.1006,Cipinang Muara,adm_area_31_75_03_1006
+31.75.03.1007,Cipinang Besar Selatan,adm_area_31_75_03_1007
+31.75.03.1008,Cipinang Besar Utara,adm_area_31_75_03_1008
+31.75.04,Kramatjati,adm_area_31_75_04
+31.75.04.1001,Kramatjati,adm_area_31_75_04_1001
+31.75.04.1002,Tengah,adm_area_31_75_04_1002
+31.75.04.1003,Dukuh,adm_area_31_75_04_1003
+31.75.04.1004,Batu Ampar,adm_area_31_75_04_1004
+31.75.04.1005,Balekambang,adm_area_31_75_04_1005
+31.75.04.1006,Cililitan,adm_area_31_75_04_1006
+31.75.04.1007,Cawang,adm_area_31_75_04_1007
+31.75.05,Pasar Rebo,adm_area_31_75_05
+31.75.05.1001,Gedong,adm_area_31_75_05_1001
+31.75.05.1002,Baru,adm_area_31_75_05_1002
+31.75.05.1003,Cijantung,adm_area_31_75_05_1003
+31.75.05.1004,Kalisari,adm_area_31_75_05_1004
+31.75.05.1005,Pekayon,adm_area_31_75_05_1005
+31.75.06,Cakung,adm_area_31_75_06
+31.75.06.1001,Jatinegara,adm_area_31_75_06_1001
+31.75.06.1002,Rawa Terate,adm_area_31_75_06_1002
+31.75.06.1003,Penggilingan,adm_area_31_75_06_1003
+31.75.06.1004,Cakung Timur,adm_area_31_75_06_1004
+31.75.06.1005,Pulo Gebang,adm_area_31_75_06_1005
+31.75.06.1006,Ujung Menteng,adm_area_31_75_06_1006
+31.75.06.1007,Cakung Barat,adm_area_31_75_06_1007
+31.75.07,Duren Sawit,adm_area_31_75_07
+31.75.07.1001,Duren Sawit,adm_area_31_75_07_1001
+31.75.07.1002,Pondok Bambu,adm_area_31_75_07_1002
+31.75.07.1003,Klender,adm_area_31_75_07_1003
+31.75.07.1004,Pondok Kelapa,adm_area_31_75_07_1004
+31.75.07.1005,Malaka Sari,adm_area_31_75_07_1005
+31.75.07.1006,Malaka Jaya,adm_area_31_75_07_1006
+31.75.07.1007,Pondok Kopi,adm_area_31_75_07_1007
+31.75.08,Makasar,adm_area_31_75_08
+31.75.08.1001,Makasar,adm_area_31_75_08_1001
+31.75.08.1002,Pinangranti,adm_area_31_75_08_1002
+31.75.08.1003,Kebon Pala,adm_area_31_75_08_1003
+31.75.08.1004,Halim Perdana Kusuma,adm_area_31_75_08_1004
+31.75.08.1005,Cipinang Melayu,adm_area_31_75_08_1005
+31.75.09,Ciracas,adm_area_31_75_09
+31.75.09.1001,Ciracas,adm_area_31_75_09_1001
+31.75.09.1002,Cibubur,adm_area_31_75_09_1002
+31.75.09.1003,Kelapa Dua Wetan,adm_area_31_75_09_1003
+31.75.09.1004,Susukan,adm_area_31_75_09_1004
+31.75.09.1005,Rambutan,adm_area_31_75_09_1005
+31.75.10,Cipayung,adm_area_31_75_10
+31.75.10.1001,Cipayung,adm_area_31_75_10_1001
+31.75.10.1002,Cilangkap,adm_area_31_75_10_1002
+31.75.10.1003,Pondok Ranggon,adm_area_31_75_10_1003
+31.75.10.1004,Munjul,adm_area_31_75_10_1004
+31.75.10.1005,Setu,adm_area_31_75_10_1005
+31.75.10.1006,Bambu Apus,adm_area_31_75_10_1006
+31.75.10.1007,Lubang Buaya,adm_area_31_75_10_1007
+31.75.10.1008,Ceger,adm_area_31_75_10_1008
+32,JAWA BARAT,adm_area_32
+32.01,KAB. BOGOR,adm_area_32_01
+32.01.01,Cibinong,adm_area_32_01_01
+32.01.01.1001,Pondok Rajeg,adm_area_32_01_01_1001
+32.01.01.1002,Karadenan,adm_area_32_01_01_1002
+32.01.01.1003,Harapanjaya,adm_area_32_01_01_1003
+32.01.01.1004,Nanggewer,adm_area_32_01_01_1004
+32.01.01.1005,Nanggewer Mekar,adm_area_32_01_01_1005
+32.01.01.1006,Cibinong,adm_area_32_01_01_1006
+32.01.01.1007,Pakansari,adm_area_32_01_01_1007
+32.01.01.1008,Tengah,adm_area_32_01_01_1008
+32.01.01.1009,Sukahati,adm_area_32_01_01_1009
+32.01.01.1010,Ciriung,adm_area_32_01_01_1010
+32.01.01.1011,Cirimekar,adm_area_32_01_01_1011
+32.01.01.1012,Pabuaran,adm_area_32_01_01_1012
+32.01.01.1013,Pabuaran Mekar,adm_area_32_01_01_1013
+32.01.02,Gunung Putri,adm_area_32_01_02
+32.01.02.2001,Wanaherang,adm_area_32_01_02_2001
+32.01.02.2002,Bojong Kulur,adm_area_32_01_02_2002
+32.01.02.2003,Ciangsana,adm_area_32_01_02_2003
+32.01.02.2004,Gunung Putri,adm_area_32_01_02_2004
+32.01.02.2005,Bojong Nangka,adm_area_32_01_02_2005
+32.01.02.2006,Tlajung Udik,adm_area_32_01_02_2006
+32.01.02.2007,Cicadas,adm_area_32_01_02_2007
+32.01.02.2008,Cikeas Udik,adm_area_32_01_02_2008
+32.01.02.2009,Nagrak,adm_area_32_01_02_2009
+32.01.02.2010,Karanggan,adm_area_32_01_02_2010
+32.01.03,Citeureup,adm_area_32_01_03
+32.01.03.2001,Puspasari,adm_area_32_01_03_2001
+32.01.03.2002,Citeureup,adm_area_32_01_03_2002
+32.01.03.2003,Leuwinutug,adm_area_32_01_03_2003
+32.01.03.2004,Tajur,adm_area_32_01_03_2004
+32.01.03.2005,Sanja,adm_area_32_01_03_2005
+32.01.03.1006,Puspanegara,adm_area_32_01_03_1006
+32.01.03.1007,Karang Asem Barat,adm_area_32_01_03_1007
+32.01.03.2008,Karang Asem Timur,adm_area_32_01_03_2008
+32.01.03.2009,Tarikolot,adm_area_32_01_03_2009
+32.01.03.2010,Gunungsari,adm_area_32_01_03_2010
+32.01.03.2011,Tangkil,adm_area_32_01_03_2011
+32.01.03.2012,Sukahati,adm_area_32_01_03_2012
+32.01.03.2013,Hambalang,adm_area_32_01_03_2013
+32.01.03.2014,Pasirmukti,adm_area_32_01_03_2014
+32.01.04,Sukaraja,adm_area_32_01_04
+32.01.04.2001,Gununggeulis,adm_area_32_01_04_2001
+32.01.04.2002,Cilebut Timur,adm_area_32_01_04_2002
+32.01.04.2003,Cilebut Barat,adm_area_32_01_04_2003
+32.01.04.2004,Cibanon,adm_area_32_01_04_2004
+32.01.04.2005,Nagrak,adm_area_32_01_04_2005
+32.01.04.2006,Sukatani,adm_area_32_01_04_2006
+32.01.04.2007,Sukaraja,adm_area_32_01_04_2007
+32.01.04.2008,Cikeas,adm_area_32_01_04_2008
+32.01.04.2009,Pasir Jambu,adm_area_32_01_04_2009
+32.01.04.2010,Cimandala,adm_area_32_01_04_2010
+32.01.04.2011,Cijujung,adm_area_32_01_04_2011
+32.01.04.2012,Cadasngampar,adm_area_32_01_04_2012
+32.01.04.2013,Pasirlaja,adm_area_32_01_04_2013
+32.01.05,Babakan Madang,adm_area_32_01_05
+32.01.05.2001,Cijayanti,adm_area_32_01_05_2001
+32.01.05.2002,Sumurbatu,adm_area_32_01_05_2002
+32.01.05.2003,Sentul,adm_area_32_01_05_2003
+32.01.05.2004,Karangtengah,adm_area_32_01_05_2004
+32.01.05.2005,Cipambuan,adm_area_32_01_05_2005
+32.01.05.2006,Kadumanggu,adm_area_32_01_05_2006
+32.01.05.2007,Citaringgul,adm_area_32_01_05_2007
+32.01.05.2008,Babakan Madang,adm_area_32_01_05_2008
+32.01.05.2009,Bojong Koneng,adm_area_32_01_05_2009
+32.01.06,Jonggol,adm_area_32_01_06
+32.01.06.2001,Sukamaju,adm_area_32_01_06_2001
+32.01.06.2002,Sirnagalih,adm_area_32_01_06_2002
+32.01.06.2003,Singajaya,adm_area_32_01_06_2003
+32.01.06.2004,Sukasirna,adm_area_32_01_06_2004
+32.01.06.2005,Sukanegara,adm_area_32_01_06_2005
+32.01.06.2006,Sukamanah,adm_area_32_01_06_2006
+32.01.06.2007,Weninggalih,adm_area_32_01_06_2007
+32.01.06.2008,Cibodas,adm_area_32_01_06_2008
+32.01.06.2009,Jonggol,adm_area_32_01_06_2009
+32.01.06.2010,Bendungan,adm_area_32_01_06_2010
+32.01.06.2011,Singasari,adm_area_32_01_06_2011
+32.01.06.2012,Balekambang,adm_area_32_01_06_2012
+32.01.06.2013,Sukajaya,adm_area_32_01_06_2013
+32.01.06.2014,Sukagalih,adm_area_32_01_06_2014
+32.01.07,Cileungsi,adm_area_32_01_07
+32.01.07.2001,Pasirangin,adm_area_32_01_07_2001
+32.01.07.2002,Mekarsari,adm_area_32_01_07_2002
+32.01.07.2003,Mampir,adm_area_32_01_07_2003
+32.01.07.2004,Dayeuh,adm_area_32_01_07_2004
+32.01.07.2005,Gandoang,adm_area_32_01_07_2005
+32.01.07.2006,Jatisari,adm_area_32_01_07_2006
+32.01.07.2007,Cileungsi Kidul,adm_area_32_01_07_2007
+32.01.07.2008,Cipeucang,adm_area_32_01_07_2008
+32.01.07.2009,Situsari,adm_area_32_01_07_2009
+32.01.07.2010,Cipenjo,adm_area_32_01_07_2010
+32.01.07.2011,Limusnunggal,adm_area_32_01_07_2011
+32.01.07.2012,Cileungsi,adm_area_32_01_07_2012
+32.01.08,Cariu,adm_area_32_01_08
+32.01.08.2001,Karyamekar,adm_area_32_01_08_2001
+32.01.08.2002,Babakanraden,adm_area_32_01_08_2002
+32.01.08.2003,Cikutamahi,adm_area_32_01_08_2003
+32.01.08.2004,Kutamekar,adm_area_32_01_08_2004
+32.01.08.2005,Cariu,adm_area_32_01_08_2005
+32.01.08.2006,Mekarwangi,adm_area_32_01_08_2006
+32.01.08.2007,Bantarkuning,adm_area_32_01_08_2007
+32.01.08.2008,Sukajadi,adm_area_32_01_08_2008
+32.01.08.2009,Tegalpanjang,adm_area_32_01_08_2009
+32.01.08.2010,Cibatutiga,adm_area_32_01_08_2010
+32.01.09,Sukamakmur,adm_area_32_01_09
+32.01.09.2001,Wargajaya,adm_area_32_01_09_2001
+32.01.09.2002,Pabuaran,adm_area_32_01_09_2002
+32.01.09.2003,Sukadamai,adm_area_32_01_09_2003
+32.01.09.2004,Sukawangi,adm_area_32_01_09_2004
+32.01.09.2005,Cibadak,adm_area_32_01_09_2005
+32.01.09.2006,Sukaresmi,adm_area_32_01_09_2006
+32.01.09.2007,Sukamulya,adm_area_32_01_09_2007
+32.01.09.2008,Sukaharja,adm_area_32_01_09_2008
+32.01.09.2009,Sirnajaya,adm_area_32_01_09_2009
+32.01.09.2010,Sukamakmur,adm_area_32_01_09_2010
+32.01.10,Parung,adm_area_32_01_10
+32.01.10.2001,Parung,adm_area_32_01_10_2001
+32.01.10.2002,Iwul,adm_area_32_01_10_2002
+32.01.10.2003,Bojongsempu,adm_area_32_01_10_2003
+32.01.10.2004,Waru,adm_area_32_01_10_2004
+32.01.10.2005,Cogreg,adm_area_32_01_10_2005
+32.01.10.2006,Pamegarsari,adm_area_32_01_10_2006
+32.01.10.2007,Warujaya,adm_area_32_01_10_2007
+32.01.10.2008,Bojongindah,adm_area_32_01_10_2008
+32.01.10.2009,Jabonmekar,adm_area_32_01_10_2009
+32.01.11,Gunung Sindur,adm_area_32_01_11
+32.01.11.2001,Cidokom,adm_area_32_01_11_2001
+32.01.11.2002,Padurenan,adm_area_32_01_11_2002
+32.01.11.2003,Pengasinan,adm_area_32_01_11_2003
+32.01.11.2004,Curug,adm_area_32_01_11_2004
+32.01.11.2005,Gunungsindur,adm_area_32_01_11_2005
+32.01.11.2006,Jampang,adm_area_32_01_11_2006
+32.01.11.2007,Cibadung,adm_area_32_01_11_2007
+32.01.11.2008,Cibinong,adm_area_32_01_11_2008
+32.01.11.2009,Rawakalong,adm_area_32_01_11_2009
+32.01.11.2010,Pabuaran,adm_area_32_01_11_2010
+32.01.12,Kemang,adm_area_32_01_12
+32.01.12.2001,Bojong,adm_area_32_01_12_2001
+32.01.12.2002,Parakanjaya,adm_area_32_01_12_2002
+32.01.12.2003,Kemang,adm_area_32_01_12_2003
+32.01.12.2004,Pabuaran,adm_area_32_01_12_2004
+32.01.12.2005,Semplak Barat,adm_area_32_01_12_2005
+32.01.12.1006,Atang Senjaya,adm_area_32_01_12_1006
+32.01.12.2007,Jampang,adm_area_32_01_12_2007
+32.01.12.2008,Pondok Udik,adm_area_32_01_12_2008
+32.01.12.2009,Tegal,adm_area_32_01_12_2009
+32.01.13,Bojong Gede,adm_area_32_01_13
+32.01.13.2001,Bojongbaru,adm_area_32_01_13_2001
+32.01.13.2002,Cimanggis,adm_area_32_01_13_2002
+32.01.13.2003,Susukan,adm_area_32_01_13_2003
+32.01.13.2004,Ragajaya,adm_area_32_01_13_2004
+32.01.13.2005,Kedungwaringin,adm_area_32_01_13_2005
+32.01.13.2006,Waringinjaya,adm_area_32_01_13_2006
+32.01.13.1007,Pabuaran,adm_area_32_01_13_1007
+32.01.13.2008,Rawapanjang,adm_area_32_01_13_2008
+32.01.13.2009,Bojonggede,adm_area_32_01_13_2009
+32.01.14,Leuwiliang,adm_area_32_01_14
+32.01.14.2001,Leuwiliang,adm_area_32_01_14_2001
+32.01.14.2002,Purasari,adm_area_32_01_14_2002
+32.01.14.2003,Karyasari,adm_area_32_01_14_2003
+32.01.14.2004,Pabangbon,adm_area_32_01_14_2004
+32.01.14.2005,Karacak,adm_area_32_01_14_2005
+32.01.14.2006,Barengkok,adm_area_32_01_14_2006
+32.01.14.2007,Leuwimekar,adm_area_32_01_14_2007
+32.01.14.2008,Puraseda,adm_area_32_01_14_2008
+32.01.14.2009,Cibeber I,adm_area_32_01_14_2009
+32.01.14.2010,Cibeber II,adm_area_32_01_14_2010
+32.01.14.2011,Karehkel,adm_area_32_01_14_2011
+32.01.15,Ciampea,adm_area_32_01_15
+32.01.15.2001,Ciampea,adm_area_32_01_15_2001
+32.01.15.2002,Cinangka,adm_area_32_01_15_2002
+32.01.15.2003,Cihideungudik,adm_area_32_01_15_2003
+32.01.15.2004,Bojongjengkol,adm_area_32_01_15_2004
+32.01.15.2005,Tegalwaru,adm_area_32_01_15_2005
+32.01.15.2006,Cibuntu,adm_area_32_01_15_2006
+32.01.15.2007,Cicadas,adm_area_32_01_15_2007
+32.01.15.2008,Cibadak,adm_area_32_01_15_2008
+32.01.15.2009,Bojongrangkas,adm_area_32_01_15_2009
+32.01.15.2010,Cihideunghilir,adm_area_32_01_15_2010
+32.01.15.2011,Cibanteng,adm_area_32_01_15_2011
+32.01.15.2012,Benteng,adm_area_32_01_15_2012
+32.01.15.2013,Ciampea Udik,adm_area_32_01_15_2013
+32.01.16,Cibungbulang,adm_area_32_01_16
+32.01.16.2001,Situ Udik,adm_area_32_01_16_2001
+32.01.16.2002,Situ Ilir,adm_area_32_01_16_2002
+32.01.16.2003,Cemplang,adm_area_32_01_16_2003
+32.01.16.2004,Cibatok I,adm_area_32_01_16_2004
+32.01.16.2005,Ciaruteun Udik,adm_area_32_01_16_2005
+32.01.16.2006,Leuweungkolot,adm_area_32_01_16_2006
+32.01.16.2007,Cimanggu I,adm_area_32_01_16_2007
+32.01.16.2008,Cimanggu II,adm_area_32_01_16_2008
+32.01.16.2009,Dukuh,adm_area_32_01_16_2009
+32.01.16.2010,Cijujung,adm_area_32_01_16_2010
+32.01.16.2011,Ciaruteun Ilir,adm_area_32_01_16_2011
+32.01.16.2012,Cibatok II,adm_area_32_01_16_2012
+32.01.16.2013,Sukamaju,adm_area_32_01_16_2013
+32.01.16.2014,Galuga,adm_area_32_01_16_2014
+32.01.16.2015,Girimulya,adm_area_32_01_16_2015
+32.01.17,Pamijahan,adm_area_32_01_17
+32.01.17.2001,Purwabakti,adm_area_32_01_17_2001
+32.01.17.2002,Cibunian,adm_area_32_01_17_2002
+32.01.17.2003,Cibitungwetan,adm_area_32_01_17_2003
+32.01.17.2004,Gunungmenyan,adm_area_32_01_17_2004
+32.01.17.2005,Gunungbunder II,adm_area_32_01_17_2005
+32.01.17.2006,Pasarean,adm_area_32_01_17_2006
+32.01.17.2007,Cimayang,adm_area_32_01_17_2007
+32.01.17.2008,Pamijahan,adm_area_32_01_17_2008
+32.01.17.2009,Cibening,adm_area_32_01_17_2009
+32.01.17.2010,Gunungbunder I,adm_area_32_01_17_2010
+32.01.17.2011,Cibitung Kulon,adm_area_32_01_17_2011
+32.01.17.2012,Gunung Picung,adm_area_32_01_17_2012
+32.01.17.2013,Ciasihan,adm_area_32_01_17_2013
+32.01.17.2014,Gunungsari,adm_area_32_01_17_2014
+32.01.17.2015,Ciasmara,adm_area_32_01_17_2015
+32.01.18,Rumpin,adm_area_32_01_18
+32.01.18.2001,Rumpin,adm_area_32_01_18_2001
+32.01.18.2002,Leuwibatu,adm_area_32_01_18_2002
+32.01.18.2003,Cidokom,adm_area_32_01_18_2003
+32.01.18.2004,Gobang,adm_area_32_01_18_2004
+32.01.18.2005,Cibodas,adm_area_32_01_18_2005
+32.01.18.2006,Rabak,adm_area_32_01_18_2006
+32.01.18.2007,Kampungsawah,adm_area_32_01_18_2007
+32.01.18.2008,Cipinang,adm_area_32_01_18_2008
+32.01.18.2009,Sukasari,adm_area_32_01_18_2009
+32.01.18.2010,Tamansari,adm_area_32_01_18_2010
+32.01.18.2011,Kertajaya,adm_area_32_01_18_2011
+32.01.18.2012,Sukamulya,adm_area_32_01_18_2012
+32.01.18.2013,Mekarsari,adm_area_32_01_18_2013
+32.01.18.2014,Mekarjaya,adm_area_32_01_18_2014
+32.01.19,Jasinga,adm_area_32_01_19
+32.01.19.2001,Curug,adm_area_32_01_19_2001
+32.01.19.2002,Pangradin,adm_area_32_01_19_2002
+32.01.19.2003,Kalongsawah,adm_area_32_01_19_2003
+32.01.19.2004,Sipak,adm_area_32_01_19_2004
+32.01.19.2005,Jasinga,adm_area_32_01_19_2005
+32.01.19.2006,Koleang,adm_area_32_01_19_2006
+32.01.19.2007,Cikopomayak,adm_area_32_01_19_2007
+32.01.19.2008,Setu,adm_area_32_01_19_2008
+32.01.19.2009,Barengkok,adm_area_32_01_19_2009
+32.01.19.2010,Bagoang,adm_area_32_01_19_2010
+32.01.19.2011,Pangaur,adm_area_32_01_19_2011
+32.01.19.2012,Pamagersari,adm_area_32_01_19_2012
+32.01.19.2013,Jugala Jaya,adm_area_32_01_19_2013
+32.01.19.2014,Tegalwangi,adm_area_32_01_19_2014
+32.01.19.2015,Neglasari,adm_area_32_01_19_2015
+32.01.19.2016,Wirajaya,adm_area_32_01_19_2016
+32.01.20,Parung Panjang,adm_area_32_01_20
+32.01.20.2001,Jagabaya,adm_area_32_01_20_2001
+32.01.20.2002,Gorowong,adm_area_32_01_20_2002
+32.01.20.2003,Dago,adm_area_32_01_20_2003
+32.01.20.2004,Pingku,adm_area_32_01_20_2004
+32.01.20.2005,Cikuda,adm_area_32_01_20_2005
+32.01.20.2006,Parungpanjang,adm_area_32_01_20_2006
+32.01.20.2007,Lumpang,adm_area_32_01_20_2007
+32.01.20.2008,Cibunar,adm_area_32_01_20_2008
+32.01.20.2009,Jagabita,adm_area_32_01_20_2009
+32.01.20.2010,Gintungcilejet,adm_area_32_01_20_2010
+32.01.20.2011,Kabasiran,adm_area_32_01_20_2011
+32.01.21,Nanggung,adm_area_32_01_21
+32.01.21.2001,Malasari,adm_area_32_01_21_2001
+32.01.21.2002,Curugbitung,adm_area_32_01_21_2002
+32.01.21.2003,Cisarua,adm_area_32_01_21_2003
+32.01.21.2004,Bantarkaret,adm_area_32_01_21_2004
+32.01.21.2005,Hambaro,adm_area_32_01_21_2005
+32.01.21.2006,Kalongliud,adm_area_32_01_21_2006
+32.01.21.2007,Nanggung,adm_area_32_01_21_2007
+32.01.21.2008,Parakanmuncang,adm_area_32_01_21_2008
+32.01.21.2009,Pangkaljaya,adm_area_32_01_21_2009
+32.01.21.2010,Sukaluyu,adm_area_32_01_21_2010
+32.01.21.2011,Batu Tulis,adm_area_32_01_21_2011
+32.01.22,Cigudeg,adm_area_32_01_22
+32.01.22.2001,Sukamaju,adm_area_32_01_22_2001
+32.01.22.2002,Cigudeg,adm_area_32_01_22_2002
+32.01.22.2003,Bunar,adm_area_32_01_22_2003
+32.01.22.2004,Banyuresmi,adm_area_32_01_22_2004
+32.01.22.2005,Cintamanik,adm_area_32_01_22_2005
+32.01.22.2006,Argapura,adm_area_32_01_22_2006
+32.01.22.2007,Bangunjaya,adm_area_32_01_22_2007
+32.01.22.2008,Rengasjajar,adm_area_32_01_22_2008
+32.01.22.2009,Batujajar,adm_area_32_01_22_2009
+32.01.22.2010,Wargajaya,adm_area_32_01_22_2010
+32.01.22.2011,Sukaraksa,adm_area_32_01_22_2011
+32.01.22.2012,Banyuwangi,adm_area_32_01_22_2012
+32.01.22.2013,Banyuasih,adm_area_32_01_22_2013
+32.01.22.2014,Mekarjaya,adm_area_32_01_22_2014
+32.01.22.2015,Tegallega,adm_area_32_01_22_2015
+32.01.23,Tenjo,adm_area_32_01_23
+32.01.23.2001,Tapos,adm_area_32_01_23_2001
+32.01.23.2002,Ciomas,adm_area_32_01_23_2002
+32.01.23.2003,Batok,adm_area_32_01_23_2003
+32.01.23.2004,Babakan,adm_area_32_01_23_2004
+32.01.23.2005,Tenjo,adm_area_32_01_23_2005
+32.01.23.2006,Cilaku,adm_area_32_01_23_2006
+32.01.23.2007,Singabraja,adm_area_32_01_23_2007
+32.01.23.2008,Singabangsa,adm_area_32_01_23_2008
+32.01.23.2009,Bojong,adm_area_32_01_23_2009
+32.01.24,Ciawi,adm_area_32_01_24
+32.01.24.2001,Cileungsi,adm_area_32_01_24_2001
+32.01.24.2002,Citapen,adm_area_32_01_24_2002
+32.01.24.2003,Cibedug,adm_area_32_01_24_2003
+32.01.24.2004,Jambuluwuk,adm_area_32_01_24_2004
+32.01.24.2005,Banjarsari,adm_area_32_01_24_2005
+32.01.24.2006,Teluk Pinang,adm_area_32_01_24_2006
+32.01.24.2007,Banjar Waru,adm_area_32_01_24_2007
+32.01.24.2008,Bendungan,adm_area_32_01_24_2008
+32.01.24.2009,Pandan Sari,adm_area_32_01_24_2009
+32.01.24.2010,Bojong Murni,adm_area_32_01_24_2010
+32.01.24.2011,Banjar Wangi,adm_area_32_01_24_2011
+32.01.24.2012,Ciawi,adm_area_32_01_24_2012
+32.01.24.2013,Bitungsari,adm_area_32_01_24_2013
+32.01.25,Cisarua,adm_area_32_01_25
+32.01.25.2001,Batulayang,adm_area_32_01_25_2001
+32.01.25.2002,Jogjogan,adm_area_32_01_25_2002
+32.01.25.2003,Cibeureum,adm_area_32_01_25_2003
+32.01.25.2004,Cilember,adm_area_32_01_25_2004
+32.01.25.2005,Citeko,adm_area_32_01_25_2005
+32.01.25.2006,Tugu Selatan,adm_area_32_01_25_2006
+32.01.25.2007,Leuwimalang,adm_area_32_01_25_2007
+32.01.25.2008,Kopo,adm_area_32_01_25_2008
+32.01.25.2009,Tugu Utara,adm_area_32_01_25_2009
+32.01.25.1010,Cisarua,adm_area_32_01_25_1010
+32.01.26,Megamendung,adm_area_32_01_26
+32.01.26.2001,Sukamaju,adm_area_32_01_26_2001
+32.01.26.2002,Kuta,adm_area_32_01_26_2002
+32.01.26.2003,Gadog,adm_area_32_01_26_2003
+32.01.26.2004,Sukakarya,adm_area_32_01_26_2004
+32.01.26.2005,Megamendung,adm_area_32_01_26_2005
+32.01.26.2006,Cipayung Datar,adm_area_32_01_26_2006
+32.01.26.2007,Sukamanah,adm_area_32_01_26_2007
+32.01.26.2008,Sukagalih,adm_area_32_01_26_2008
+32.01.26.2009,Cipayung Girang,adm_area_32_01_26_2009
+32.01.26.2010,Sukamahi,adm_area_32_01_26_2010
+32.01.26.2011,Sukaresmi,adm_area_32_01_26_2011
+32.01.26.2012,Pasir Angin,adm_area_32_01_26_2012
+32.01.27,Caringin,adm_area_32_01_27
+32.01.27.2001,Pasir Muncang,adm_area_32_01_27_2001
+32.01.27.2002,Cimande Hilir,adm_area_32_01_27_2002
+32.01.27.2003,Ciderum,adm_area_32_01_27_2003
+32.01.27.2004,Caringin,adm_area_32_01_27_2004
+32.01.27.2005,Ciherang Pondok,adm_area_32_01_27_2005
+32.01.27.2006,Cinagara,adm_area_32_01_27_2006
+32.01.27.2007,Cimande,adm_area_32_01_27_2007
+32.01.27.2008,Pancawati,adm_area_32_01_27_2008
+32.01.27.2009,Muara Jaya,adm_area_32_01_27_2009
+32.01.27.2010,Basir Buncir,adm_area_32_01_27_2010
+32.01.27.2011,Lemah Duhur,adm_area_32_01_27_2011
+32.01.27.2012,Tangkil,adm_area_32_01_27_2012
+32.01.28,Cijeruk,adm_area_32_01_28
+32.01.28.2001,Cijeruk,adm_area_32_01_28_2001
+32.01.28.2002,Cipelang,adm_area_32_01_28_2002
+32.01.28.2003,Warung Menteng,adm_area_32_01_28_2003
+32.01.28.2004,Tajur Halang,adm_area_32_01_28_2004
+32.01.28.2005,Cipicung,adm_area_32_01_28_2005
+32.01.28.2006,Cibalung,adm_area_32_01_28_2006
+32.01.28.2007,Sukaharja,adm_area_32_01_28_2007
+32.01.28.2008,Palasari,adm_area_32_01_28_2008
+32.01.28.2009,Tanjungsari,adm_area_32_01_28_2009
+32.01.29,Ciomas,adm_area_32_01_29
+32.01.29.2001,Mekarjaya,adm_area_32_01_29_2001
+32.01.29.2002,Sukaharja,adm_area_32_01_29_2002
+32.01.29.1003,Padasuka,adm_area_32_01_29_1003
+32.01.29.2004,Parakan,adm_area_32_01_29_2004
+32.01.29.2005,Ciomas,adm_area_32_01_29_2005
+32.01.29.2006,Pagelaran,adm_area_32_01_29_2006
+32.01.29.2007,Sukamakmur,adm_area_32_01_29_2007
+32.01.29.2008,Ciapus,adm_area_32_01_29_2008
+32.01.29.2009,Kota Batu,adm_area_32_01_29_2009
+32.01.29.2010,Laladon,adm_area_32_01_29_2010
+32.01.29.2011,Ciomas Rahayu,adm_area_32_01_29_2011
+32.01.30,Dramaga,adm_area_32_01_30
+32.01.30.2001,Sukadamai,adm_area_32_01_30_2001
+32.01.30.2002,Ciherang,adm_area_32_01_30_2002
+32.01.30.2003,Sinarsari,adm_area_32_01_30_2003
+32.01.30.2004,Sukawening,adm_area_32_01_30_2004
+32.01.30.2005,Petir,adm_area_32_01_30_2005
+32.01.30.2006,Purwasari,adm_area_32_01_30_2006
+32.01.30.2007,Cikarawang,adm_area_32_01_30_2007
+32.01.30.2008,Babakan,adm_area_32_01_30_2008
+32.01.30.2009,Dramaga,adm_area_32_01_30_2009
+32.01.30.2010,Neglasari,adm_area_32_01_30_2010
+32.01.31,Tamansari,adm_area_32_01_31
+32.01.31.2001,Sukamantri,adm_area_32_01_31_2001
+32.01.31.2002,Sirnagalih,adm_area_32_01_31_2002
+32.01.31.2003,Pasireurih,adm_area_32_01_31_2003
+32.01.31.2004,Tamansari,adm_area_32_01_31_2004
+32.01.31.2005,Sukaluyu,adm_area_32_01_31_2005
+32.01.31.2006,Sukaresmi,adm_area_32_01_31_2006
+32.01.31.2007,Sukajaya,adm_area_32_01_31_2007
+32.01.31.2008,Sukajadi,adm_area_32_01_31_2008
+32.01.32,Klapanunggal,adm_area_32_01_32
+32.01.32.2001,Klapanunggal,adm_area_32_01_32_2001
+32.01.32.2002,Bojong,adm_area_32_01_32_2002
+32.01.32.2003,Nambo,adm_area_32_01_32_2003
+32.01.32.2004,Lulut,adm_area_32_01_32_2004
+32.01.32.2005,Cikahuripan,adm_area_32_01_32_2005
+32.01.32.2006,Kembang Kuning,adm_area_32_01_32_2006
+32.01.32.2007,Bantar Jati,adm_area_32_01_32_2007
+32.01.32.2008,Leuwikaret,adm_area_32_01_32_2008
+32.01.32.2009,Ligarmukti,adm_area_32_01_32_2009
+32.01.33,Ciseeng,adm_area_32_01_33
+32.01.33.2001,Putat Nutug,adm_area_32_01_33_2001
+32.01.33.2002,Ciseeng,adm_area_32_01_33_2002
+32.01.33.2003,Parigi Mekar,adm_area_32_01_33_2003
+32.01.33.2004,Cibentang,adm_area_32_01_33_2004
+32.01.33.2005,Cibeuteung Udik,adm_area_32_01_33_2005
+32.01.33.2006,Karihkil,adm_area_32_01_33_2006
+32.01.33.2007,Babakan,adm_area_32_01_33_2007
+32.01.33.2008,Cihoe,adm_area_32_01_33_2008
+32.01.33.2009,Cibeuteung Muara,adm_area_32_01_33_2009
+32.01.33.2010,Kuripan,adm_area_32_01_33_2010
+32.01.34,Ranca Bungur,adm_area_32_01_34
+32.01.34.2001,Bantarjaya,adm_area_32_01_34_2001
+32.01.34.2002,Bantarsari,adm_area_32_01_34_2002
+32.01.34.2003,Pasirgaok,adm_area_32_01_34_2003
+32.01.34.2004,Rancabungur,adm_area_32_01_34_2004
+32.01.34.2005,Mekarsari,adm_area_32_01_34_2005
+32.01.34.2006,Candali,adm_area_32_01_34_2006
+32.01.34.2007,Cimulang,adm_area_32_01_34_2007
+32.01.35,Sukajaya,adm_area_32_01_35
+32.01.35.2001,Cisarua,adm_area_32_01_35_2001
+32.01.35.2002,Kiarasari,adm_area_32_01_35_2002
+32.01.35.2003,Sukajaya,adm_area_32_01_35_2003
+32.01.35.2004,Sipayung,adm_area_32_01_35_2004
+32.01.35.2005,Cileuksa,adm_area_32_01_35_2005
+32.01.35.2006,Kiarapandak,adm_area_32_01_35_2006
+32.01.35.2007,Harkatjaya,adm_area_32_01_35_2007
+32.01.35.2008,Sukamulih,adm_area_32_01_35_2008
+32.01.35.2009,Pasir Madang,adm_area_32_01_35_2009
+32.01.35.2010,Urug,adm_area_32_01_35_2010
+32.01.35.2011,Jayaraharja,adm_area_32_01_35_2011
+32.01.36,Tanjungsari,adm_area_32_01_36
+32.01.36.2001,Tanjungsari,adm_area_32_01_36_2001
+32.01.36.2002,Selawangi,adm_area_32_01_36_2002
+32.01.36.2003,Tanjungrasa,adm_area_32_01_36_2003
+32.01.36.2004,Antajaya,adm_area_32_01_36_2004
+32.01.36.2005,Pasir Tanjung,adm_area_32_01_36_2005
+32.01.36.2006,Cibadak,adm_area_32_01_36_2006
+32.01.36.2007,Sukarasa,adm_area_32_01_36_2007
+32.01.36.2008,Sirnasari,adm_area_32_01_36_2008
+32.01.36.2009,Buanajaya,adm_area_32_01_36_2009
+32.01.36.2010,Sirnarasa,adm_area_32_01_36_2010
+32.01.37,Tajurhalang,adm_area_32_01_37
+32.01.37.2001,Tajurhalang,adm_area_32_01_37_2001
+32.01.37.2002,Citayam,adm_area_32_01_37_2002
+32.01.37.2003,Sasak Panjang,adm_area_32_01_37_2003
+32.01.37.2004,Nanggerang,adm_area_32_01_37_2004
+32.01.37.2005,Sukmajaya,adm_area_32_01_37_2005
+32.01.37.2006,Tonjong,adm_area_32_01_37_2006
+32.01.37.2007,Kalisuren,adm_area_32_01_37_2007
+32.01.38,Cigombong,adm_area_32_01_38
+32.01.38.2001,Cigombong,adm_area_32_01_38_2001
+32.01.38.2002,Watesjaya,adm_area_32_01_38_2002
+32.01.38.2003,Ciburuy,adm_area_32_01_38_2003
+32.01.38.2004,Srogol,adm_area_32_01_38_2004
+32.01.38.2005,Cisalada,adm_area_32_01_38_2005
+32.01.38.2006,Tugujaya,adm_area_32_01_38_2006
+32.01.38.2007,Pasirjaya,adm_area_32_01_38_2007
+32.01.38.2008,Ciburayut,adm_area_32_01_38_2008
+32.01.38.2009,Ciadeg,adm_area_32_01_38_2009
+32.01.39,Leuwisadeng,adm_area_32_01_39
+32.01.39.2001,Leuwisadeng,adm_area_32_01_39_2001
+32.01.39.2002,Babakan Sadeng,adm_area_32_01_39_2002
+32.01.39.2003,Sadeng Kolot,adm_area_32_01_39_2003
+32.01.39.2004,Wangunjaya,adm_area_32_01_39_2004
+32.01.39.2005,Kalong I,adm_area_32_01_39_2005
+32.01.39.2006,Kalong II,adm_area_32_01_39_2006
+32.01.39.2007,Sadeng,adm_area_32_01_39_2007
+32.01.39.2008,Sibanteng,adm_area_32_01_39_2008
+32.01.40,Tenjolaya,adm_area_32_01_40
+32.01.40.2001,Tapos I,adm_area_32_01_40_2001
+32.01.40.2002,Tapos II,adm_area_32_01_40_2002
+32.01.40.2003,Cibitung Tengah,adm_area_32_01_40_2003
+32.01.40.2004,Situdaun,adm_area_32_01_40_2004
+32.01.40.2005,Cinangneng,adm_area_32_01_40_2005
+32.01.40.2006,Gunung Malang,adm_area_32_01_40_2006
+32.01.40.2007,Gunung Mulya,adm_area_32_01_40_2007
+32.02,KAB. SUKABUMI,adm_area_32_02
+32.02.01,Palabuhanratu,adm_area_32_02_01
+32.02.01.1001,Palabuhanratu,adm_area_32_02_01_1001
+32.02.01.2002,Tonjong,adm_area_32_02_01_2002
+32.02.01.2003,Citepus,adm_area_32_02_01_2003
+32.02.01.2004,Buniwangi,adm_area_32_02_01_2004
+32.02.01.2005,Cibodas,adm_area_32_02_01_2005
+32.02.01.2006,Pasirsuren,adm_area_32_02_01_2006
+32.02.01.2007,Cikadu,adm_area_32_02_01_2007
+32.02.01.2008,Citarik,adm_area_32_02_01_2008
+32.02.01.2009,Cimanggu,adm_area_32_02_01_2009
+32.02.01.2010,Jayanti,adm_area_32_02_01_2010
+32.02.02,Simpenan,adm_area_32_02_02
+32.02.02.2001,Cidadap,adm_area_32_02_02_2001
+32.02.02.2002,Loji,adm_area_32_02_02_2002
+32.02.02.2003,Kertajaya,adm_area_32_02_02_2003
+32.02.02.2004,Cihaur,adm_area_32_02_02_2004
+32.02.02.2005,Cibuntu,adm_area_32_02_02_2005
+32.02.02.2006,Mekarasih,adm_area_32_02_02_2006
+32.02.02.2007,Sangrawayang,adm_area_32_02_02_2007
+32.02.03,Cikakak,adm_area_32_02_03
+32.02.03.2001,Cikakak,adm_area_32_02_03_2001
+32.02.03.2002,Cimaja,adm_area_32_02_03_2002
+32.02.03.2003,Ridogalih,adm_area_32_02_03_2003
+32.02.03.2004,Sukamaju,adm_area_32_02_03_2004
+32.02.03.2005,Cileungsing,adm_area_32_02_03_2005
+32.02.03.2006,Margalaksana,adm_area_32_02_03_2006
+32.02.03.2007,Sirnarasa,adm_area_32_02_03_2007
+32.02.03.2008,Gandasoli,adm_area_32_02_03_2008
+32.02.03.2009,Cirendang,adm_area_32_02_03_2009
+32.02.04,Bantargadung,adm_area_32_02_04
+32.02.04.2001,Bantargadung,adm_area_32_02_04_2001
+32.02.04.2002,Mangunjaya,adm_area_32_02_04_2002
+32.02.04.2003,Bojonggaling,adm_area_32_02_04_2003
+32.02.04.2004,Limusnunggal,adm_area_32_02_04_2004
+32.02.04.2005,Bantargebang,adm_area_32_02_04_2005
+32.02.04.2006,Buanajaya,adm_area_32_02_04_2006
+32.02.04.2007,Boyong Sari,adm_area_32_02_04_2007
+32.02.05,Cisolok,adm_area_32_02_05
+32.02.05.2001,Cisolok,adm_area_32_02_05_2001
+32.02.05.2002,Pasir Baru,adm_area_32_02_05_2002
+32.02.05.2003,Cikahuripan,adm_area_32_02_05_2003
+32.02.05.2004,Cikelat,adm_area_32_02_05_2004
+32.02.05.2005,Caringin,adm_area_32_02_05_2005
+32.02.05.2006,Gunungkaramat,adm_area_32_02_05_2006
+32.02.05.2007,Gunungtanjung,adm_area_32_02_05_2007
+32.02.05.2008,Karangpapak,adm_area_32_02_05_2008
+32.02.05.2009,Sirnaresmi,adm_area_32_02_05_2009
+32.02.05.2010,Cicadas,adm_area_32_02_05_2010
+32.02.05.2011,Wanajaya,adm_area_32_02_05_2011
+32.02.05.2012,Wangunsari,adm_area_32_02_05_2012
+32.02.05.2013,Sukarame,adm_area_32_02_05_2013
+32.02.06,Cikidang,adm_area_32_02_06
+32.02.06.2001,Cikidang,adm_area_32_02_06_2001
+32.02.06.2002,Cikiray,adm_area_32_02_06_2002
+32.02.06.2003,Gunungmalang,adm_area_32_02_06_2003
+32.02.06.2004,Pangkalan,adm_area_32_02_06_2004
+32.02.06.2005,Cicareuh,adm_area_32_02_06_2005
+32.02.06.2006,Taman Sari,adm_area_32_02_06_2006
+32.02.06.2007,Bumi Sari,adm_area_32_02_06_2007
+32.02.06.2008,Sampora,adm_area_32_02_06_2008
+32.02.06.2009,Nangkakoneng,adm_area_32_02_06_2009
+32.02.06.2010,Mekarnangka,adm_area_32_02_06_2010
+32.02.06.2011,Cijambe,adm_area_32_02_06_2011
+32.02.06.2012,Cikarae Thoyyibah,adm_area_32_02_06_2012
+32.02.07,Lengkong,adm_area_32_02_07
+32.02.07.2001,Lengkong,adm_area_32_02_07_2001
+32.02.07.2002,Cilangkap,adm_area_32_02_07_2002
+32.02.07.2003,Tegallega,adm_area_32_02_07_2003
+32.02.07.2004,Neglasari,adm_area_32_02_07_2004
+32.02.07.2005,Langkapjaya,adm_area_32_02_07_2005
+32.02.08,Jampangtengah,adm_area_32_02_08
+32.02.08.2001,Jampangtengah,adm_area_32_02_08_2001
+32.02.08.2002,Padabeunghar,adm_area_32_02_08_2002
+32.02.08.2003,Bantarpanjang,adm_area_32_02_08_2003
+32.02.08.2004,Bojongjengkol,adm_area_32_02_08_2004
+32.02.08.2005,Nangerang,adm_area_32_02_08_2005
+32.02.08.2006,Tanjungsari,adm_area_32_02_08_2006
+32.02.08.2007,Sindangresmi,adm_area_32_02_08_2007
+32.02.08.2008,Panumbangan,adm_area_32_02_08_2008
+32.02.08.2009,Cijulang,adm_area_32_02_08_2009
+32.02.08.2010,Bantaragung,adm_area_32_02_08_2010
+32.02.08.2011,Bojongtipar,adm_area_32_02_08_2011
+32.02.09,Warungkiara,adm_area_32_02_09
+32.02.09.2001,Warungkiara,adm_area_32_02_09_2001
+32.02.09.2002,Bojongkerta,adm_area_32_02_09_2002
+32.02.09.2003,Girijaya,adm_area_32_02_09_2003
+32.02.09.2004,Bantarkalong,adm_area_32_02_09_2004
+32.02.09.2005,Hegarmanah,adm_area_32_02_09_2005
+32.02.09.2006,Ubrug,adm_area_32_02_09_2006
+32.02.09.2007,Sirnajaya,adm_area_32_02_09_2007
+32.02.09.2008,Sukaharja,adm_area_32_02_09_2008
+32.02.09.2009,Kertamukti,adm_area_32_02_09_2009
+32.02.09.2010,Mekarjaya,adm_area_32_02_09_2010
+32.02.09.2011,Damarraja,adm_area_32_02_09_2011
+32.02.09.2012,Tarisi,adm_area_32_02_09_2012
+32.02.10,Cikembar,adm_area_32_02_10
+32.02.10.2001,Cikembar,adm_area_32_02_10_2001
+32.02.10.2002,Parakanlima,adm_area_32_02_10_2002
+32.02.10.2003,Bojong,adm_area_32_02_10_2003
+32.02.10.2004,Cimanggu,adm_area_32_02_10_2004
+32.02.10.2005,Bojongkembar,adm_area_32_02_10_2005
+32.02.10.2006,Sukamaju,adm_area_32_02_10_2006
+32.02.10.2007,Cibatu,adm_area_32_02_10_2007
+32.02.10.2008,Kertaraharja,adm_area_32_02_10_2008
+32.02.10.2009,Sukamulya,adm_area_32_02_10_2009
+32.02.10.2010,Bojongraharja,adm_area_32_02_10_2010
+32.02.11,Cibadak,adm_area_32_02_11
+32.02.11.1001,Cibadak,adm_area_32_02_11_1001
+32.02.11.2002,Sekarwangi,adm_area_32_02_11_2002
+32.02.11.2003,Pamuruyan,adm_area_32_02_11_2003
+32.02.11.2004,Karangtengah,adm_area_32_02_11_2004
+32.02.11.2005,Neglasari,adm_area_32_02_11_2005
+32.02.11.2006,Warnajati,adm_area_32_02_11_2006
+32.02.11.2007,Tenjojaya,adm_area_32_02_11_2007
+32.02.11.2008,Ciheulang Tonggoh,adm_area_32_02_11_2008
+32.02.11.2009,Sukasirna,adm_area_32_02_11_2009
+32.02.11.2010,Batununggal,adm_area_32_02_11_2010
+32.02.12,Nagrak,adm_area_32_02_12
+32.02.12.2001,Kalaparea,adm_area_32_02_12_2001
+32.02.12.2002,Pawenang,adm_area_32_02_12_2002
+32.02.12.2003,Nagrak Utara,adm_area_32_02_12_2003
+32.02.12.2004,Cisarua,adm_area_32_02_12_2004
+32.02.12.2009,Balekambang,adm_area_32_02_12_2009
+32.02.12.2010,Babakan Panjang,adm_area_32_02_12_2010
+32.02.12.2011,Darmareja,adm_area_32_02_12_2011
+32.02.12.2012,Cihanyawar,adm_area_32_02_12_2012
+32.02.12.2013,Nagrak Selatan,adm_area_32_02_12_2013
+32.02.12.2014,Girijaya,adm_area_32_02_12_2014
+32.02.13,Parungkuda,adm_area_32_02_13
+32.02.13.2001,Parungkuda,adm_area_32_02_13_2001
+32.02.13.2002,Palasari Hilir,adm_area_32_02_13_2002
+32.02.13.2003,Kompa,adm_area_32_02_13_2003
+32.02.13.2004,Pondokkaso Landeuh,adm_area_32_02_13_2004
+32.02.13.2005,Sundawenang,adm_area_32_02_13_2005
+32.02.13.2006,Bojongkokosan,adm_area_32_02_13_2006
+32.02.13.2007,Langensari,adm_area_32_02_13_2007
+32.02.13.2008,Babakanjaya,adm_area_32_02_13_2008
+32.02.14,Bojonggenteng,adm_area_32_02_14
+32.02.14.2001,Bojonggenteng,adm_area_32_02_14_2001
+32.02.14.2002,Cibodas,adm_area_32_02_14_2002
+32.02.14.2003,Berekah,adm_area_32_02_14_2003
+32.02.14.2004,Cipanengah,adm_area_32_02_14_2004
+32.02.14.2005,Bojonggaling,adm_area_32_02_14_2005
+32.02.15,Parakansalak,adm_area_32_02_15
+32.02.15.2001,Parakan Salak,adm_area_32_02_15_2001
+32.02.15.2002,Bojong Longok,adm_area_32_02_15_2002
+32.02.15.2003,Sukakersa,adm_area_32_02_15_2003
+32.02.15.2004,Sukatani,adm_area_32_02_15_2004
+32.02.15.2005,Bojongasih,adm_area_32_02_15_2005
+32.02.15.2006,Lebaksari,adm_area_32_02_15_2006
+32.02.16,Cicurug,adm_area_32_02_16
+32.02.16.1001,Cicurug,adm_area_32_02_16_1001
+32.02.16.2002,Nyangkowek,adm_area_32_02_16_2002
+32.02.16.2003,Tenjolaya,adm_area_32_02_16_2003
+32.02.16.2004,Benda,adm_area_32_02_16_2004
+32.02.16.2005,Pasawahan,adm_area_32_02_16_2005
+32.02.16.2006,Cisaat,adm_area_32_02_16_2006
+32.02.16.2007,Purwasari,adm_area_32_02_16_2007
+32.02.16.2008,Caringin,adm_area_32_02_16_2008
+32.02.16.2009,Tenjoayu,adm_area_32_02_16_2009
+32.02.16.2010,Kutajaya,adm_area_32_02_16_2010
+32.02.16.2011,Mekarsari,adm_area_32_02_16_2011
+32.02.16.2012,Bangbayang,adm_area_32_02_16_2012
+32.02.16.2013,Nanggerang,adm_area_32_02_16_2013
+32.02.17,Cidahu,adm_area_32_02_17
+32.02.17.2001,Pondokaso Tonggoh,adm_area_32_02_17_2001
+32.02.17.2002,Babakanpari,adm_area_32_02_17_2002
+32.02.17.2003,Pondokaso Tengah,adm_area_32_02_17_2003
+32.02.17.2004,Cidahu,adm_area_32_02_17_2004
+32.02.17.2005,Tangkil,adm_area_32_02_17_2005
+32.02.17.2006,Jayabakti,adm_area_32_02_17_2006
+32.02.17.2007,Girijaya,adm_area_32_02_17_2007
+32.02.17.2008,Pasirdoton,adm_area_32_02_17_2008
+32.02.18,Kalapanunggal,adm_area_32_02_18
+32.02.18.2001,Kalapanunggal,adm_area_32_02_18_2001
+32.02.18.2002,Palasari Girang,adm_area_32_02_18_2002
+32.02.18.2003,Pulosari,adm_area_32_02_18_2003
+32.02.18.2004,Makasari,adm_area_32_02_18_2004
+32.02.18.2005,Kadununggal,adm_area_32_02_18_2005
+32.02.18.2006,Walang Sari,adm_area_32_02_18_2006
+32.02.18.2007,Gunungendut,adm_area_32_02_18_2007
+32.02.19,Kabandungan,adm_area_32_02_19
+32.02.19.2001,Kabandungan,adm_area_32_02_19_2001
+32.02.19.2002,Cipeuteuy,adm_area_32_02_19_2002
+32.02.19.2003,Cihamerang,adm_area_32_02_19_2003
+32.02.19.2004,Tugubandung,adm_area_32_02_19_2004
+32.02.19.2005,Mekarjaya,adm_area_32_02_19_2005
+32.02.19.2006,Cianaga,adm_area_32_02_19_2006
+32.02.20,Waluran,adm_area_32_02_20
+32.02.20.2001,Waluran,adm_area_32_02_20_2001
+32.02.20.2002,Sukamukti,adm_area_32_02_20_2002
+32.02.20.2003,Caringinnunggal,adm_area_32_02_20_2003
+32.02.20.2004,Mekarmukti,adm_area_32_02_20_2004
+32.02.20.2005,Mangunjaya,adm_area_32_02_20_2005
+32.02.20.2006,Waluran Mandiri,adm_area_32_02_20_2006
+32.02.21,Jampangkulon,adm_area_32_02_21
+32.02.21.1001,Jampangkulon,adm_area_32_02_21_1001
+32.02.21.2002,Bojonggenteng,adm_area_32_02_21_2002
+32.02.21.2003,Cikarang,adm_area_32_02_21_2003
+32.02.21.2005,Bojongsari,adm_area_32_02_21_2005
+32.02.21.2007,Nagraksari,adm_area_32_02_21_2007
+32.02.21.2008,Mekarjaya,adm_area_32_02_21_2008
+32.02.21.2009,Tanjung,adm_area_32_02_21_2009
+32.02.21.2011,Ciparay,adm_area_32_02_21_2011
+32.02.21.2013,Padajaya,adm_area_32_02_21_2013
+32.02.21.2014,Karanganyar,adm_area_32_02_21_2014
+32.02.21.2016,Cikaranggeusan,adm_area_32_02_21_2016
+32.02.22,Ciemas,adm_area_32_02_22
+32.02.22.2001,Ciemas,adm_area_32_02_22_2001
+32.02.22.2002,Cibenda,adm_area_32_02_22_2002
+32.02.22.2003,Ciwaru,adm_area_32_02_22_2003
+32.02.22.2004,Mekarjaya,adm_area_32_02_22_2004
+32.02.22.2005,Girimukti,adm_area_32_02_22_2005
+32.02.22.2006,Tamanjaya,adm_area_32_02_22_2006
+32.02.22.2007,Mandrajaya,adm_area_32_02_22_2007
+32.02.22.2008,Sidamulya,adm_area_32_02_22_2008
+32.02.22.2009,Mekarsakti,adm_area_32_02_22_2009
+32.02.23,Kalibunder,adm_area_32_02_23
+32.02.23.2001,Kalibunder,adm_area_32_02_23_2001
+32.02.23.2002,Bojong,adm_area_32_02_23_2002
+32.02.23.2003,Cimahpar,adm_area_32_02_23_2003
+32.02.23.2004,Sekarsari,adm_area_32_02_23_2004
+32.02.23.2005,Sukaluyu,adm_area_32_02_23_2005
+32.02.23.2006,Balekambang,adm_area_32_02_23_2006
+32.02.23.2007,Mekarwangi,adm_area_32_02_23_2007
+32.02.24,Surade,adm_area_32_02_24
+32.02.24.2001,Jagamukti,adm_area_32_02_24_2001
+32.02.24.2002,Citanglar,adm_area_32_02_24_2002
+32.02.24.2003,Wanasari,adm_area_32_02_24_2003
+32.02.24.2005,Sirnasari,adm_area_32_02_24_2005
+32.02.24.2006,Kadaleman,adm_area_32_02_24_2006
+32.02.24.2007,Gunungsungging,adm_area_32_02_24_2007
+32.02.24.2008,Cipeundeuy,adm_area_32_02_24_2008
+32.02.24.2009,Pasiripis,adm_area_32_02_24_2009
+32.02.24.2010,Buniwangi,adm_area_32_02_24_2010
+32.02.24.2011,Sukatani,adm_area_32_02_24_2011
+32.02.24.2012,Kademangan,adm_area_32_02_24_2012
+32.02.24.1013,Surade,adm_area_32_02_24_1013
+32.02.25,Cibitung,adm_area_32_02_25
+32.02.25.2001,Talagamurni,adm_area_32_02_25_2001
+32.02.25.2002,Banyumurni,adm_area_32_02_25_2002
+32.02.25.2003,Cibitung,adm_area_32_02_25_2003
+32.02.25.2004,Cidahu,adm_area_32_02_25_2004
+32.02.25.2005,Cibodas,adm_area_32_02_25_2005
+32.02.25.2006,Banyuwangi,adm_area_32_02_25_2006
+32.02.26,Ciracap,adm_area_32_02_26
+32.02.26.2001,Ciracap,adm_area_32_02_26_2001
+32.02.26.2002,Cikangkung,adm_area_32_02_26_2002
+32.02.26.2003,Gunungbatu,adm_area_32_02_26_2003
+32.02.26.2004,Purwasedar,adm_area_32_02_26_2004
+32.02.26.2005,Pasirpanjang,adm_area_32_02_26_2005
+32.02.26.2006,Mekarsari,adm_area_32_02_26_2006
+32.02.26.2007,Ujung Genteng,adm_area_32_02_26_2007
+32.02.26.2008,Pangumbahan,adm_area_32_02_26_2008
+32.02.27,Gunungguruh,adm_area_32_02_27
+32.02.27.2001,Cikujang,adm_area_32_02_27_2001
+32.02.27.2002,Gunungguruh,adm_area_32_02_27_2002
+32.02.27.2003,Cibentang,adm_area_32_02_27_2003
+32.02.27.2004,Sirnaresmi,adm_area_32_02_27_2004
+32.02.27.2005,Kebonmanggu,adm_area_32_02_27_2005
+32.02.27.2006,Cibolang,adm_area_32_02_27_2006
+32.02.27.2007,Mangkalaya,adm_area_32_02_27_2007
+32.02.28,Cicantayan,adm_area_32_02_28
+32.02.28.2001,Cicantayan,adm_area_32_02_28_2001
+32.02.28.2002,Lembursawah,adm_area_32_02_28_2002
+32.02.28.2003,Cijalingan,adm_area_32_02_28_2003
+32.02.28.2004,Cisande,adm_area_32_02_28_2004
+32.02.28.2005,Cimahi,adm_area_32_02_28_2005
+32.02.28.2006,Hegarmanah,adm_area_32_02_28_2006
+32.02.28.2007,Sikadamai,adm_area_32_02_28_2007
+32.02.28.2008,Cimanggis,adm_area_32_02_28_2008
+32.02.29,Cisaat,adm_area_32_02_29
+32.02.29.2001,Gunungjaya,adm_area_32_02_29_2001
+32.02.29.2002,Sukasari,adm_area_32_02_29_2002
+32.02.29.2003,Sukamanah,adm_area_32_02_29_2003
+32.02.29.2004,Cisaat,adm_area_32_02_29_2004
+32.02.29.2005,Nagrak,adm_area_32_02_29_2005
+32.02.29.2006,Babakan,adm_area_32_02_29_2006
+32.02.29.2007,Sukamantri,adm_area_32_02_29_2007
+32.02.29.2008,Cibatu,adm_area_32_02_29_2008
+32.02.29.2009,Selajambe,adm_area_32_02_29_2009
+32.02.29.2010,Padaasih,adm_area_32_02_29_2010
+32.02.29.2011,Cibolang Kaler,adm_area_32_02_29_2011
+32.02.29.2012,Kutasirna,adm_area_32_02_29_2012
+32.02.29.2013,Sukaresmi,adm_area_32_02_29_2013
+32.02.30,Kadudampit,adm_area_32_02_30
+32.02.30.2001,Kadudampit,adm_area_32_02_30_2001
+32.02.30.2002,Citamiang,adm_area_32_02_30_2002
+32.02.30.2003,Muaradua,adm_area_32_02_30_2003
+32.02.30.2004,Gedepangrango,adm_area_32_02_30_2004
+32.02.30.2005,Sukamanis,adm_area_32_02_30_2005
+32.02.30.2006,Undrusbinangun,adm_area_32_02_30_2006
+32.02.30.2007,Cipetir,adm_area_32_02_30_2007
+32.02.30.2008,Sukamaju,adm_area_32_02_30_2008
+32.02.30.2009,Cikahuripan,adm_area_32_02_30_2009
+32.02.31,Caringin,adm_area_32_02_31
+32.02.31.2001,Caringin Wetan,adm_area_32_02_31_2001
+32.02.31.2002,Sukamulya,adm_area_32_02_31_2002
+32.02.31.2003,Caringin Kulon,adm_area_32_02_31_2003
+32.02.31.2004,Seuseupan,adm_area_32_02_31_2004
+32.02.31.2005,Cijengkol,adm_area_32_02_31_2005
+32.02.31.2006,Mekarjaya,adm_area_32_02_31_2006
+32.02.31.2007,Talaga,adm_area_32_02_31_2007
+32.02.31.2008,Cikembang,adm_area_32_02_31_2008
+32.02.31.2009,Pasir Datar Indah,adm_area_32_02_31_2009
+32.02.32,Sukabumi,adm_area_32_02_32
+32.02.32.2001,Parungseah,adm_area_32_02_32_2001
+32.02.32.2002,Sundajayagirang,adm_area_32_02_32_2002
+32.02.32.2003,Karawang,adm_area_32_02_32_2003
+32.02.32.2004,Warnasari,adm_area_32_02_32_2004
+32.02.32.2005,Sukajaya,adm_area_32_02_32_2005
+32.02.32.2006,Perbawati,adm_area_32_02_32_2006
+32.02.33,Sukaraja,adm_area_32_02_33
+32.02.33.2001,Pasirhalang,adm_area_32_02_33_2001
+32.02.33.2002,Selawi,adm_area_32_02_33_2002
+32.02.33.2003,Langensari,adm_area_32_02_33_2003
+32.02.33.2004,Sukaraja,adm_area_32_02_33_2004
+32.02.33.2005,Limbangan,adm_area_32_02_33_2005
+32.02.33.2006,Cisarua,adm_area_32_02_33_2006
+32.02.33.2007,Sukamekar,adm_area_32_02_33_2007
+32.02.33.2008,Selawangi,adm_area_32_02_33_2008
+32.02.33.2009,Margaluyu,adm_area_32_02_33_2009
+32.02.34,Kebonpedes,adm_area_32_02_34
+32.02.34.2001,Kebonpedes,adm_area_32_02_34_2001
+32.02.34.2002,Cikaret,adm_area_32_02_34_2002
+32.02.34.2003,Bojongsawah,adm_area_32_02_34_2003
+32.02.34.2004,Sasagaran,adm_area_32_02_34_2004
+32.02.34.2005,Jambenenggang,adm_area_32_02_34_2005
+32.02.35,Cireunghas,adm_area_32_02_35
+32.02.35.2001,Cireunghas,adm_area_32_02_35_2001
+32.02.35.2002,Cipurut,adm_area_32_02_35_2002
+32.02.35.2003,Bencoy,adm_area_32_02_35_2003
+32.02.35.2004,Cikurutug,adm_area_32_02_35_2004
+32.02.35.2005,Tegalpanjang,adm_area_32_02_35_2005
+32.02.36,Sukalarang,adm_area_32_02_36
+32.02.36.2001,Sukalarang,adm_area_32_02_36_2001
+32.02.36.2002,Sukamaju,adm_area_32_02_36_2002
+32.02.36.2003,Cimangkok,adm_area_32_02_36_2003
+32.02.36.2004,Titisan,adm_area_32_02_36_2004
+32.02.36.2005,Semplak,adm_area_32_02_36_2005
+32.02.36.2006,Prianganjaya,adm_area_32_02_36_2006
+32.02.37,Pabuaran,adm_area_32_02_37
+32.02.37.2001,Pabuaran,adm_area_32_02_37_2001
+32.02.37.2002,Ciwalat,adm_area_32_02_37_2002
+32.02.37.2003,Sirnasari,adm_area_32_02_37_2003
+32.02.37.2004,Bantarsari,adm_area_32_02_37_2004
+32.02.37.2005,Sukajaya,adm_area_32_02_37_2005
+32.02.37.2006,Cibadak,adm_area_32_02_37_2006
+32.02.37.2007,Lembur Sawah,adm_area_32_02_37_2007
+32.02.38,Purabaya,adm_area_32_02_38
+32.02.38.2001,Purabaya,adm_area_32_02_38_2001
+32.02.38.2002,Neglasari,adm_area_32_02_38_2002
+32.02.38.2003,Pagelaran,adm_area_32_02_38_2003
+32.02.38.2004,Cimerang,adm_area_32_02_38_2004
+32.02.38.2005,Citamiang,adm_area_32_02_38_2005
+32.02.38.2006,Margaluyu,adm_area_32_02_38_2006
+32.02.38.2007,Cicukang,adm_area_32_02_38_2007
+32.02.39,Nyalindung,adm_area_32_02_39
+32.02.39.2001,Nyalindung,adm_area_32_02_39_2001
+32.02.39.2002,Neglasari,adm_area_32_02_39_2002
+32.02.39.2003,Sukamaju,adm_area_32_02_39_2003
+32.02.39.2004,Bojongkalong,adm_area_32_02_39_2004
+32.02.39.2005,Cijangkar,adm_area_32_02_39_2005
+32.02.39.2006,Mekarsari,adm_area_32_02_39_2006
+32.02.39.2007,Wangunreja,adm_area_32_02_39_2007
+32.02.39.2008,Cisitu,adm_area_32_02_39_2008
+32.02.39.2009,Bojongsari,adm_area_32_02_39_2009
+32.02.39.2010,Kertaangsana,adm_area_32_02_39_2010
+32.02.40,Gegerbitung,adm_area_32_02_40
+32.02.40.2001,Gegerbitung,adm_area_32_02_40_2001
+32.02.40.2002,Cijurey,adm_area_32_02_40_2002
+32.02.40.2003,Ciengang,adm_area_32_02_40_2003
+32.02.40.2004,Karangjaya,adm_area_32_02_40_2004
+32.02.40.2005,Caringin,adm_area_32_02_40_2005
+32.02.40.2006,Sukamanah,adm_area_32_02_40_2006
+32.02.40.2007,Buniwangi,adm_area_32_02_40_2007
+32.02.41,Sagaranten,adm_area_32_02_41
+32.02.41.2001,Sagaranten,adm_area_32_02_41_2001
+32.02.41.2002,Curugluhur,adm_area_32_02_41_2002
+32.02.41.2003,Cibaregbeg,adm_area_32_02_41_2003
+32.02.41.2004,Pasanggrahan,adm_area_32_02_41_2004
+32.02.41.2005,Datarnangka,adm_area_32_02_41_2005
+32.02.41.2006,Puncakmanggis,adm_area_32_02_41_2006
+32.02.41.2007,Hegarmanah,adm_area_32_02_41_2007
+32.02.41.2008,Gunungbentang,adm_area_32_02_41_2008
+32.02.41.2009,Sinarbentang,adm_area_32_02_41_2009
+32.02.41.2010,Cibitung,adm_area_32_02_41_2010
+32.02.41.2011,Margaluyu,adm_area_32_02_41_2011
+32.02.41.2012,Mekarsari,adm_area_32_02_41_2012
+32.02.42,Curugkembar,adm_area_32_02_42
+32.02.42.2001,Curugkembar,adm_area_32_02_42_2001
+32.02.42.2002,Cimenteng,adm_area_32_02_42_2002
+32.02.42.2003,Tanjungsari,adm_area_32_02_42_2003
+32.02.42.2004,Sindangraja,adm_area_32_02_42_2004
+32.02.42.2005,Mekartanjung,adm_area_32_02_42_2005
+32.02.42.2006,Nagrakjaya,adm_area_32_02_42_2006
+32.02.42.2007,Bojong Tugu,adm_area_32_02_42_2007
+32.02.43,Cidolog,adm_area_32_02_43
+32.02.43.2001,Cidolog,adm_area_32_02_43_2001
+32.02.43.2002,Cipamingkis,adm_area_32_02_43_2002
+32.02.43.2003,Cikarang,adm_area_32_02_43_2003
+32.02.43.2004,Tegallega,adm_area_32_02_43_2004
+32.02.43.2005,Mekarjaya,adm_area_32_02_43_2005
+32.02.44,Cidadap,adm_area_32_02_44
+32.02.44.2001,Padasenang,adm_area_32_02_44_2001
+32.02.44.2002,Cidadap,adm_area_32_02_44_2002
+32.02.44.2003,Banjarsari,adm_area_32_02_44_2003
+32.02.44.2004,Hegarmulya,adm_area_32_02_44_2004
+32.02.44.2005,Tenjolaut,adm_area_32_02_44_2005
+32.02.44.2006,Mekartani,adm_area_32_02_44_2006
+32.02.45,Tegalbuleud,adm_area_32_02_45
+32.02.45.2001,Tegalbuleud,adm_area_32_02_45_2001
+32.02.45.2002,Bangbayang,adm_area_32_02_45_2002
+32.02.45.2003,Sumberjaya,adm_area_32_02_45_2003
+32.02.45.2004,Calingcing,adm_area_32_02_45_2004
+32.02.45.2005,Nangela,adm_area_32_02_45_2005
+32.02.45.2006,Rambay,adm_area_32_02_45_2006
+32.02.45.2007,Buniasih,adm_area_32_02_45_2007
+32.02.45.2008,Sirnamekar,adm_area_32_02_45_2008
+32.02.46,Cimanggu,adm_area_32_02_46
+32.02.46.2001,Cimanggu,adm_area_32_02_46_2001
+32.02.46.2002,Sukamaju,adm_area_32_02_46_2002
+32.02.46.2003,Sukajadi,adm_area_32_02_46_2003
+32.02.46.2004,Karangmekar,adm_area_32_02_46_2004
+32.02.46.2005,Boregahindah,adm_area_32_02_46_2005
+32.02.46.2006,Sukamanah,adm_area_32_02_46_2006
+32.02.47,Ciambar,adm_area_32_02_47
+32.02.47.2001,Ciambar,adm_area_32_02_47_2001
+32.02.47.2002,Ginanjar,adm_area_32_02_47_2002
+32.02.47.2003,Wangunjaya,adm_area_32_02_47_2003
+32.02.47.2004,Munjul,adm_area_32_02_47_2004
+32.02.47.2005,Ambarjaya,adm_area_32_02_47_2005
+32.02.47.2006,Cibunarjaya,adm_area_32_02_47_2006
+32.03,KAB. CIANJUR,adm_area_32_03
+32.03.01,Cianjur,adm_area_32_03_01
+32.03.01.2001,Babakan Karet,adm_area_32_03_01_2001
+32.03.01.2002,Nagrak,adm_area_32_03_01_2002
+32.03.01.2003,Sukamaju,adm_area_32_03_01_2003
+32.03.01.2004,Mekarsari,adm_area_32_03_01_2004
+32.03.01.2005,Limbangansari,adm_area_32_03_01_2005
+32.03.01.1006,Pamoyanan,adm_area_32_03_01_1006
+32.03.01.1007,Sawahgede,adm_area_32_03_01_1007
+32.03.01.1008,Bojongherang,adm_area_32_03_01_1008
+32.03.01.1009,Sayang,adm_area_32_03_01_1009
+32.03.01.1010,Solokpandan,adm_area_32_03_01_1010
+32.03.01.1011,Muka,adm_area_32_03_01_1011
+32.03.02,Warungkondang,adm_area_32_03_02
+32.03.02.2002,Jambudipa,adm_area_32_03_02_2002
+32.03.02.2006,Cisarandi,adm_area_32_03_02_2006
+32.03.02.2007,Cikaroya,adm_area_32_03_02_2007
+32.03.02.2008,Bunikasih,adm_area_32_03_02_2008
+32.03.02.2009,Ciwalen,adm_area_32_03_02_2009
+32.03.02.2010,Tegallega,adm_area_32_03_02_2010
+32.03.02.2011,Sukawangi,adm_area_32_03_02_2011
+32.03.02.2014,Bunisari,adm_area_32_03_02_2014
+32.03.02.2016,Sukamulya,adm_area_32_03_02_2016
+32.03.02.2017,Cieundeur,adm_area_32_03_02_2017
+32.03.02.2018,Mekarwangi,adm_area_32_03_02_2018
+32.03.03,Cibeber,adm_area_32_03_03
+32.03.03.2001,Cipetir,adm_area_32_03_03_2001
+32.03.03.2002,Cihaur,adm_area_32_03_03_2002
+32.03.03.2003,Cimanggu,adm_area_32_03_03_2003
+32.03.03.2004,Cibaregbeg,adm_area_32_03_03_2004
+32.03.03.2005,Sukaraharja,adm_area_32_03_03_2005
+32.03.03.2006,Peuteuycondong,adm_area_32_03_03_2006
+32.03.03.2007,Mayak,adm_area_32_03_03_2007
+32.03.03.2008,Cikondang,adm_area_32_03_03_2008
+32.03.03.2009,Cibokor,adm_area_32_03_03_2009
+32.03.03.2010,Selagedang,adm_area_32_03_03_2010
+32.03.03.2011,Karangnunggal,adm_area_32_03_03_2011
+32.03.03.2012,Kanoman,adm_area_32_03_03_2012
+32.03.03.2013,Sukamaju,adm_area_32_03_03_2013
+32.03.03.2014,Girimulya,adm_area_32_03_03_2014
+32.03.03.2015,Cisalak,adm_area_32_03_03_2015
+32.03.03.2016,Cibadak,adm_area_32_03_03_2016
+32.03.03.2017,Sukamanah,adm_area_32_03_03_2017
+32.03.03.2018,Salamnunggal,adm_area_32_03_03_2018
+32.03.04,Cilaku,adm_area_32_03_04
+32.03.04.2001,Rancagoong,adm_area_32_03_04_2001
+32.03.04.2002,Sukasari,adm_area_32_03_04_2002
+32.03.04.2003,Sirnagalih,adm_area_32_03_04_2003
+32.03.04.2004,Sukakerta,adm_area_32_03_04_2004
+32.03.04.2005,Cibinonghilir,adm_area_32_03_04_2005
+32.03.04.2006,Rahong,adm_area_32_03_04_2006
+32.03.04.2007,Munjul,adm_area_32_03_04_2007
+32.03.04.2008,Sindangsari,adm_area_32_03_04_2008
+32.03.04.2009,Ciharashas,adm_area_32_03_04_2009
+32.03.04.2010,Mulyasari,adm_area_32_03_04_2010
+32.03.05,Ciranjang,adm_area_32_03_05
+32.03.05.2001,Ciranjang,adm_area_32_03_05_2001
+32.03.05.2002,Sindangjaya,adm_area_32_03_05_2002
+32.03.05.2004,Cibiuk,adm_area_32_03_05_2004
+32.03.05.2005,Gunungsari,adm_area_32_03_05_2005
+32.03.05.2006,Karangwangi,adm_area_32_03_05_2006
+32.03.05.2007,Nanggalamekar,adm_area_32_03_05_2007
+32.03.05.2008,Kertajaya,adm_area_32_03_05_2008
+32.03.05.2009,Sindangsari,adm_area_32_03_05_2009
+32.03.05.2012,Mekargalih,adm_area_32_03_05_2012
+32.03.06,Bojongpicung,adm_area_32_03_06
+32.03.06.2001,Hegarmanah,adm_area_32_03_06_2001
+32.03.06.2002,Bojongpicung,adm_area_32_03_06_2002
+32.03.06.2004,Cibarengkok,adm_area_32_03_06_2004
+32.03.06.2006,Kemang,adm_area_32_03_06_2006
+32.03.06.2007,Sukajaya,adm_area_32_03_06_2007
+32.03.06.2008,Jati,adm_area_32_03_06_2008
+32.03.06.2009,Cikondang,adm_area_32_03_06_2009
+32.03.06.2010,Sukarama,adm_area_32_03_06_2010
+32.03.06.2012,Sukaratu,adm_area_32_03_06_2012
+32.03.06.2013,Neglasari,adm_area_32_03_06_2013
+32.03.06.2014,Jatisari,adm_area_32_03_06_2014
+32.03.07,Karangtengah,adm_area_32_03_07
+32.03.07.2001,Sukamanah,adm_area_32_03_07_2001
+32.03.07.2002,Bojong,adm_area_32_03_07_2002
+32.03.07.2003,Sindanglaka,adm_area_32_03_07_2003
+32.03.07.2004,Maleber,adm_area_32_03_07_2004
+32.03.07.2005,Ciherang,adm_area_32_03_07_2005
+32.03.07.2006,Sukamantri,adm_area_32_03_07_2006
+32.03.07.2007,Sukasarana,adm_area_32_03_07_2007
+32.03.07.2008,Sukasari,adm_area_32_03_07_2008
+32.03.07.2009,Babakancaringin,adm_area_32_03_07_2009
+32.03.07.2010,Sabandar,adm_area_32_03_07_2010
+32.03.07.2011,Sindangasih,adm_area_32_03_07_2011
+32.03.07.2012,Sukataris,adm_area_32_03_07_2012
+32.03.07.2013,Langensari,adm_area_32_03_07_2013
+32.03.07.2014,Hegarmanah,adm_area_32_03_07_2014
+32.03.07.2015,Sukajadi,adm_area_32_03_07_2015
+32.03.07.2016,Sukamulya,adm_area_32_03_07_2016
+32.03.08,Mande,adm_area_32_03_08
+32.03.08.2001,Kademangan,adm_area_32_03_08_2001
+32.03.08.2002,Bobojong,adm_area_32_03_08_2002
+32.03.08.2003,Jamali,adm_area_32_03_08_2003
+32.03.08.2004,Cikidangbayabang,adm_area_32_03_08_2004
+32.03.08.2005,Mande,adm_area_32_03_08_2005
+32.03.08.2006,Mulyasari,adm_area_32_03_08_2006
+32.03.08.2007,Ciandam,adm_area_32_03_08_2007
+32.03.08.2008,Sukamanah,adm_area_32_03_08_2008
+32.03.08.2009,Leuwikoja,adm_area_32_03_08_2009
+32.03.08.2010,Mekarjaya,adm_area_32_03_08_2010
+32.03.08.2011,Kutawaringin,adm_area_32_03_08_2011
+32.03.08.2012,Murnisari,adm_area_32_03_08_2012
+32.03.09,Sukaluyu,adm_area_32_03_09
+32.03.09.2001,Selajambe,adm_area_32_03_09_2001
+32.03.09.2002,Sukamulya,adm_area_32_03_09_2002
+32.03.09.2003,Panyusuhan,adm_area_32_03_09_2003
+32.03.09.2004,Tanjungsari,adm_area_32_03_09_2004
+32.03.09.2005,Sidangraja,adm_area_32_03_09_2005
+32.03.09.2006,Mekarjaya,adm_area_32_03_09_2006
+32.03.09.2007,Sukasirna,adm_area_32_03_09_2007
+32.03.09.2008,Sukaluyu,adm_area_32_03_09_2008
+32.03.09.2009,Babakansari,adm_area_32_03_09_2009
+32.03.09.2010,Hegarmanah,adm_area_32_03_09_2010
+32.03.10,Pacet,adm_area_32_03_10
+32.03.10.2001,Ciherang,adm_area_32_03_10_2001
+32.03.10.2003,Cibodas,adm_area_32_03_10_2003
+32.03.10.2005,Sukanagalih,adm_area_32_03_10_2005
+32.03.10.2007,Cipendawa,adm_area_32_03_10_2007
+32.03.10.2010,Ciputri,adm_area_32_03_10_2010
+32.03.10.2012,Gadog,adm_area_32_03_10_2012
+32.03.10.2013,Sukatani,adm_area_32_03_10_2013
+32.03.11,Cugenang,adm_area_32_03_11
+32.03.11.2001,Sukamanah,adm_area_32_03_11_2001
+32.03.11.2002,Gasol,adm_area_32_03_11_2002
+32.03.11.2003,Cijedil,adm_area_32_03_11_2003
+32.03.11.2004,Cibeureum,adm_area_32_03_11_2004
+32.03.11.2005,Nyalindung,adm_area_32_03_11_2005
+32.03.11.2006,Mangunkerta,adm_area_32_03_11_2006
+32.03.11.2007,Sarampad,adm_area_32_03_11_2007
+32.03.11.2008,Talaga,adm_area_32_03_11_2008
+32.03.11.2009,Sukajaya,adm_area_32_03_11_2009
+32.03.11.2010,Cibulakan,adm_area_32_03_11_2010
+32.03.11.2011,Benjot,adm_area_32_03_11_2011
+32.03.11.2012,Sukamulya,adm_area_32_03_11_2012
+32.03.11.2013,Wangunjaya,adm_area_32_03_11_2013
+32.03.11.2014,Cirumput,adm_area_32_03_11_2014
+32.03.11.2015,Padaluyu,adm_area_32_03_11_2015
+32.03.11.2016,Galudra,adm_area_32_03_11_2016
+32.03.12,Cikalongkulon,adm_area_32_03_12
+32.03.12.2001,Sukagalih,adm_area_32_03_12_2001
+32.03.12.2002,Gudang,adm_area_32_03_12_2002
+32.03.12.2003,Cinangsi,adm_area_32_03_12_2003
+32.03.12.2004,Cijagang,adm_area_32_03_12_2004
+32.03.12.2005,Majalaya,adm_area_32_03_12_2005
+32.03.12.2006,Kamurang,adm_area_32_03_12_2006
+32.03.12.2007,Warudoyong,adm_area_32_03_12_2007
+32.03.12.2008,Ciramagirang,adm_area_32_03_12_2008
+32.03.12.2009,Mekarjaya,adm_area_32_03_12_2009
+32.03.12.2010,Sukamulya,adm_area_32_03_12_2010
+32.03.12.2011,Padajaya,adm_area_32_03_12_2011
+32.03.12.2012,Cigunungherang,adm_area_32_03_12_2012
+32.03.12.2013,Neglasari,adm_area_32_03_12_2013
+32.03.12.2014,Mekargalih,adm_area_32_03_12_2014
+32.03.12.2015,Lembahsari,adm_area_32_03_12_2015
+32.03.12.2016,Mentengsari,adm_area_32_03_12_2016
+32.03.12.2017,Mekarsari,adm_area_32_03_12_2017
+32.03.12.2018,Mekarmulya,adm_area_32_03_12_2018
+32.03.13,Sukaresmi,adm_area_32_03_13
+32.03.13.2001,Cikanyere,adm_area_32_03_13_2001
+32.03.13.2002,Cikancana,adm_area_32_03_13_2002
+32.03.13.2003,Ciwalen,adm_area_32_03_13_2003
+32.03.13.2004,Kawungluwuk,adm_area_32_03_13_2004
+32.03.13.2005,Cibadak,adm_area_32_03_13_2005
+32.03.13.2006,Sukamahi,adm_area_32_03_13_2006
+32.03.13.2007,Sukaresmi,adm_area_32_03_13_2007
+32.03.13.2008,Cibanteng,adm_area_32_03_13_2008
+32.03.13.2009,Kubang,adm_area_32_03_13_2009
+32.03.13.2010,Pakuon,adm_area_32_03_13_2010
+32.03.13.2011,Rawabelut,adm_area_32_03_13_2011
+32.03.14,Sukanagara,adm_area_32_03_14
+32.03.14.2001,Sukanagara,adm_area_32_03_14_2001
+32.03.14.2002,Sukajembar,adm_area_32_03_14_2002
+32.03.14.2003,Sukakarya,adm_area_32_03_14_2003
+32.03.14.2004,Ciguha,adm_area_32_03_14_2004
+32.03.14.2005,Sukamekar,adm_area_32_03_14_2005
+32.03.14.2006,Gunungsari,adm_area_32_03_14_2006
+32.03.14.2007,Sukalaksana,adm_area_32_03_14_2007
+32.03.14.2008,Sukarame,adm_area_32_03_14_2008
+32.03.14.2009,Sindangsari,adm_area_32_03_14_2009
+32.03.14.2010,Jayagiri,adm_area_32_03_14_2010
+32.03.15,Campaka,adm_area_32_03_15
+32.03.15.2001,Cidadap,adm_area_32_03_15_2001
+32.03.15.2002,Cimenteng,adm_area_32_03_15_2002
+32.03.15.2003,Susukan,adm_area_32_03_15_2003
+32.03.15.2004,Sukajadi,adm_area_32_03_15_2004
+32.03.15.2005,Sukadana,adm_area_32_03_15_2005
+32.03.15.2006,Margaluyu,adm_area_32_03_15_2006
+32.03.15.2007,Karyamukti,adm_area_32_03_15_2007
+32.03.15.2008,Campaka,adm_area_32_03_15_2008
+32.03.15.2009,Wangunjaya,adm_area_32_03_15_2009
+32.03.15.2010,Girimukti,adm_area_32_03_15_2010
+32.03.15.2011,Mekarjaya,adm_area_32_03_15_2011
+32.03.16,Takokak,adm_area_32_03_16
+32.03.16.2001,Pasawahan,adm_area_32_03_16_2001
+32.03.16.2002,Sindangresmi,adm_area_32_03_16_2002
+32.03.16.2003,Sindanghayu,adm_area_32_03_16_2003
+32.03.16.2004,Simpang,adm_area_32_03_16_2004
+32.03.16.2005,Sukagalih,adm_area_32_03_16_2005
+32.03.16.2006,Bungbangsari,adm_area_32_03_16_2006
+32.03.16.2007,Cisujen,adm_area_32_03_16_2007
+32.03.16.2008,Hegarmanah,adm_area_32_03_16_2008
+32.03.16.2009,Waringinsari,adm_area_32_03_16_2009
+32.03.17,Kadupandak,adm_area_32_03_17
+32.03.17.2003,Sukasari,adm_area_32_03_17_2003
+32.03.17.2006,Pasirdalem,adm_area_32_03_17_2006
+32.03.17.2008,Talagasari,adm_area_32_03_17_2008
+32.03.17.2009,Bojongkasih,adm_area_32_03_17_2009
+32.03.17.2010,Wargaasih,adm_area_32_03_17_2010
+32.03.17.2011,Sukaraharja,adm_area_32_03_17_2011
+32.03.17.2014,Sukakerta,adm_area_32_03_17_2014
+32.03.17.2016,Neglasari,adm_area_32_03_17_2016
+32.03.17.2017,Sukaresmi,adm_area_32_03_17_2017
+32.03.17.2019,Wargasari,adm_area_32_03_17_2019
+32.03.17.2020,Sukaraja,adm_area_32_03_17_2020
+32.03.17.2021,Kadupandak,adm_area_32_03_17_2021
+32.03.17.2022,Gandasari,adm_area_32_03_17_2022
+32.03.17.2023,Sindangsari,adm_area_32_03_17_2023
+32.03.18,Pagelaran,adm_area_32_03_18
+32.03.18.2001,Pagelaran,adm_area_32_03_18_2001
+32.03.18.2002,Pangadegan,adm_area_32_03_18_2002
+32.03.18.2004,Gelaranyar,adm_area_32_03_18_2004
+32.03.18.2005,Buniwangi,adm_area_32_03_18_2005
+32.03.18.2007,Sindangkerta,adm_area_32_03_18_2007
+32.03.18.2008,Pasirbaru,adm_area_32_03_18_2008
+32.03.18.2009,Bunijaya,adm_area_32_03_18_2009
+32.03.18.2010,Situhiang,adm_area_32_03_18_2010
+32.03.18.2011,Mekarsari,adm_area_32_03_18_2011
+32.03.18.2012,Kertaraharja,adm_area_32_03_18_2012
+32.03.18.2013,Selagedang,adm_area_32_03_18_2013
+32.03.18.2014,Padamaju,adm_area_32_03_18_2014
+32.03.18.2015,Karangharja,adm_area_32_03_18_2015
+32.03.18.2018,Sukamaju,adm_area_32_03_18_2018
+32.03.19,Tanggeung,adm_area_32_03_19
+32.03.19.2001,Tanggeung,adm_area_32_03_19_2001
+32.03.19.2002,Rawagede,adm_area_32_03_19_2002
+32.03.19.2003,Cilongsong,adm_area_32_03_19_2003
+32.03.19.2004,Margaluyu,adm_area_32_03_19_2004
+32.03.19.2005,Karangtengah,adm_area_32_03_19_2005
+32.03.19.2006,Pagermaneuh,adm_area_32_03_19_2006
+32.03.19.2007,Bojongpetir,adm_area_32_03_19_2007
+32.03.19.2009,Pasirjambu,adm_area_32_03_19_2009
+32.03.19.2010,Sirnajaya,adm_area_32_03_19_2010
+32.03.19.2013,Kertajaya,adm_area_32_03_19_2013
+32.03.19.2014,Sukajaya,adm_area_32_03_19_2014
+32.03.19.2015,Padaluyu,adm_area_32_03_19_2015
+32.03.20,Cibinong,adm_area_32_03_20
+32.03.20.2001,Pananggapan,adm_area_32_03_20_2001
+32.03.20.2002,Cikangkareng,adm_area_32_03_20_2002
+32.03.20.2003,Sukajadi,adm_area_32_03_20_2003
+32.03.20.2004,Panyindangan,adm_area_32_03_20_2004
+32.03.20.2005,Padasuka,adm_area_32_03_20_2005
+32.03.20.2006,Cimaskara,adm_area_32_03_20_2006
+32.03.20.2007,Pamoyanan,adm_area_32_03_20_2007
+32.03.20.2008,Batulawang,adm_area_32_03_20_2008
+32.03.20.2009,Sukamekar,adm_area_32_03_20_2009
+32.03.20.2010,Hamerang,adm_area_32_03_20_2010
+32.03.20.2011,Girijaya,adm_area_32_03_20_2011
+32.03.20.2012,Wargaluyu,adm_area_32_03_20_2012
+32.03.20.2013,Mekarmukti,adm_area_32_03_20_2013
+32.03.20.2014,Ciburial,adm_area_32_03_20_2014
+32.03.21,Sindangbarang,adm_area_32_03_21
+32.03.21.2001,Saganten,adm_area_32_03_21_2001
+32.03.21.2002,Muaracikadu,adm_area_32_03_21_2002
+32.03.21.2003,Jatisari,adm_area_32_03_21_2003
+32.03.21.2004,Sirnagalih,adm_area_32_03_21_2004
+32.03.21.2005,Jayagiri,adm_area_32_03_21_2005
+32.03.21.2006,Kertasari,adm_area_32_03_21_2006
+32.03.21.2007,Girimukti,adm_area_32_03_21_2007
+32.03.21.2008,Talagasari,adm_area_32_03_21_2008
+32.03.21.2009,Hegarsari,adm_area_32_03_21_2009
+32.03.21.2010,Mekarlaksana,adm_area_32_03_21_2010
+32.03.21.2011,Kertamukti,adm_area_32_03_21_2011
+32.03.22,Agrabinta,adm_area_32_03_22
+32.03.22.2004,Sukamanah,adm_area_32_03_22_2004
+32.03.22.2005,Bojongkaso,adm_area_32_03_22_2005
+32.03.22.2006,Bunisari,adm_area_32_03_22_2006
+32.03.22.2007,Wanasari,adm_area_32_03_22_2007
+32.03.22.2010,Sinarlaut,adm_area_32_03_22_2010
+32.03.22.2014,Neglasari,adm_area_32_03_22_2014
+32.03.22.2016,Karangsari,adm_area_32_03_22_2016
+32.03.22.2017,Mulyasari,adm_area_32_03_22_2017
+32.03.22.2018,Tanjung Sari,adm_area_32_03_22_2018
+32.03.22.2019,Mekarsari,adm_area_32_03_22_2019
+32.03.22.2022,Wangunjaya,adm_area_32_03_22_2022
+32.03.23,Cidaun,adm_area_32_03_23
+32.03.23.2001,Cidamar,adm_area_32_03_23_2001
+32.03.23.2002,Cibuluh,adm_area_32_03_23_2002
+32.03.23.2003,Cisalak,adm_area_32_03_23_2003
+32.03.23.2004,Cimaragang,adm_area_32_03_23_2004
+32.03.23.2005,Mekarjaya,adm_area_32_03_23_2005
+32.03.23.2006,Kertajadi,adm_area_32_03_23_2006
+32.03.23.2007,Sukapura,adm_area_32_03_23_2007
+32.03.23.2008,Gelarpawitan,adm_area_32_03_23_2008
+32.03.23.2009,Karangwangi,adm_area_32_03_23_2009
+32.03.23.2010,Karyabakti,adm_area_32_03_23_2010
+32.03.23.2011,Jayapura,adm_area_32_03_23_2011
+32.03.23.2012,Neglasari,adm_area_32_03_23_2012
+32.03.23.2013,Puncakbaru,adm_area_32_03_23_2013
+32.03.23.2014,Gelarwangi,adm_area_32_03_23_2014
+32.03.24,Naringgul,adm_area_32_03_24
+32.03.24.2001,Naringgul,adm_area_32_03_24_2001
+32.03.24.2002,Balegede,adm_area_32_03_24_2002
+32.03.24.2003,Wangunjaya,adm_area_32_03_24_2003
+32.03.24.2004,Mekarsari,adm_area_32_03_24_2004
+32.03.24.2005,Cinerang,adm_area_32_03_24_2005
+32.03.24.2006,Wanasari,adm_area_32_03_24_2006
+32.03.24.2007,Sukabakti,adm_area_32_03_24_2007
+32.03.24.2008,Malati,adm_area_32_03_24_2008
+32.03.24.2009,Wangunsari,adm_area_32_03_24_2009
+32.03.24.2010,Sukamulya,adm_area_32_03_24_2010
+32.03.24.2011,Margasari,adm_area_32_03_24_2011
+32.03.25,Campakamulya,adm_area_32_03_25
+32.03.25.2001,Cibanggala,adm_area_32_03_25_2001
+32.03.25.2002,Campakawarna,adm_area_32_03_25_2002
+32.03.25.2003,Sukasirna,adm_area_32_03_25_2003
+32.03.25.2004,Campakamulya,adm_area_32_03_25_2004
+32.03.25.2005,Sukabungah,adm_area_32_03_25_2005
+32.03.26,Cikadu,adm_area_32_03_26
+32.03.26.2001,Kalapanunggal,adm_area_32_03_26_2001
+32.03.26.2002,Cikadu,adm_area_32_03_26_2002
+32.03.26.2003,Mekarwangi,adm_area_32_03_26_2003
+32.03.26.2004,Padaluyu,adm_area_32_03_26_2004
+32.03.26.2005,Sukamulya,adm_area_32_03_26_2005
+32.03.26.2006,Cisaranten,adm_area_32_03_26_2006
+32.03.26.2007,Mekarlaksana,adm_area_32_03_26_2007
+32.03.26.2008,Sukaluyu,adm_area_32_03_26_2008
+32.03.26.2009,Mekarjaya,adm_area_32_03_26_2009
+32.03.26.2010,Sukamanah,adm_area_32_03_26_2010
+32.03.27,Gekbrong,adm_area_32_03_27
+32.03.27.2001,Bangbayang,adm_area_32_03_27_2001
+32.03.27.2002,Songgom,adm_area_32_03_27_2002
+32.03.27.2003,Sukaratu,adm_area_32_03_27_2003
+32.03.27.2004,Cikancana,adm_area_32_03_27_2004
+32.03.27.2005,Kebonpeuteuy,adm_area_32_03_27_2005
+32.03.27.2006,Gekbrong,adm_area_32_03_27_2006
+32.03.27.2007,Cikahuripan,adm_area_32_03_27_2007
+32.03.27.2008,Cintaasih,adm_area_32_03_27_2008
+32.03.28,Cipanas,adm_area_32_03_28
+32.03.28.2001,Cipanas,adm_area_32_03_28_2001
+32.03.28.2002,Cimacan,adm_area_32_03_28_2002
+32.03.28.2003,Ciloto,adm_area_32_03_28_2003
+32.03.28.2004,Sindanglaya,adm_area_32_03_28_2004
+32.03.28.2005,Batulawang,adm_area_32_03_28_2005
+32.03.28.2006,Palasari,adm_area_32_03_28_2006
+32.03.28.2007,Sindangjaya,adm_area_32_03_28_2007
+32.03.29,Cijati,adm_area_32_03_29
+32.03.29.2001,Parakantugu,adm_area_32_03_29_2001
+32.03.29.2002,Cijati,adm_area_32_03_29_2002
+32.03.29.2003,Bojonglarang,adm_area_32_03_29_2003
+32.03.29.2004,Padaasih,adm_area_32_03_29_2004
+32.03.29.2005,Cibodas,adm_area_32_03_29_2005
+32.03.29.2006,Sukamahi,adm_area_32_03_29_2006
+32.03.29.2007,Sukaluyu,adm_area_32_03_29_2007
+32.03.29.2008,Caringin,adm_area_32_03_29_2008
+32.03.29.2009,Sinarbakti,adm_area_32_03_29_2009
+32.03.29.2010,Sukamaju,adm_area_32_03_29_2010
+32.03.30,Leles,adm_area_32_03_30
+32.03.30.2001,Pusakasari,adm_area_32_03_30_2001
+32.03.30.2002,Walahir,adm_area_32_03_30_2002
+32.03.30.2003,Purabaya,adm_area_32_03_30_2003
+32.03.30.2004,Puncakwangi,adm_area_32_03_30_2004
+32.03.30.2005,Sukajaya,adm_area_32_03_30_2005
+32.03.30.2006,Nagasari,adm_area_32_03_30_2006
+32.03.30.2007,Sukasirna,adm_area_32_03_30_2007
+32.03.30.2008,Sukamulya,adm_area_32_03_30_2008
+32.03.30.2009,Sirnasari,adm_area_32_03_30_2009
+32.03.30.2010,Karyamukti,adm_area_32_03_30_2010
+32.03.30.2011,Mandalawangi,adm_area_32_03_30_2011
+32.03.30.2012,Sindangsari,adm_area_32_03_30_2012

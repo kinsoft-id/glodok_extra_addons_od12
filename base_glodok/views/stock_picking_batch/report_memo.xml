@@ -1,0 +1,66 @@
+<odoo>
+	<report
+        string="PickUp Memo" 
+        id="action_report_picking_batch_memo" 
+        model="stock.picking.batch" 
+        report_type="qweb-pdf"
+        name="base_glodok.report_picking_batch_memo_docs" 
+        file="base_glodok.report_picking_batch_memo_docs"
+        print_report_name="'MEMO - %s' % (object.name)"
+        paperformat="paper_format_a6_landscape" 
+        groups="base_glodok.group_can_print_batch" 
+        attachment="'MEMO - %s.pdf' % (object.name)" 
+        attachment_use="True"
+    />
+	<template id="report_picking_batch_memo_docs">
+        <t t-call="web.html_container">
+
+        	
+        	<t t-foreach="docs" t-as="o">
+        		<t t-set="datas" t-value="o.group_move_line_by_source_location()"/>
+        		<t t-foreach="datas" t-as="data">
+        			<t t-set="move_line_ids" t-value="data['lines']" />
+		            <t t-call="base_glodok.picking_batch_external_layout" t-if="env.user.user_has_groups('base.group_system')">
+
+		                <table class="table table-condensed" t-if="move_line_ids">
+		                    
+		                    <thead>
+		                        <tr>
+		                            <th style="width:15%;" class="text-center"><strong>Banyaknya</strong></th>
+		                            <th class="text-center"><strong>Nama Barang</strong></th>
+		                            <th class="text-center"><strong>No. SJ/Customer</strong></th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+
+		                        <tr t-foreach="move_line_ids" t-as="move_line">
+		                            <td class="text-center">
+		                                <span t-field="move_line.qty_done"/>
+		                                <span t-field="move_line.product_uom_id"/>
+		                            </td>
+		                            <td>
+		                                <span t-field="move_line.product_id"/>
+		                                <p t-if="move_line.picking_id.picking_type_code == 'outgoing'">
+		                                    <span t-field="move_line.product_id.sudo().description_pickingout"/>
+		                                </p>
+		                                <p t-if="move_line.picking_id.picking_type_code == 'incoming'">
+		                                    <span t-field="move_line.product_id.sudo().description_pickingin"/>
+		                                </p>
+		                            </td>
+		                            <td>
+		                            	<span t-esc="move_line.picking_id.name"/>
+		                            	<br/>
+		                            	(<span t-esc="move_line.picking_id.partner_id.name"/>)
+		                            </td>
+		                            
+		                            
+		                        </tr>
+		                    </tbody>
+		                </table>
+		                
+		            </t>
+		        </t>
+        	</t>
+         </t>
+    </template>
+</odoo>

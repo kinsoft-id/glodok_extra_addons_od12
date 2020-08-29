@@ -1,0 +1,182 @@
+<odoo>
+
+	<record id="sale.action_quotations" model="ir.actions.act_window">
+		<field name="domain">[('state','in',['draft','sent','cancel'])]</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_order_glodok_form">
+		<field name="name">view_order_glodok.form</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<button name="action_cancel" position="replace">
+				<button name="action_cancel" states="draft,sent,sale,done" type="object" string="Cancel" confirm="Cancel??"/>
+				<button name="action_print_envelope" states="sale,done" type='object' string="Print Env" class="oe_highlight" />
+			</button>
+			
+			<field name="partner_id" position="attributes">
+				<attribute name="context">{'form_view_ref':'base_glodok.view_partner_glodok_form'}</attribute>
+			</field>
+			<field name="client_order_ref" position="replace" />
+			<field name="payment_term_id" position="after">
+				<field name="client_order_ref" />
+				<field name="need_follow_up" groups="base.group_no_one" />
+
+			</field>
+			<field name="origin" position="after">
+				<field name="envelope_print_counter" readonly="1" />
+			</field>
+		</field>
+	</record>
+
+	<record model='ir.ui.view' id='view_order_tree'>
+		<field name='name'>view_order.tree</field>
+		<field name='model'>sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_tree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//tree/field[5]" position="replace">
+				<field name="client_order_ref" />
+			</xpath>
+			<field name="state" position="after">
+				<field name="delivery_slip_printed" />
+				<field name="envelope_print_counter" />
+			</field>
+		</field>
+	</record>
+
+	<record model='ir.ui.view' id='view_quotation_tree'>
+		<field name='name'>view_order.tree</field>
+		<field name='model'>sale.order</field>
+		<field name="inherit_id" ref="sale.view_quotation_tree"/>
+		<field name="arch" type="xml">
+			<field name="state" position="after">
+				<field name="delivery_slip_printed" />
+				<field name="envelope_print_counter" />
+			</field>
+		</field>
+	</record>
+
+
+
+	<template id="envelope_external_layout">
+		<div class="article o_report_layout_standard">
+            <t t-raw="0"/>
+        </div>
+        <div class="footer">
+        	<span t-field="o.confirmation_date" t-field-options='{"format": "d-MMMM-y"}'/>
+        </div>
+	</template>
+
+
+	<template id="sale_order_envelope_report_docs">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="base_glodok.envelope_external_layout">
+					<div class="page" style="page-break-before: always;font-size:1.2em;letter-spacing:3px;">
+						<table>
+							<tr>
+								<td style="width:65%;">
+									<table>
+										<tr>
+											<td>
+												<ul>
+													<t t-foreach="o.order_line" t-as="l">
+														<li>
+															<span t-field="l.product_id"/> - <span t-field="l.product_uom_qty"/> (<span t-field="l.product_uom"/>)
+														</li>
+													</t>
+												</ul>
+											</td>
+										</tr>
+
+										<tr>
+											<td>
+												<h5>NOMINAL YANG HARUS DITAGIH :</h5>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td style="vertical-align:top;">
+									<table>
+										<tr>
+											<td>
+												<table>
+													<tr>
+														<td>
+															<span>Order No :</span>
+															<span t-esc="o.name"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<span>Customer Ref :</span>
+															<span t-esc="o.client_order_ref"/>
+														</td>
+													</tr>
+												</table>
+											</td>
+
+										</tr>
+										<tr>
+											<td>
+												<table>
+													<tr>
+														<td>
+															<strong><span t-esc="o.partner_id.name"/></strong>
+															<div class="small">
+																<span t-esc="o.partner_id.street"/><t t-if="o.partner_id.street2">,<span t-esc="o.partner_id.street2" /></t>
+																<br/><span t-esc="o.partner_id.region_district_id.name" /> - <span t-esc="o.partner_id.region_city_id.name" />
+																<br/>
+																<span>Hp: <span t-esc="o.partner_id.mobile" /></span>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									
+								</td>
+							</tr>
+							<tr>
+								<td>
+									
+								</td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+
+
+	<record id="envelope_104" model="report.paperformat">
+		<field name="name">Envelope 104</field>
+		<field name="default" eval="False"/>
+		<field name="format">custom</field>
+		<field name="orientation">Portrait</field>
+		<field name="page_height">110</field>
+		<field name="page_width">230</field>
+		<field name="margin_top">30</field>
+		<field name="margin_bottom">10</field>
+		<field name="margin_left">7</field>
+		<field name="margin_right">7</field>
+		<field name="header_line" eval="False"/>
+		<field name="header_spacing">10</field>
+		<field name="dpi">90</field>
+	</record>
+
+
+
+	<report 
+		id="sale_order_envelope_report"
+		string="Sale Order Envelope Report"
+		model="sale.order"
+		report_type="qweb-html"
+		file="base_glodok.sale_order_envelope_report_docs"
+		name="base_glodok.sale_order_envelope_report_docs"
+		paperformat="base_glodok.envelope_104" 
+	/>
+</odoo>

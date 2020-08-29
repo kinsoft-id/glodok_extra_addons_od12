@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+
+         <record id="alert_qty_wizard_form_view" model="ir.ui.view">
+            <field name="name">Apply Alert Quantity</field>
+            <field name="model">alert.qty.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="apply_on" />
+                            <field name="overwrite_exist_product"/>
+                        </group>
+                        <group attrs="{'invisible':[('apply_on','!=','product')]}">
+                            <field name="product_ids" widget="many2many_tags"  options="{'no_create': True}"/>
+                        </group>
+                        <group attrs="{'invisible':[('apply_on','!=','category')]}">
+                            <field name="category_ids" widget="many2many_tags"  options="{'no_create': True}"/>
+                        </group>
+                        <separator string="Product Alert"/>
+                        <group>
+                            <field name="all_product_alert_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="location_id" options="{'no_create': True}"/>
+                                    <field name="alert_qty"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_apply_to_products" string="Apply" type="object"/>
+                         or
+                        <button string="Cancel" special="cancel" class="btn-default"/>
+                    </footer>
+                </form>
+            </field>
+         </record>
+
+         <record id="action_alert_qty_wizard" model="ir.actions.act_window">
+            <field name="name">Apply Alert Quantity</field>
+            <field name="res_model">alert.qty.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+         </record>
+
+         <!-- <menuitem id="menu_alert_qty_wizard" name="Apply Alert Quantity" action="action_alert_qty_wizard"  parent="stock.menu_stock_inventory_control" groups="stock.group_stock_manager"/> -->
+
+    </data>
+</odoo>

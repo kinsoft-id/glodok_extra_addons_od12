@@ -1,0 +1,318 @@
+<odoo>
+	<template id="external_layout">
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-2 mb4">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
+                </div>
+
+                <div class="col-xs-4" name="moto">
+                    <div class="text-center">
+                        <!-- <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="display:inline-block;"/> -->
+                        <h5><span t-esc="company.partner_id.name"/></h5>
+                        <div class="small">
+                            <span t-esc="company.partner_id.street"/>
+                            <span t-esc="company.partner_id.street2"/>
+                            <span t-esc="company.partner_id.city"/>
+                            <t t-if="company.partner_id.state_id.name">- <span t-esc="company.partner_id.state_id.name"/></t>
+                            <span t-if="company.partner_id.phone" t-esc="company.partner_id.phone" />
+                            <span t-if="company.partner_id.email" t-esc="company.partner_id.email" />
+                            <span t-if="company.partner_id.website" t-esc="company.partner_id.website" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                Jakarta <span name="td_sched_date"><t t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Kepada Yth,
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                ...................................................................
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="article o_report_layout_standard">
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <!-- <ul class="list-inline mb4">
+                    <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
+                    <li t-if="company.email">Email: <span t-field="company.email"/></li>
+                    <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+                </ul> -->
+                <div name="financial_infos">
+                    <span t-field="company.report_footer"/>
+                </div>
+
+                <div class="text-muted">
+                    Halaman: <span class="page"/> / <span class="topage"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="external_layout_2">
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-2 mb4">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
+                </div>
+
+                <div class="col-xs-6" name="moto">
+                    <div class="text-center">
+                        <!-- <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="display:inline-block;"/> -->
+
+                        <h5><span t-esc="company.partner_id.name"/></h5>
+                        <div class="small">
+                            <span t-esc="company.partner_id.street"/>
+                            <span t-esc="company.partner_id.street2"/>
+                            <span t-esc="company.partner_id.city"/>
+                            <t t-if="company.partner_id.state_id.name">- <span t-esc="company.partner_id.state_id.name"/></t>
+                            <span t-if="company.partner_id.phone" t-esc="company.partner_id.phone" />
+                            <span t-if="company.partner_id.email" t-esc="company.partner_id.email" />
+                            <span t-if="company.partner_id.website" t-esc="company.partner_id.website" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                Jakarta <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')" t-options='{"widget": "date"}' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Kepada Yth,
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <!-- <span t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" /> -->
+                                <b><span t-esc="o.partner_id.name" /></b>
+                                <div class="small">
+                                    <br/><span t-esc="o.partner_id.street"/><t t-if="o.partner_id.street2">,<span t-esc="o.partner_id.street2" /></t>
+                                    <br/><span t-esc="o.partner_id.region_district_id.name" /> - <span t-esc="o.partner_id.region_city_id.name" />
+                                    <br/>
+                                    <span>Hp: <span t-esc="o.partner_id.mobile" /></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="article o_report_layout_standard">
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <!-- <ul class="list-inline mb4">
+                    <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
+                    <li t-if="company.email">Email: <span t-field="company.email"/></li>
+                    <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+                </ul> -->
+                <div class="col-xs-3">
+                    Tanda Terima
+                    <br/>
+                    <br/>
+                    <br/>
+                    (.............................)
+                </div>
+                <div class="col-xs-6">
+                    <div name="financial_infos">
+                        <span class="small" t-field="company.report_footer"/>
+                    </div>
+                    <div class="text-muted">
+                        Halaman: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    &amp;nbsp;
+                </div>
+                
+            </div>
+        </div>
+    </template>
+
+
+
+    <template id="picking_batch_external_layout">
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-2 mb4">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
+                </div>
+
+                <div class="col-xs-6" name="moto">
+                    <div class="text-center">
+                        <!-- <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="display:inline-block;"/> -->
+
+                        <h5><span t-esc="company.partner_id.name"/></h5>
+                        <div class="small">
+                            <span t-esc="company.partner_id.street"/>
+                            <span t-esc="company.partner_id.street2"/>
+                            <span t-esc="company.partner_id.city"/>
+                            <t t-if="company.partner_id.state_id.name">- <span t-esc="company.partner_id.state_id.name"/></t>
+                            <span t-if="company.partner_id.phone" t-esc="company.partner_id.phone" />
+                            <span t-if="company.partner_id.email" t-esc="company.partner_id.email" />
+                            <span t-if="company.partner_id.website" t-esc="company.partner_id.website" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                Jakarta <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')" t-options='{"widget": "date"}' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <strong>No:</strong> <span t-field="o.name"/>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <strong>Kurir:</strong>
+                                    &amp;nbsp;
+                                    <span t-esc="o.user_id.name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <strong>Gudang:</strong>
+                                    &amp;nbsp;
+                                    <t t-if="data['external']==True">
+                                        <b><span t-esc="data['vendor'].display_name" /></b>
+                                        <br/>
+                                        <span t-esc="data['vendor'].street" style="font-size:9px;"/>
+                                        
+                                        <t t-if="data['vendor'].street2">
+                                            ,
+                                            <span t-esc="data['vendor'].street2" style="font-size:9px;" />
+                                        </t>
+                                        <t t-if="data['vendor'].region_city_id.id">
+                                            ,
+                                            <span t-esc="data['vendor'].region_city_id.name" style="font-size:9px;" />
+                                        </t>
+                                        <span t-esc="data['vendor'].region_district_id.name" style="font-size:9px;" />
+                                        <br/>
+                                        <span t-esc="data['vendor'].region_city_id.parent_id.name" style="font-size:9px;" />
+                                        
+                                    </t>
+                                    <t t-else="">
+                                        <span t-esc="data['location'].name"/>
+                                    </t>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="article o_report_layout_standard">
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <!-- <ul class="list-inline mb4">
+                    <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
+                    <li t-if="company.email">Email: <span t-field="company.email"/></li>
+                    <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+                </ul> -->
+                <div class="col-xs-3">
+                    Tanda Terima
+                    <br/>
+                    <br/>
+                    <br/>
+                    (.............................)
+                </div>
+                <div class="col-xs-6">
+                    <div name="financial_infos">
+                        <span class="small" t-field="company.report_footer"/>
+                    </div>
+                    <div class="text-muted">
+                        Halaman: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <table>
+                        <tr>
+                            <td style="text-align:center;">Petugas</td>
+                            <td style="width:20px;">&amp;nbsp;</td>
+                            <td style="text-align:center;">Owner</td>
+                        </tr>
+                        <tr>
+                            <td>&amp;nbsp;<br/><br/></td>
+                            <td></td>
+                            <td>&amp;nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">(.................)</td>
+                            <td>&amp;nbsp;</td>
+                            <td style="text-align:center;">(.................)</td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </template>
+</odoo>

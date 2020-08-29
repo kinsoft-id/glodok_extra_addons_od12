@@ -1,0 +1,12 @@
+<odoo>
+	<record id="action_region" model="ir.actions.act_window">
+		<field name="name">Region</field>
+		<field name="res_model">region</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	
+
+	<menuitem id="region_menu" name="Region/Area" parent="contacts.menu_localisation" action="action_region" sequence="4"/>
+</odoo>
+

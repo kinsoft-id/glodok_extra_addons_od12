@@ -1,0 +1,47 @@
+<odoo>
+<data>
+
+    <record id="product_alert_config_settings_view_form" model="ir.ui.view">
+        <field name="name">product.alert.config.settings.view.form.inherit.stock</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="30"/>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]//div[@data-key='stock']" position="inside">
+                <h2>Product Alert Quantity Settings</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="alert_user_ids"/>
+                            <div class="text-muted">
+                                Send a quantity alert email to the users
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="alert_user_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="alert_email_id"/>
+                            <div class="text-muted">
+                               Quantity alert email template
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="alert_email_id" options="{'no_create': True}" domain="[('use_for_alert_qty','=',True)]"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</data>
+</odoo>
+
+

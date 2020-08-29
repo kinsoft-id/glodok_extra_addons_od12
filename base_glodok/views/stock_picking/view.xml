@@ -1,0 +1,95 @@
+<odoo>
+	<record id="view_picking_internal_search" model="ir.ui.view">
+		<field name="name">stock.picking.search</field>
+		<field name="model">stock.picking</field>
+		<field name="inherit_id" ref="stock.view_picking_internal_search"/>
+		<field name="arch" type="xml">
+			<field name="name" position="replace">
+				<field name="name" string="Picking List" filter_domain="['|','|',('name','ilike', self),('origin','ilike',self),('partner_region_city_id','ilike',self)]"/>
+			</field>
+			
+			<xpath expr="//search/filter[@name='available']" position="replace">
+				<filter name="available" string="Ready" domain="[('state','in',['assigned', 'partially_available']), ('batch_id','=',False)]" help="Assigned Moves"/>
+
+				
+			</xpath>
+
+			<xpath expr="//search/filter[@name='available']" position="before">
+				<filter name="printed" string="Printed" domain="[('state','in',['printed'])]" help="Printed Picking"/>
+			</xpath>
+
+			<xpath expr="//search/separator[1]" position="before">
+				<separator />
+				<filter name="batched" string="Batched/Has Memo" domain="[('batch_id','!=',False)]" help="Batched Picking/Already Has Memo"/>
+				<filter name="not_batched" string="Not Batched/To Memo" domain="[('batch_id','=',False)]" help="Not Batched/To Memo"/>
+			</xpath>
+
+		</field>
+	</record>
+
+	<record model='ir.ui.view' id='picking_region_tree'>
+		<field name='name'>picking.region.tree</field>
+		<field name='model'>stock.picking</field>
+		<field name="inherit_id" ref="stock.vpicktree"/>
+		<field name='arch' type='xml'>
+			<field name="partner_id" position="after">
+				<field name="partner_region_city_id" />
+			</field>
+			
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="view_picking_form_form">
+		<field name="name">view_picking_form.form</field>
+		<field name="model">stock.picking</field>
+		<field name="inherit_id" ref="stock.view_picking_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//form/header/button[@name='action_cancel']" position="replace">
+				<button name="action_cancel" attrs="{'invisible': ['|', ('state', 'not in', ('printed','assigned', 'confirmed', 'partially_available', 'draft', 'waiting')), ('is_locked', '=', False)]}" string="Cancel" groups="stock.group_stock_manager,sales_team.group_sale_salesman,base.group_system" type="object" confirm="Cancel??"/>
+			</xpath>
+			<xpath expr="//form/header/field[@name='state']" position="attributes">
+				<attribute name="statusbar_visible">draft,confirmed,partially_available,assigned,printed,done</attribute>
+			</xpath>
+			<button name="button_scrap" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</button>
+			<button name="button_validate" position="attributes">
+				<attribute name="groups">base_glodok.group_can_validate_do,base.group_system</attribute>
+			</button>
+			<button name="button_validate" position="after">
+				<button name="button_validate_incoming" type="object" string="Validate Receiving" attrs="{'invisible':['|', ('picking_type_code','!=','incoming'), '&amp;', ('picking_type_code','=','incoming'), ('state','not in',['assigned','printed'])]}" groups="stock.group_stock_user,base.group_system"/>
+				<button name="button_validate_internal" type="object" string="Validate Internal Move" attrs="{'invisible':['|', ('picking_type_code','!=','internal'), '&amp;', ('picking_type_code','=','incoming'), ('state','not in',['assigned','printed'])]}" groups="stock.group_stock_user,base.group_system" />
+			</button>
+			
+			
+			<header position="inside">
+				<button name="set_as_draft" type="object" string="Set as Draft" class="oe_highlight" confirm="Set as draft?" groups="base.group_system" states="cancel"/>
+				<field name="show_btn_print_slip" invisible="1" />
+				<button name="print_slip" type="object" string="Print Slip" class="oe_highlight" attrs="{'invisible':[('show_btn_print_slip','=',False)]}" />
+			</header>
+
+			<field name="move_lines" position="before">
+				<button name="all_ok" type="object" class="oe_highlight" string="Set All Done" groups="base.group_no_one" />
+			</field>
+
+			<xpath expr="//form/header/button[@name='do_print_picking']" position="attributes">
+				<attribute name="invisible">1</attribute>
+			</xpath>
+			<field name="priority" position="after">
+				<field name="printed"/>
+			</field>
+			<field name="move_type" position="before">
+				<field name="batch_id" readonly="1"/>
+			</field>
+
+			<field name="batch_id" position="after">
+				<field name="batch_user_id" readonly="1" />
+				<field name="direct_pickup" attrs="{'readonly':[('state','in',['done','cancel'])]}" widget="boolean_toggle" />
+			</field>
+			
+			<header position="inside">
+				<button name="force_assign" states="waiting,confirmed,partially_available" string="Assign" type="object" icon="icon" class="oe_highlight"/>
+			</header>
+		</field>
+	</record>
+</odoo>

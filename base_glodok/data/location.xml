@@ -1,0 +1,5 @@
+<odoo>
+	<record model="stock.warehouse" id="stock.warehouse0">
+		<field name="external_loc" ref="stock.stock_location_suppliers" />
+	</record>
+</odoo>

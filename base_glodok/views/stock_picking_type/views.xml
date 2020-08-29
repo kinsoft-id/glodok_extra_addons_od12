@@ -1,0 +1,61 @@
+<odoo>
+
+	<record id="stock_picking_type_printed_kanban" model="ir.ui.view">
+		<field name="name">Stock Picking Type Printed.kanban</field>
+		<field name="model">stock.picking.type</field>
+		<field name="inherit_id" ref="stock.stock_picking_type_kanban" />
+		<field name="arch" type="xml">
+			<field name="count_picking_backorders" position="after">
+				<field name="count_printed"/>
+				<field name="count_printed_and_ready"/>
+			</field>
+
+			<xpath expr="//div[hasclass('o_kanban_primary_left')]/button/span[2]" position="replace">
+				<span t-if="record.code.raw_value =='outgoing'"><t t-esc="record.count_printed.value"/> To Memo</span>
+			</xpath>
+			<xpath expr="//div[hasclass('o_kanban_primary_right')]/div[4]" position="after">
+				
+				<div t-if="record.count_picking_ready.raw_value > 0" class="row">
+					<div class="col-xs-9">
+						<a class="oe_kanban_stock_picking_type_list text-danger" name="get_action_picking_tree_do_ready" type="object">
+							Ready
+						</a>
+					</div>
+					<div class="col-xs-3">
+						<field name="count_picking_ready"/>
+					</div>
+				</div>
+			</xpath>
+
+
+			<xpath expr="//div[hasclass('o_kanban_manage_new')]" position="replace">
+				<div class="col-xs-6 o_kanban_card_manage_section o_kanban_manage_view">
+					<t t-if="record.code.raw_value =='outgoing'">
+						<div class="o_kanban_card_manage_title">
+							<span>New</span>
+						</div>
+						<div>
+							<a name="337" type="action">PickUp Batch / Memo</a>
+						</div>
+					</t>
+					<t t-else="">
+						<div class="o_kanban_card_manage_title">
+							<span>New</span>
+						</div>
+						<div>
+							<a name="261" type="action">Immediate Transfer</a>
+						</div>
+						<div>
+							<a name="261" type="action" context="{'planned_picking': True}">Planned Transfer</a>
+						</div>
+					</t>
+				</div>
+			</xpath>
+
+			<xpath expr="//div[hasclass('o_kanban_primary_left')]/button/span[1]" position="replace">
+
+				<span t-if="record.code.raw_value =='incoming'"><t t-esc="record.count_printed_and_ready.value"/> To Receive</span>
+			</xpath>
+		</field>
+	</record>
+</odoo>

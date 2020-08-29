@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+        <record id="aspl_product_alert_paper_format" model='report.paperformat'>
+            <field name="name">Product Alert Format</field>
+            <field name="format">custom</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">47</field>
+            <field name="header_spacing">45</field>
+        </record>
+
+        <report
+            id="action_report_alert_qty_wizard"
+            string="Products"
+            model="wizard.report"
+            report_type="qweb-pdf"
+            file="aspl_product_alert_qty.report_wizard_template"
+            name="aspl_product_alert_qty.report_wizard_template"
+            paperformat="aspl_product_alert_qty.aspl_product_alert_paper_format"
+        />
+
+    </data>
+</odoo>

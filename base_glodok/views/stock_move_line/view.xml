@@ -1,0 +1,60 @@
+<odoo>
+	<record model='ir.ui.view' id='view_stock_move_line_operation_tree'>
+		<field name='name'>view_stock_move_line_operation.tree</field>
+		<field name='model'>stock.move.line</field>
+		<field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+		<field name='arch' type='xml'>
+			<field name="picking_id" position="after">
+				<field name="picking_state" invisible="1" />
+			</field>
+			<field name="location_id" position="replace">
+				<field name="location_id" attrs="{'readonly': ['|', ('in_entire_package', '=', True), ('picking_state','in',['printed','done','cancel'])]}" invisible="not context.get('show_source_location')" domain="[('id', 'child_of', parent.location_id)]" groups="stock.group_stock_multi_locations" options="{'no_create':1,'no_quick_create':1}"/>
+			</field>
+			<field name="qty_done" position="replace">
+				<field name="qty_done" attrs="{'readonly': ['|','|', '|', ('picking_state','in',['done','cancel','printed']), ('is_initial_demand_editable', '=', True), '&amp;', ('state', '=', 'done'), ('is_locked', '=', True), ('in_entire_package', '=', True)]}"/>
+			</field>
+			<field name="product_uom_id" position="after">
+				<field name="external_pickup_partner_required" invisible="1" />
+				
+				<field name="external_pickup_partner" attrs="{'required':[('external_pickup_partner_required','=',True)], 'readonly':[('picking_state','in', ['printed','done','cancel'])]}" context="{'search_default_supplier':1, 'default_supplier':1, 'default_customer':0}" options="{'no_create':1,'no_quick_create':1}" />
+
+			</field>
+		</field>
+	</record>
+
+	<record model='ir.ui.view' id='view_move_line_tree'>
+		<field name='name'>view_move_line.tree</field>
+		<field name='model'>stock.move.line</field>
+		<field name="inherit_id" ref="stock.view_move_line_tree"/>
+		<field name='arch' type='xml'>
+			<field name="reference" position="after">
+				<field name="picking_partner" />
+				<field name="picking_origin" />
+			</field>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="stock_move_line_change_supplier_form">
+		<field name="name">stock_move_line_change_supplier.form</field>
+		<field name="model">stock.move.line</field>
+		<field name="priority" >99</field>
+		<field name="arch" type="xml">
+			<form string="Change Suppplier">
+				
+				<sheet>
+					<group>
+						<field name="external_pickup_partner_required" invisible="1"/>
+						<field name="external_pickup_partner" attrs="{'required':[('external_pickup_partner_required','=',True)]}" context="{'search_default_supplier':1, 'default_supplier':1, 'default_customer':0}" options="{'no_create':1,'no_quick_create':1}" />
+						<field name="pickup_qty"/>
+						<field name="qty_done"/>
+						<field name="pickup_validated"/>
+						<field name="pickup_validated_by"/> 
+					</group>
+				</sheet>
+				<footer>
+					<button name="update_suppplier_changes" type="object" string="Save" class="oe_highlight" />
+				</footer>
+			</form>
+		</field>
+	</record>
+</odoo>

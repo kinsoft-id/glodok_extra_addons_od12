@@ -1,0 +1,115 @@
+<odoo>
+	<record model="ir.ui.view" id="region_form">
+		<field name="name">region.form</field>
+		<field name="model">region</field>
+		<field name="arch" type="xml">
+			<form string="Region">
+				<header>
+				</header>
+				<sheet>
+					<h1>
+						<field name="code"/>
+					</h1>
+					<group>
+						<!-- START HERE -->
+						<!-- YOU CAN ERASE THIS SYNTAX -->
+						<group>
+							<field name="name"/>
+							<field name="parent_id" attrs="{'invisible':[('parent_id','=',False)]}"/>
+							<field name="country_id"/>
+							<!-- <field name="res_country_state_id"/> -->
+						</group>
+						<group>
+							<field name="index_level" />
+							<field name="area_level" />
+						</group>
+					</group>
+					<field name="child_ids" />
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+
+	<record model='ir.ui.view' id='region_tree'>
+		<field name='name'>region.tree</field>
+		<field name='model'>region</field>
+		<field name='arch' type='xml'>
+			<tree string='Region'>
+				<!-- START HERE -->
+				<!-- YOU CAN ERASE THIS SYNTAX -->
+				<field name="country_id"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="region_kanban">
+		<field name="name">region.kanban</field>
+		<field name="model">region</field>
+		<field name="arch" type="xml">
+			<kanban class="o_kanban_mobile">
+				<field name="name"/>
+				<field name="create_date"/>
+				<field name="create_uid"/>
+				<templates>
+					<t t-name="kanban-box">
+						<div t-attf-class="oe_kanban_card oe_kanban_global_click">
+							<div class="o_kanban_record_top">
+								<div class="o_kanban_record_headings">
+									<strong class="o_kanban_record_title"><span><t t-esc="record.name.value"/></span></strong>
+								</div>
+								<strong>
+									<span>
+										<!-- START EDIT HERE -->
+										<!-- YOU CAN ERASE THIS SYNTAX -->
+										<field name="name"/>
+									</span>
+								</strong>
+							</div>
+							<div class="o_kanban_record_bottom">
+								<div class="oe_kanban_bottom_left text-muted">
+									<!-- EDIT HERE -->
+									<!-- THIS SECTION WILL BE SHOWN IN LEFT BOTTOM OF KANBAN RECORD -->
+									<span><t t-esc="record.create_uid.value"/> <t t-esc="record.create_date.value"/></span>
+								</div>
+								<div class="oe_kanban_bottom_right">
+									<span class="pull-right text-right">
+										<!-- EDIT HERE -->
+									<!-- THIS SECTION WILL BE SHOWN IN RIGHT BOTTOM OF KANBAN RECORD -->
+									</span>
+								</div>
+							</div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+
+	<record id="region_search" model="ir.ui.view">
+	    <field name="name">region.search</field>
+	    <field name="model">region</field>
+	    <field name="arch" type="xml">
+	        <search string="Region">
+	            <field name="name" filter_domain="['|',('name','ilike',self), ('code','ilike',self)]" />
+	            <filter name="filter_state" domain="[('area_level','=','state/province')]" string="State/Province" />
+	            <filter name="filter_state" domain="[('area_level','=','city')]" string="City" />
+	            <filter name="filter_state" domain="[('area_level','=','district')]" string="District" />
+	        </search>
+	    </field>
+	</record>
+
+	<record id="action_checking_res_country_state" model="ir.actions.server">
+		<field name="name">Check:Res Country State</field>
+		<field name="type">ir.actions.server</field>
+		<field name="model_id" ref="model_region"/>
+        <field name="binding_model_id" ref="model_region" />
+        <field name="state">code</field>
+        <field name="code">
+if records:
+    records.check_states()
+        </field>
+		
+	</record>
+</odoo>
