@@ -1,1 +1,2 @@
-# glodok_extra_addons_od12
+# Extra Addons for GLODOKELEKTRONIK.NET
+# Odoo CE 12
