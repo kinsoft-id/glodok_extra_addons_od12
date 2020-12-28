@@ -207,29 +207,34 @@ class StockPickingBatch(models.Model):
 		if not pickings:
 			raise UserError(_('Nothing to print.'))
 		pickings.write({'printed':True})
-		if self.state=='draft':
-			self.write({'state':'done','send_time':fields.Datetime.now()})
 
-			assigned_picking_lst = pickings.filtered(
-				lambda m: m.state not in ('done', 'cancel'))
-			assigned_picking_lst.write({'delivery_status': 'received'})
+		autodone = ['JNE', 'J&T', 'GRAB', 'grab', 'gojek', 'sicepat', 'beli2', 'Selfpickup', 'Lion Parcel', 'Ninja Express']
+		if self.user_id.name in autodone:
+			if self.state == 'draft':
+				self.write({'state': 'done', 'send_time': fields.Datetime.now()})
 
-			assigned_move_line = assigned_picking_lst.mapped('move_line_ids').filtered(
-				lambda m: m.state not in ('done', 'cancel'))
-			for move_line in assigned_move_line:
-				move_line.write(
-					{'pickup_validated': True, 'pickup_validated_by': self.env.uid, 'pickup_qty': move_line.qty_done})
+				assigned_picking_lst = pickings.filtered(
+					lambda m: m.state not in ('done', 'cancel'))
+				assigned_picking_lst.write({'delivery_status': 'received'})
 
-			quantities_done = sum(
-				move_line.qty_done for move_line in assigned_move_line
-			)
-			if not quantities_done:
-				return assigned_picking_lst.action_immediate_transfer_wizard()
-			if assigned_picking_lst._check_backorder():
-				return assigned_picking_lst.action_generate_backorder_wizard()
-			assigned_picking_lst.action_done()
+				assigned_move_line = assigned_picking_lst.mapped('move_line_ids').filtered(
+					lambda m: m.state not in ('done', 'cancel'))
+				for move_line in assigned_move_line:
+					move_line.write(
+						{'pickup_validated': True, 'pickup_validated_by': self.env.uid,
+						 'pickup_qty': move_line.qty_done})
 
-			assigned_picking_batch_lst.done()
+				quantities_done = sum(
+					move_line.qty_done for move_line in assigned_move_line
+				)
+				if not quantities_done:
+					return assigned_picking_lst.action_immediate_transfer_wizard()
+				if assigned_picking_lst._check_backorder():
+					return assigned_picking_lst.action_generate_backorder_wizard()
+				assigned_picking_lst.action_done()
+		else:
+			if self.state=='draft':
+				self.write({'state':'in_progress','send_time':fields.Datetime.now()})
 
 		document = self.env.ref('base_glodok.action_report_picking_batch_memo').report_action(self)
 

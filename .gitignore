@@ -130,4 +130,5 @@ dmypy.json
 
 # Pycharm project settings
 .idea
+odoo.conf
 odoo11.conf

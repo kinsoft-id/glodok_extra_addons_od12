@@ -32,20 +32,26 @@ class StockPickingBatchMassAction(TransientModel):
 
         assigned_picking_lst = assigned_picking_batch_lst.mapped('picking_ids').filtered(
                 lambda m: m.state not in ('done', 'cancel'))
-        assigned_picking_lst.write({'delivery_status':'received'})
 
-        assigned_move_line = assigned_picking_lst.mapped('move_line_ids').filtered(
-            lambda m: m.state not in ('done', 'cancel'))
-        for move_line in assigned_move_line:
-            move_line.write({'pickup_validated': True, 'pickup_validated_by': self.env.uid, 'pickup_qty': move_line.qty_done})
+        if assigned_picking_lst:
+            assigned_picking_lst.write({'delivery_status':'received'})
 
-        quantities_done = sum(
-            move_line.qty_done for move_line in assigned_move_line
-            )
-        if not quantities_done:
-            return assigned_picking_lst.action_immediate_transfer_wizard()
-        if assigned_picking_lst._check_backorder():
-            return assigned_picking_lst.action_generate_backorder_wizard()
-        assigned_picking_lst.action_done()
+            assigned_move_line = assigned_picking_lst.mapped('move_line_ids').filtered(
+                lambda m: m.state not in ('done', 'cancel'))
+
+            if assigned_move_line:
+                for move_line in assigned_move_line:
+                    move_line.write({'pickup_validated': True, 'pickup_validated_by': self.env.uid, 'pickup_qty': move_line.qty_done})
+
+                quantities_done = sum(
+                    move_line.qty_done for move_line in assigned_move_line
+                    )
+                if not quantities_done:
+                    return assigned_picking_lst.action_immediate_transfer_wizard()
+
+            if assigned_picking_lst._check_backorder():
+                return assigned_picking_lst.action_generate_backorder_wizard()
+
+            assigned_picking_lst.action_done()
 
         assigned_picking_batch_lst.done()
