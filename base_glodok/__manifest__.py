@@ -19,7 +19,7 @@
     "installable": True,
     "depends": [
         'base','mail','stock','stock_picking_batch','account_invoicing','sale_management','purchase',
-        'region'
+        'region','sale_stock'
     ],
     "data": [
         
