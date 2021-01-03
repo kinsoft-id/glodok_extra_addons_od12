@@ -9,36 +9,44 @@ from ..hooks import uninstall_hook
 
 
 class TestMassEditing(common.TransactionCase):
+    at_install = False
+    post_install = True
 
     def setUp(self):
         super(TestMassEditing, self).setUp()
+        # Model connections
         model_obj = self.env['ir.model']
         self.mass_wiz_obj = self.env['mass.editing.wizard']
         self.mass_object_model = self.env['mass.object']
         self.res_partner_model = self.env['res.partner']
+        self.ir_translation_model = self.env['ir.translation']
+        self.lang_model = self.env['res.lang']
+        # Shared data for test methods
         self.partner = self._create_partner()
         self.partner_model = model_obj.\
             search([('model', '=', 'res.partner')])
         self.user_model = model_obj.search([('model', '=', 'res.users')])
-        # Calling the Search method without context for
-        # the Search from the List view of the Fields.
         self.fields_model = self.env['ir.model.fields'].\
-            search([('model_id', '=', self.partner_model.id),
-                    ('name', 'in', ['email', 'phone', 'category_id', 'comment',
-                                    'country_id', 'customer', 'child_ids',
-                                    'title'])])
-        # Calling the Search method with context for the Search
-        # model_id field related fields in the fields_ids.
-        self.fields_model = self.env['ir.model.fields'].\
-            with_context({'mass_edit': True}).\
             search([('model_id', '=', self.partner_model.id),
                     ('name', 'in', ['email', 'phone', 'category_id', 'comment',
                                     'country_id', 'customer', 'child_ids',
                                     'title'])])
         self.mass = self._create_mass_editing(self.partner_model,
-                                              self.fields_model)
+                                              self.fields_model,
+                                              'Partner')
         self.copy_mass = self.mass.copy()
         self.user = self._create_user()
+        self.res_partner_title_model = self.env['res.partner.title']
+        self.partner_title = self._create_partner_title()
+        self.partner_title_model = model_obj.search(
+            [('model', '=', 'res.partner.title')])
+        self.fields_partner_title_model = self.env['ir.model.fields'].search(
+            [('model_id', '=', self.partner_title_model.id),
+             ('name', 'in', ['abbreviation'])])
+        self.mass_partner_title = self._create_mass_editing(
+            self.partner_title_model,
+            self.fields_partner_title_model,
+            'Partner Title')
 
     def _create_partner(self):
         """Create a Partner."""
@@ -50,6 +58,22 @@ class TestMassEditing(common.TransactionCase):
             'category_id': [(6, 0, categ_ids)],
         })
 
+    def _create_partner_title(self):
+        """Create a Partner Title."""
+        # Loads German to work with translations
+        self.lang_model.load_lang('de_DE')
+        # Creating the title in English
+        partner_title = self.res_partner_title_model.create({
+            'name': 'Ambassador',
+            'shortcut': 'Amb.',
+        })
+        # Adding translated terms
+        ctx = {'lang': 'de_DE'}
+        partner_title.with_context(ctx).write({
+            'name': 'Botschafter',
+            'shortcut': 'Bots.'})
+        return partner_title
+
     def _create_user(self):
         return self.env['res.users'].create({
             'name': 'Test User',
@@ -57,24 +81,24 @@ class TestMassEditing(common.TransactionCase):
             'email': 'test@test.com',
         })
 
-    def _create_mass_editing(self, model, fields):
+    def _create_mass_editing(self, model, fields, model_name):
         """Create a Mass Editing with Partner as model and
         email field of partner."""
         mass = self.mass_object_model.create({
-            'name': 'Mass Editing for Partner',
+            'name': 'Mass Editing for {0}'.format(model_name),
             'model_id': model.id,
             'field_ids': [(6, 0, fields.ids)]
         })
         mass.create_action()
         return mass
 
-    def _apply_action(self, partner, vals):
+    def _apply_action(self, obj, vals):
         """Create Wizard object to perform mass editing to
         REMOVE field's value."""
         ctx = {
-            'active_id': partner.id,
-            'active_ids': partner.ids,
-            'active_model': 'res.partner',
+            'active_id': obj.id,
+            'active_ids': obj.ids,
+            'active_model': obj._name,
         }
         return self.mass_wiz_obj.with_context(ctx).create(vals)
 
@@ -97,6 +121,52 @@ class TestMassEditing(common.TransactionCase):
         model_list = ast.literal_eval(new_mass.model_list)
         self.assertTrue(self.user_model.id in model_list,
                         'Onchange model list must contains model_id.')
+
+    def test_wiz_read_fields(self):
+        """Test whether read method returns all fields or not."""
+        ctx = {
+            'mass_editing_object': self.mass.id,
+            'active_id': self.partner.id,
+            'active_ids': self.partner.ids,
+            'active_model': 'res.partner',
+        }
+        fields_view = self.mass_wiz_obj.with_context(ctx).fields_view_get()
+        fields = list(fields_view['fields'].keys())
+        # add a real field
+        fields.append('display_name')
+        vals = {
+            'selection__email': 'remove',
+            'selection__phone': 'remove',
+        }
+        mass_wiz_obj = self._apply_action(self.partner, vals)
+        result = mass_wiz_obj.read(fields)[0]
+        self.assertTrue(all([field in result for field in fields]),
+                        'Read must return all fields.')
+
+    def test_mass_edit_partner_title(self):
+        """Test Case for MASS EDITING which will check if translation
+        was loaded for new partner title, and if they are removed
+        as well as the value for the abbreviation for the partner title."""
+        search_domain = [('res_id', '=', self.partner_title.id),
+                         ('type', '=', 'model'),
+                         ('name', '=', 'res.partner.title,shortcut'),
+                         ('lang', '=', 'de_DE')]
+        translation_ids = self.ir_translation_model.search(search_domain)
+        self.assertEqual(len(translation_ids), 1,
+                         'Translation for Partner Title\'s Abbreviation '
+                         'was not loaded properly.')
+        # Removing partner title with mass edit action
+        vals = {
+            'selection__shortcut': 'remove',
+        }
+        self._apply_action(self.partner_title, vals)
+        self.assertEqual(self.partner_title.shortcut, False,
+                         'Partner Title\'s Abbreviation should be removed.')
+        # Checking if translations were also removed
+        translation_ids = self.ir_translation_model.search(search_domain)
+        self.assertEqual(len(translation_ids), 0,
+                         'Translation for Partner Title\'s Abbreviation '
+                         'was not removed properly.')
 
     def test_mass_edit_email(self):
         """Test Case for MASS EDITING which will remove and after add
@@ -130,13 +200,23 @@ class TestMassEditing(common.TransactionCase):
                             'Partner\'s category should be removed.')
         # Add m2m categories
         dist_categ_id = self.env.ref('base.res_partner_category_13').id
+        vend_categ_id = self.env.ref('base.res_partner_category_1').id
         vals = {
             'selection__category_id': 'add',
-            'category_id': [[6, 0, [dist_categ_id]]],
+            'category_id': [[6, 0, [dist_categ_id, vend_categ_id]]],
         }
         wiz_action = self._apply_action(self.partner, vals)
-        self.assertTrue(dist_categ_id in self.partner.category_id.ids,
+        self.assertTrue(all(item in self.partner.category_id.ids
+                            for item in [dist_categ_id, vend_categ_id]),
                         'Partner\'s category should be added.')
+        # Remove one m2m category
+        vals = {
+            'selection__category_id': 'remove_m2m',
+            'category_id': [[6, 0, [vend_categ_id]]],
+        }
+        wiz_action = self._apply_action(self.partner, vals)
+        self.assertTrue([dist_categ_id] == self.partner.category_id.ids,
+                        'Partner\'s category should be removed.')
         # Check window close action
         res = wiz_action.action_apply()
         self.assertTrue(res['type'] == 'ir.actions.act_window_close',
@@ -151,7 +231,8 @@ class TestMassEditing(common.TransactionCase):
 
     def test_sidebar_action(self):
         """Test if Sidebar Action is added / removed to / from give object."""
-        action = self.mass.ref_ir_act_window_id
+        action = self.mass.ref_ir_act_window_id\
+            and self.mass.ref_ir_act_window_id.binding_model_id
         self.assertTrue(action, 'Sidebar action must be exists.')
         # Remove the sidebar actions
         self.mass.unlink_action()
@@ -161,9 +242,12 @@ class TestMassEditing(common.TransactionCase):
     def test_unlink_mass(self):
         """Test if related actions are removed when mass editing
         record is unlinked."""
-        self.mass.unlink()
+        mass_action_id = self.mass.ref_ir_act_window_id.id
+        mass_object_id = self.mass.id
+        mass_id = self.env['mass.object'].browse(mass_object_id)
+        mass_id.unlink()
         value_cnt = self.env['ir.actions.act_window'].search([
-            ('res_model', '=', 'mass.editing.wizard')], count=True)
+            ('id', '=', mass_action_id)], count=True)
         self.assertTrue(value_cnt == 0,
                         "Sidebar action must be removed when mass"
                         " editing is unlinked.")
@@ -172,8 +256,9 @@ class TestMassEditing(common.TransactionCase):
         """Test if related actions are removed when mass editing
         record is uninstalled."""
         uninstall_hook(self.cr, registry)
-        value_cnt = self.env['ir.actions.act_window'].search([
-            ('res_model', '=', 'mass.editing.wizard')], count=True)
+        mass_action_id = self.mass.ref_ir_act_window_id.id
+        value_cnt = len(self.env['ir.actions.act_window'].browse(
+                        mass_action_id))
         self.assertTrue(value_cnt == 0,
                         "Sidebar action must be removed when mass"
                         " editing module is uninstalled.")

@@ -1,7 +1,6 @@
 # © 2016 Serpent Consulting Services Pvt. Ltd. (support@serpentcs.com)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.exceptions import UserError
 from odoo import api, fields, models, _
 
 
@@ -9,15 +8,16 @@ class MassObject(models.Model):
     _name = "mass.object"
     _description = "Mass Editing Object"
 
-    name = fields.Char('Name', required=True, index=True)
+    name = fields.Char('Name', required=True, index=1)
     model_id = fields.Many2one('ir.model', 'Model', required=True,
+                               ondelete="cascade",
                                help="Model is used for Selecting Fields. "
                                     "This is editable until Sidebar menu "
                                     "is not created.")
     field_ids = fields.Many2many('ir.model.fields', 'mass_field_rel',
                                  'mass_id', 'field_id', 'Fields')
     ref_ir_act_window_id = fields.Many2one('ir.actions.act_window',
-                                           'Sidebar Action',
+                                           'Sidebar action',
                                            readonly=True,
                                            help="Sidebar action to make this "
                                                 "template available on "
@@ -26,7 +26,7 @@ class MassObject(models.Model):
     model_list = fields.Char('Model List')
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', _('Name must be unique!')),
+        ('name_uniq', 'unique (name)', 'Name must be unique!'),
     ]
 
     @api.onchange('model_id')
@@ -38,10 +38,8 @@ class MassObject(models.Model):
             model_list = [self.model_id.id]
             active_model_obj = self.env[self.model_id.model]
             if active_model_obj._inherits:
-                model_names = active_model_obj._inherits.keys()
-                inherits_model_list = model_obj.search([('model',
-                                                         'in',
-                                                         list(model_names))])
+                keys = list(active_model_obj._inherits.keys())
+                inherits_model_list = model_obj.search([('model', 'in', keys)])
                 model_list.extend((inherits_model_list and
                                    inherits_model_list.ids or []))
         self.model_list = model_list
@@ -63,18 +61,15 @@ class MassObject(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'binding_model_id': self.model_id.id,
+            'binding_type': 'action',
+            'multi': True,
         }).id
         self.write(vals)
         return True
 
     @api.multi
     def unlink_action(self):
-        for mass in self:
-            try:
-                if mass.ref_ir_act_window_id:
-                    mass.ref_ir_act_window_id.unlink()
-            except:
-                raise UserError(_("Deletion of the action record failed."))
+        self.mapped('ref_ir_act_window_id').unlink()
         return True
 
     @api.multi
@@ -82,7 +77,6 @@ class MassObject(models.Model):
         self.unlink_action()
         return super(MassObject, self).unlink()
 
-    @api.multi
     @api.returns('self', lambda value: value.id)
     def copy(self, default=None):
         if default is None:
