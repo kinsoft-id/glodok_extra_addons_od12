@@ -34,6 +34,24 @@
 		</field>
 	</record>
 
+	<record id="view_move_line_form" model="ir.ui.view">
+        <field name="name">stock.move.line.form.inherit.kin</field>
+        <field name="model">stock.move.line</field>
+		<field name="inherit_id" ref="stock.view_move_line_form"/>
+        <field name="arch" type="xml">
+			<header position="inside">
+				<button name="button_print_label" string="Print Label" groups="stock.group_stock_user"  type="object" class="oe_highlight" />
+			</header>
+			<field name="owner_id" position="after">
+				<field name="pembeli" />
+				<field name="batch"/>
+				<field name="cust_reference"/>
+				<field name="salesperson"/>
+				<field name="nama_kurir"/>
+			</field>
+		</field>
+    </record>
+
 	<record model="ir.ui.view" id="stock_move_line_change_supplier_form">
 		<field name="name">stock_move_line_change_supplier.form</field>
 		<field name="model">stock.move.line</field>
@@ -57,4 +75,47 @@
 			</form>
 		</field>
 	</record>
+
+	<!-->>>>>>>>>>>>>>>>>>>>>>>>>-->
+	<record id="label_pengiriman_tree" model="ir.ui.view">
+		<field name="name">label.pengiriman.tree</field>
+		<field name="model">stock.move.line</field>
+		<field eval="8" name="priority"/>
+		<field name="arch" type="xml">
+			<tree decoration-muted="state == 'cancel'" decoration-danger="(state not in ('cancel','done')) and date > current_date" string="Moves" create="0">
+				<field name="pembeli"/>
+				<field name="batch"/>
+				<field name="reference" string="DO Number"/>
+				<field name="date"/>
+				<!--<field name="picking_type_id"/>-->
+				<field name="location_id" groups="stock.group_stock_multi_locations" string="From"/>
+				<field name="product_id"/>
+				<field name="ordered_qty"/>
+				<field name="product_uom_id" options="{'no_open': True, 'no_create': True}" string="Unit of Measure" groups="product.group_uom"/>
+				<field name="cust_reference"/>
+				<field name="salesperson"/>
+				<field name="nama_kurir"/>
+				<field name="state"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_label_pengiriman" model="ir.actions.act_window">
+		<field name="name">Label Pengiriman</field>
+		<field name="res_model">stock.move.line</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_id" eval="label_pengiriman_tree"/>
+		<field name="domain">
+			[
+				('picking_id.picking_type_id','=',1),
+				('batch','!=',''),
+				('is_label_printed','=',False),
+				('state','not in',['draft', 'cancel']),
+			]
+		</field>
+<!--		<field name="search_view_id" ref="view_voucher_filter"/>-->
+	</record>
+	<menuitem id="label_pengiriman_menu" name="Label Pengiriman" parent="stock.menu_stock_warehouse_mgmt" action="action_label_pengiriman" sequence="101"/>
+	<!--<<<<<<<<<<<<<<<<<<<<<-->
 </odoo>

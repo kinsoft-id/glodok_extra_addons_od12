@@ -1,0 +1,118 @@
+<odoo>
+	<report
+        string="Label Pengiriman"
+        id="action_report_label_pengiriman"
+        model="stock.move.line"
+        report_type="qweb-pdf"
+        name="base_glodok.report_label_pengiriman"
+        file="base_glodok.report_label_pengiriman"
+		print_report_name="'LABEL - %s' % (object.reference)"
+        paperformat="paper_format_a7_portrait"
+        groups="stock.group_stock_user"
+		attachment="'LABEL - %s.pdf' % (object.reference)"
+        attachment_use="False"
+    />
+	<template id="report_label_pengiriman">
+        <t t-call="web.basic_layout">
+			<style>
+				.container {
+				  padding-right: 5px !important;
+				  padding-left: 5px !important;
+				  margin-right: auto;
+				  margin-left: auto;
+				}
+				table tbody tr td {
+					font-size: 3px !important;
+					font-family: Arial !important;
+				}
+			</style>
+			<t t-foreach="docs" t-as="o">
+				<table cellspacing="1" cellpadding="0" style="width:100%; margin-top: 5px !important;  margin-left: -5px !important;">
+					<tbody>
+					<tr>
+						<td>
+							Pembeli
+						</td>
+						<td>
+							<span t-field="o.pembeli"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Batch
+						</td>
+						<td>
+							<span t-field="o.batch"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							DO Number
+						</td>
+						<td>
+							<span t-field="o.reference"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Date
+						</td>
+						<td>
+							<span t-field="o.date"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							From
+						</td>
+						<td>
+							<span t-field="o.location_id"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product
+						</td>
+						<td>
+							<span t-field="o.product_id"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Qty
+						</td>
+						<td>
+							<span t-field="o.ordered_qty"/>
+							<span t-field="o.product_uom_id"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Customer Reference
+						</td>
+						<td>
+							<span t-field="o.cust_reference"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Salesperson
+						</td>
+						<td>
+							<span t-field="o.salesperson"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Nama Kurir
+						</td>
+						<td>
+							<span t-field="o.nama_kurir"/>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</t>
+         </t>
+    </template>
+</odoo>

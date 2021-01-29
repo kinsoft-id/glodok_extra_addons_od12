@@ -28,6 +28,23 @@ class StockMoveLine(models.Model):
 	wizard_return_qty = fields.Float(string="Wizard Return Qty", compute="_copmute_wizard_return_qty")
 
 
+	pembeli = fields.Char("Pembeli", related='picking_id.partner_id.name')
+	batch = fields.Char("Batch", related='picking_id.batch_id.name')
+	cust_reference = fields.Char("Customer Reference", related='picking_id.sale_id.client_order_ref')
+	salesperson = fields.Char("Salesperson", related='picking_id.sale_id.user_id.name')
+	nama_kurir = fields.Char("Nama Kurir", related='picking_id.batch_id.user_id.name')
+	is_label_printed = fields.Boolean("Is Label Printed")
+
+	@api.multi
+	def button_print_label(self):
+		self.write({'is_label_printed': True})
+
+		document = self.env.ref('base_glodok.action_report_label_pengiriman').report_action(self)
+
+		# _logger.critical(document)
+
+		return document
+
 	@api.multi
 	def _copmute_wizard_return_qty(self):
 		for rec in self:

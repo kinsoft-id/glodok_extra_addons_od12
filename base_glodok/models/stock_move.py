@@ -9,12 +9,6 @@ _logger = logging.getLogger(__name__)
 class StockMove(models.Model):
 	_inherit = 'stock.move'
 
-	pembeli = fields.Char("Pembeli", related='picking_id.partner_id.name')
-	batch = fields.Char("Batch", related='picking_id.batch_id.name')
-	cust_reference = fields.Char("Customer Reference", related='picking_id.sale_id.client_order_ref')
-	nama_kurir = fields.Char("Nama Kurir", related='picking_id.batch_id.user_id.name')
-	is_label_printed = fields.Boolean("Is Label Printed")
-
 	def set_reserved_done(self):
 		for rec in self.filtered(lambda r:r.reserved_availability>0):
 			if len(rec.move_line_ids)>0:
