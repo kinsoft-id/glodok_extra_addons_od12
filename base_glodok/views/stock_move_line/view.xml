@@ -112,6 +112,7 @@
 				('batch','!=',''),
 				('is_label_printed','=',False),
 				('state','not in',['draft', 'cancel', 'done']),
+				('nama_kurir','in',['JNE', 'J&amp;T', 'GRAB', 'grab', 'gojek', 'sicepat', 'beli2', 'Selfpickup', 'Lion Parcel', 'Ninja Express']),
 			]
 		</field>
 <!--		<field name="search_view_id" ref="view_voucher_filter"/>-->
