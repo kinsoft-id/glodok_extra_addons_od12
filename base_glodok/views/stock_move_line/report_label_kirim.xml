@@ -15,6 +15,7 @@
 	<template id="report_label_pengiriman">
         <t t-call="web.basic_layout">
 			<style>
+                body { padding: 0; margin 0; }
 				.container {
 				  padding-right: 5px !important;
 				  padding-left: 5px !important;
@@ -24,6 +25,7 @@
 				table tbody tr td {
 					font-size: 3px !important;
 					font-family: Arial !important;
+					vertical-align: top !important;
 				}
 			</style>
 			<t t-foreach="docs" t-as="o">
@@ -33,30 +35,16 @@
 						<td>
 							Pembeli
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.pembeli"/>
 						</td>
 					</tr>
 					<tr>
-						<td>
-							Batch
-						</td>
-						<td>
-							<span t-field="o.batch"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							DO Number
-						</td>
-						<td>
-							<span t-field="o.reference"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
+						<td style="vertical-align:top !important;">
 							Date
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.date"/>
 						</td>
@@ -65,6 +53,7 @@
 						<td>
 							From
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.location_id"/>
 						</td>
@@ -73,6 +62,7 @@
 						<td>
 							Product
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.product_id"/>
 						</td>
@@ -81,6 +71,7 @@
 						<td>
 							Qty
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.ordered_qty"/>
 							<span t-field="o.product_uom_id"/>
@@ -90,6 +81,7 @@
 						<td>
 							Customer Reference
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.cust_reference"/>
 						</td>
@@ -98,6 +90,7 @@
 						<td>
 							Salesperson
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.salesperson"/>
 						</td>
@@ -106,6 +99,7 @@
 						<td>
 							Nama Kurir
 						</td>
+                        <td>:</td>
 						<td>
 							<span t-field="o.nama_kurir"/>
 						</td>
