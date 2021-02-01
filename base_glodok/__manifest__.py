@@ -65,6 +65,7 @@
 
         'views/stock_picking_batch/report_memo.xml',
         'views/stock_move_line/report_label_kirim.xml',
+        'wizard/mass_action_view.xml',
 
 
 

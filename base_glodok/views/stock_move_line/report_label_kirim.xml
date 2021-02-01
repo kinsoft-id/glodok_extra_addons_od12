@@ -11,6 +11,7 @@
         groups="stock.group_stock_user"
 		attachment="'LABEL - %s.pdf' % (object.reference)"
         attachment_use="False"
+		menu="True"
     />
 	<template id="report_label_pengiriman">
         <t t-call="web.basic_layout">
