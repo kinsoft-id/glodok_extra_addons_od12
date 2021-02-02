@@ -111,7 +111,7 @@
 				('picking_id.picking_type_id','=',1),
 				('batch','!=',''),
 				('is_label_printed','=',False),
-				('state','not in',['draft', 'cancel', 'done']),
+				('state','not in',['draft', 'cancel']),
 			]
 		</field>
 <!--		<field name="search_view_id" ref="view_voucher_filter"/>-->
