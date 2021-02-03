@@ -35,8 +35,9 @@ class StockMoveLine(models.Model):
 	nama_kurir = fields.Char("Nama Kurir", related='picking_id.batch_id.user_id.name')
 	is_label_printed = fields.Boolean("Is Label Printed")
 
-	@api.multi
+	# @api.multi
 	def button_print_label(self):
+		self.ensure_one()
 		self.write({'is_label_printed': True})
 
 		document = self.env.ref('base_glodok.action_report_label_pengiriman').report_action(self)

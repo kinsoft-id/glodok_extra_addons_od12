@@ -1,7 +1,7 @@
 <odoo>
 	<report
-        string="Label Pengiriman"
-        id="action_report_label_pengiriman"
+		id="action_report_label_pengiriman"
+		string="Label Pengiriman"
         model="stock.move.line"
         report_type="qweb-pdf"
         name="base_glodok.report_label_pengiriman"
@@ -9,8 +9,6 @@
 		print_report_name="'LABEL - %s' % (object.reference)"
         paperformat="paper_format_a7_portrait"
         groups="stock.group_stock_user"
-		attachment="'LABEL - %s.pdf' % (object.reference)"
-        attachment_use="False"
 		menu="True"
     />
 	<template id="report_label_pengiriman">
@@ -29,85 +27,121 @@
 					vertical-align: top !important;
 				}
 			</style>
-			<t t-foreach="docs" t-as="o">
-				<table cellspacing="1" cellpadding="0" style="width:100%; margin-top: 5px !important;  margin-left: -5px !important;">
-					<tbody>
-					<tr>
-						<td>
-							Pembeli
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.pembeli"/>
-						</td>
-					</tr>
-					<tr>
-						<td style="vertical-align:top !important;">
-							Date
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.date"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							From
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.location_id"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Product
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.product_id"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Qty
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.ordered_qty"/>
-							<span t-field="o.product_uom_id"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Customer Reference
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.cust_reference"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Salesperson
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.salesperson"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Nama Kurir
-						</td>
-                        <td>:</td>
-						<td>
-							<span t-field="o.nama_kurir"/>
-						</td>
-					</tr>
-					</tbody>
-				</table>
-			</t>
+			<t t-foreach="docs" t-as="doc">
+				<t t-if="not o and doc">
+					<t t-set="o" t-value="doc"/>
+				</t>
+
+				<t t-if="o and 'company_id' in o">
+					<t t-set="company" t-value="o.company_id.sudo()"/>
+				</t>
+				<t t-if="not o or not 'company_id' in o">
+					<t t-set="company" t-value="res_company"/>
+				</t>
+					<style>
+						body { padding: 0; margin 0; }
+						.container {
+						  padding-right: 5px !important;
+						  padding-left: 5px !important;
+						  margin-right: auto;
+						  margin-left: auto;
+						}
+						table tbody tr td {
+							font-size: 40px !important;
+							font-family: Arial !important;
+							vertical-align: top !important;
+						}
+					</style>
+					<div class="page">
+						<table cellspacing="1" cellpadding="0" style="width:100%;">
+							<tbody>
+								<tr>
+									<td colspan="3">
+										<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"/>
+										<br/>
+										<![CDATA[
+										&nbsp;
+										]]>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Pembeli
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.pembeli"/>
+									</td>
+								</tr>
+								<tr>
+									<td style="vertical-align:top !important;">
+										Date
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.date"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										From
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.location_id"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Product
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.product_id"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Qty
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.ordered_qty"/>
+										<span t-field="o.product_uom_id"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Customer Reference
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.cust_reference"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Salesperson
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.salesperson"/>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Nama Kurir
+									</td>
+									<td>:</td>
+									<td>
+										<span t-field="o.nama_kurir"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p style="page-break-before:always;"> </p>
+				</t>
          </t>
     </template>
 </odoo>
