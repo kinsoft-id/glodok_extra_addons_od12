@@ -12,22 +12,8 @@
 		menu="True"
     />
 	<template id="report_label_pengiriman">
-        <t t-call="web.basic_layout">
-			<style>
-                body { padding: 0; margin 0; }
-				.container {
-				  padding-right: 5px !important;
-				  padding-left: 5px !important;
-				  margin-right: auto;
-				  margin-left: auto;
-				}
-				table tbody tr td {
-					font-size: 3px !important;
-					font-family: Arial !important;
-					vertical-align: top !important;
-				}
-			</style>
-			<t t-foreach="docs" t-as="doc">
+        <t t-call="web.html_container">
+			<t t-foreach="docs" t-as="o">
 				<t t-if="not o and doc">
 					<t t-set="o" t-value="doc"/>
 				</t>
@@ -38,22 +24,15 @@
 				<t t-if="not o or not 'company_id' in o">
 					<t t-set="company" t-value="res_company"/>
 				</t>
-					<style>
-						body { padding: 0; margin 0; }
-						.container {
-						  padding-right: 5px !important;
-						  padding-left: 5px !important;
-						  margin-right: auto;
-						  margin-left: auto;
-						}
-						table tbody tr td {
-							font-size: 40px !important;
-							font-family: Arial !important;
-							vertical-align: top !important;
-						}
-					</style>
-					<div class="page">
-						<table cellspacing="1" cellpadding="0" style="width:100%;">
+					<div class="article o_report_layout_standard">
+						<style>
+							table tbody tr td {
+								font-size: 36px !important;
+								font-family: Arial !important;
+								vertical-align: top !important;
+							}
+						</style>
+						<table cellspacing="2" cellpadding="2" style="width:100%;">
 							<tbody>
 								<tr>
 									<td colspan="3">
