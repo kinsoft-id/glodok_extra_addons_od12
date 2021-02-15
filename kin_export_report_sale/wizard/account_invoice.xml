@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="action_open_kin_export_report_sale_wizard" model="ir.actions.act_window">
+            <field name="name">Export Customer Invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">export.customer.invoice.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="export_customer_invoice_view_form" model="ir.ui.view">
+            <field name="name">export.customer.invoice.view.form</field>
+            <field name="model">export.customer.invoice.wizard</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Export account_move" version="7.0">
+                    <p>
+                        Klik tombol Export di bawah untuk mulai export data Customer Invoices.
+                        Data yang diexport adalah account_move yang belum diexport.
+                    </p>
+
+                    <p>
+                        Setelah proses export Customer Invoices selesai dilakukan, klik Export file untuk mendownload file CSV.
+                    </p>
+                    <p>
+                        <group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+                            <group>
+                                <field name="is_shopee25"/>
+                                 <field name="is_blibli25"/>
+                                <field name="total_durations"/>
+                                <field name="export_file" readonly="1" filename="export_filename"/>
+                                <field name="export_filename" invisible="1" />
+                            </group>
+                        </group>
+
+                    </p>
+
+                    <footer>
+                        <button string="Export" name="confirm_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <menuitem id="menu_export_customer_invoice"
+                  parent="base.menu_custom"
+                  sequence="40"
+                  name="Export Account Moves"
+                  action="action_open_kin_export_report_sale_wizard"/>
+
+    </data>
+</openerp>
