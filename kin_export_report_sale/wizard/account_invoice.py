@@ -69,7 +69,7 @@ class export_customer_invoice_wizard(models.TransientModel):
                 JOIN res_users ru ON ai.user_id = ru.id
                 WHERE ai.type = 'out_invoice'
                 AND ai.state IN ('open','paid')
-                AND ai.name NOT IN ('COD DESY','cod desy','COD ENGKO','cod engko','COD NGKO','cod ngko','COD ENCI','cod enci','COD HENRI','cod henri')
+                AND ai.name NOT IN ('COD DESY','cod desy','COD ENGKO','cod engko','COD NGKO','cod ngko','COD ENCI','cod enci','COD NCI','cod nci','COD HENRI','cod henri')
                 AND ail.product_id NOT IN (6416, 6604)
                 AND ai.user_id = """ + str(self.user_id.id) + """
                 AND ai.date BETWEEN '""" + self.date_from + """' AND '""" + self.date_to + """'
