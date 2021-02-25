@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <record id="x_price_below_cost" model="ir.ui.view">
+      <field name="name">sale.order.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+<!--        <xpath expr="//field[@name='partner_id']" position="after">-->
+<!--            <field name="warning_below_cost"/>-->
+<!--        </xpath>-->
+        <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='tax_id']" position="before">
+            <field name="margin"/>
+        </xpath>
+        <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+            <field name="margin"/>
+        </xpath>
+<!--        <xpath expr="//field[@name='order_line']/tree" position="attributes">-->
+<!--          <attribute name="text-danger">(price_below_cost)</attribute>-->
+<!--        </xpath>-->
+      </field>
+    </record>
+  </data>
+</odoo>

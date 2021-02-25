@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_stock_move_line_mass_action_form" model="ir.ui.view">
+        <field name="model">stock.move.line.mass.action</field>
+        <field name="arch" type="xml">
+            <form string="Mass Action for the selected stock picking batch">
+                <h4>
+                    Set Label Printed selected data?
+                </h4>
+                <footer>
+                    <button name="mass_action" string="Apply" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Transfer Action -->
+    <record id="action_transfer" model="ir.actions.act_window">
+        <field name="name">Set Label Printed</field>
+        <field name="res_model">stock.move.line.mass.action</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+        <field name="groups_id" eval="[(4,ref('stock.group_stock_user'))]"/>
+        <field name="binding_model_id" ref="base_glodok.model_stock_move_line" />
+    </record>
+
+</odoo>
