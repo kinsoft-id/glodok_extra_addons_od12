@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError, AccessError
+from odoo.exceptions import UserError, AccessError, Warning
 
 
 class SaleOrderLine(models.Model):
@@ -15,10 +15,6 @@ class SaleOrderLine(models.Model):
             std_price = record.product_id.standard_price
             fstd_price = '{0:,.2f}'.format(std_price)
             record['margin'] = record.price_unit - std_price
-
-            if record['margin'] < 0:
-                raise UserError(_('Harga jual tidak boleh lebih dari cost.\nCost %s.') % (fstd_price))
-                # return super(SaleOrderLine, self).unlink()
 
     @api.model
     def create(self, values):

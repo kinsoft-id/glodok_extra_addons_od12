@@ -24,7 +24,10 @@
 
     # always loaded
     'data': [
+        'security/groups.xml',
         'views/sale_order_views.xml',
+        'wizard/sale_order.xml',
+        'wizard/laporan_rekap_margin_penjualan_pdf_view.xml',
     ],
     'application': True,
 }

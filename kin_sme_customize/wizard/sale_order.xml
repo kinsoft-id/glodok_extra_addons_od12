@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="action_open_kin_export_report_sale_wizard" model="ir.actions.act_window">
+            <field name="name">Laporan Rekap Margin Penjualan</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">export.sale.order.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="export_sale_order_view_form" model="ir.ui.view">
+            <field name="name">export.sale.order.view.form</field>
+            <field name="model">export.sale.order.wizard</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Export account_move" version="7.0">
+                    <p>
+                        Pilih tanggal yg diinginkan dan klik tombol Preview di bawah untuk melihat laporan rekap margin penjuaalan.
+                    </p>
+                    <p>
+                        <group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+                        </group>
+
+                    </p>
+
+                    <footer>
+                        <button string="Preview" name="confirm_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <menuitem id="menu_export_sale_order"
+                  parent="sale.menu_sale_report"
+                  sequence="40"
+                  name="Laporan Rekap Margin Penjualan"
+                  action="action_open_kin_export_report_sale_wizard"/>
+
+    </data>
+</openerp>

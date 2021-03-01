@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="laporan_rekap_margin_penjualan_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                            <style type="text/css">
+                            .page{
+                                font-size:10pt;
+                            }
+
+                            table.table-bordered, table.table-bordered thead tr th, table.table-bordered tbody tr td {
+                                border: black thin solid !important;
+                                border-collapse: collapse;
+                            }
+                            </style>
+                            <div class="oe_structure"/>
+                            <table class="table table-sm table-bordered" cellspacing="5" cellpadding="5" style="width:100%;">
+                                <thead>
+                                    <t t-set="date_from" t-value="time.strftime('%d/%m/%Y',time.strptime(str(o.date_from),'%Y-%m-%d'))"/>
+                                    <t t-set="date_to" t-value="time.strftime('%d/%m/%Y',time.strptime(str(o.date_to),'%Y-%m-%d'))"/>
+                                    <center>
+                                        <h1><b>Laporan Rekap Margin Penjualan</b></h1>
+                                        <br/>
+                                    </center>
+                                    <span><h2>Periode : <t t-esc="date_from"/> - <t t-esc="date_to"/></h2></span>
+                                    <tr>
+                                        <th class="text-center" style="vertical-align:middle"><strong>No</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Sale Order Date</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Sale Order No</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Product</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>UOM</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Quantity</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Margin</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Sub Total Margin</strong></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="number" t-value="0"/>
+                                    <t t-set="tot_margin" t-value="0"/>
+                                    <tr t-foreach="o.get_result()" t-as="line">
+                                        <t t-set="number" t-value="number+1"/>
+                                        <t t-set="tot_margin" t-value="tot_margin + line['subtot_margin']"/>
+                                        <td align="center">
+                                            <span t-esc="number"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-esc="time.strftime('%d/%m/%Y',time.strptime(str(line['date_order']),'%Y-%m-%d %H:%M:%S'))"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-esc="line['name']"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-esc="line['product_name']"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-esc="line['product_uom']"/>
+                                        </td>
+                                        <td align="right">
+                                            <span t-esc="line['product_qty']"/>
+                                        </td>
+                                        <td align="right">
+                                            <span t-esc="'{0:,.2f}'.format(float(line['margin']))"/>
+                                        </td>
+                                        <td align="right">
+                                            <span t-esc="'{0:,.2f}'.format(float(line['subtot_margin']))"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7" align="right"><b>Total Margin</b></td>
+                                        <td align="right"><b><span t-esc="'{0:,.2f}'.format(float(tot_margin))"/></b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report 
+            string="Report PDF Rekap Margin Penjualan"
+            id="laporan_rekap_margin_penjualan"
+            model="export.sale.order.wizard"
+            report_type="qweb-pdf"
+            name="kin_sme_customize.laporan_rekap_margin_penjualan_document"
+            file="kin_sme_customize.laporan_rekap_margin_penjualan_document"
+        />
+        
+        <record id="paperformat_pdf_inventory_penerimaan" model="report.paperformat">
+            <field name="name">Paperformat PDF Inventory Penerimaan Barang</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">30</field> 
+            <field name="margin_bottom">7</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">25</field>
+            <field name="dpi">96</field>
+            <field name="report_ids" eval="[
+                (4, ref('kin_sme_customize.laporan_rekap_margin_penjualan')),
+            ]"/>
+        </record>
+    </data>
+</odoo>
