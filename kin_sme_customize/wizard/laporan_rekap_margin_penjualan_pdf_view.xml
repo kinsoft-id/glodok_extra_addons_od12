@@ -17,32 +17,38 @@
                             }
                             </style>
                             <div class="oe_structure"/>
+                            <center>
+                                <h1><b>Laporan Rekap Margin Penjualan</b></h1>
+                                <br/>
+                            </center>
+                            <t t-set="date_from" t-value="time.strftime('%d/%m/%Y',time.strptime(str(o.date_from),'%Y-%m-%d'))"/>
+                            <t t-set="date_to" t-value="time.strftime('%d/%m/%Y',time.strptime(str(o.date_to),'%Y-%m-%d'))"/>
+                            <span><h2>Periode : <t t-esc="date_from"/> - <t t-esc="date_to"/></h2></span>
                             <table class="table table-sm table-bordered" cellspacing="5" cellpadding="5" style="width:100%;">
                                 <thead>
-                                    <t t-set="date_from" t-value="time.strftime('%d/%m/%Y',time.strptime(str(o.date_from),'%Y-%m-%d'))"/>
-                                    <t t-set="date_to" t-value="time.strftime('%d/%m/%Y',time.strptime(str(o.date_to),'%Y-%m-%d'))"/>
-                                    <center>
-                                        <h1><b>Laporan Rekap Margin Penjualan</b></h1>
-                                        <br/>
-                                    </center>
-                                    <span><h2>Periode : <t t-esc="date_from"/> - <t t-esc="date_to"/></h2></span>
                                     <tr>
                                         <th class="text-center" style="vertical-align:middle"><strong>No</strong></th>
                                         <th class="text-center" style="vertical-align:middle"><strong>Sale Order Date</strong></th>
                                         <th class="text-center" style="vertical-align:middle"><strong>Sale Order No</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Customer Ref.</strong></th>
                                         <th class="text-center" style="vertical-align:middle"><strong>Product</strong></th>
                                         <th class="text-center" style="vertical-align:middle"><strong>UOM</strong></th>
-                                        <th class="text-center" style="vertical-align:middle"><strong>Quantity</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Qty</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Price Unit</strong></th>
                                         <th class="text-center" style="vertical-align:middle"><strong>Margin</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Omset</strong></th>
                                         <th class="text-center" style="vertical-align:middle"><strong>Sub Total Margin</strong></th>
+                                        <th class="text-center" style="vertical-align:middle"><strong>Fee 1%</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <t t-set="number" t-value="0"/>
                                     <t t-set="tot_margin" t-value="0"/>
+                                    <t t-set="tot_fee" t-value="0"/>
                                     <tr t-foreach="o.get_result()" t-as="line">
                                         <t t-set="number" t-value="number+1"/>
                                         <t t-set="tot_margin" t-value="tot_margin + line['subtot_margin']"/>
+                                        <t t-set="tot_fee" t-value="tot_fee + line['fee']"/>
                                         <td align="center">
                                             <span t-esc="number"/>
                                         </td>
@@ -53,6 +59,9 @@
                                             <span t-esc="line['name']"/>
                                         </td>
                                         <td class="text-center">
+                                            <span t-esc="line['client_order_ref']"/>
+                                        </td>
+                                        <td class="text-left">
                                             <span t-esc="line['product_name']"/>
                                         </td>
                                         <td class="text-center">
@@ -62,15 +71,26 @@
                                             <span t-esc="line['product_qty']"/>
                                         </td>
                                         <td align="right">
+                                            <span t-esc="'{0:,.2f}'.format(float(line['price_unit']))"/>
+                                        </td>
+                                        <td align="right">
                                             <span t-esc="'{0:,.2f}'.format(float(line['margin']))"/>
+                                        </td>
+                                        <td align="right">
+                                            <span t-esc="'{0:,.2f}'.format(float(line['price_subtotal']))"/>
                                         </td>
                                         <td align="right">
                                             <span t-esc="'{0:,.2f}'.format(float(line['subtot_margin']))"/>
                                         </td>
+                                        <td align="right">
+                                            <span t-esc="'{0:,.2f}'.format(float(line['fee']))"/>
+                                        </td>
+
                                     </tr>
                                     <tr>
-                                        <td colspan="7" align="right"><b>Total Margin</b></td>
+                                        <td colspan="10" align="right"><b>Total Margin</b></td>
                                         <td align="right"><b><span t-esc="'{0:,.2f}'.format(float(tot_margin))"/></b></td>
+                                        <td align="right"><b><span t-esc="'{0:,.2f}'.format(float(tot_fee))"/></b></td>
                                     </tr>
                                 </tbody>
                             </table>

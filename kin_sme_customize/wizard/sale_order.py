@@ -41,7 +41,8 @@ class export_sale_order_wizard(models.TransientModel):
         sql = """
             SELECT 
                 so.date_order, so.name, CONCAT('[', pt.default_code, '] ', pt.name) AS product_name, 
-                pu.name AS product_uom, sol.product_uom_qty, sol.margin
+                pu.name AS product_uom, sol.product_uom_qty, sol.margin, sol.price_unit, sol.price_subtotal,
+                so.client_order_ref
             FROM sale_order so
             LEFT JOIN sale_order_line sol ON sol.order_id = so.id
             LEFT JOIN product_product pp ON pp.id = sol.product_id
@@ -61,17 +62,31 @@ class export_sale_order_wizard(models.TransientModel):
         no = 1
         for val in vals:
             subtot_margin = float(val[4]) * float(val[5])
+            client_order_ref = val[8] or '-'
+            fee = 0
+            if ('BLI' in client_order_ref) or ('Bli' in client_order_ref) or ('bli' in client_order_ref) \
+                or ('SH' in client_order_ref) or ('sh' in client_order_ref) or ('SHOPEE' in client_order_ref) or ('shopee' in client_order_ref) \
+                    or ('AKU' in client_order_ref) or ('aku' in client_order_ref) or ('AL' in client_order_ref) or ('al' in client_order_ref) \
+                    or ('BL' in client_order_ref) or ('bl' in client_order_ref) \
+                    or ('INV' in client_order_ref) or ('inv' in client_order_ref) :
+                fee = val[7] * 0.01
+
             list_data.append({
                 'date_order': val[0],
                 'name': val[1],
                 'product_name': val[2],
                 'product_uom': val[3],
                 'product_qty': val[4],
+                'price_unit': val[6],
                 'margin': val[5],
-                'subtot_margin': subtot_margin
+                'price_subtotal': val[7],
+                'subtot_margin': subtot_margin,
+                'fee': fee,
+                'client_order_ref': client_order_ref
             })
             no += 1
         hasil = list_data
+        # print(hasil)
         return hasil
 
     @api.multi

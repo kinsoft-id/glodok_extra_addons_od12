@@ -7,7 +7,7 @@ from odoo.exceptions import UserError, AccessError, Warning
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    margin = fields.Float(compute='_price_unit', readonly=True, string='Margin', store=True)
+    margin = fields.Float(compute='_price_unit', readonly=False, string='Margin', store=True)
 
     @api.depends('price_unit')
     def _price_unit(self):
