@@ -61,16 +61,19 @@ class export_customer_invoice_wizard(models.TransientModel):
                  '' AS Toko, 
                  SUM(CASE WHEN ai.name LIKE '%COD%' AND ail.price_unit >= 1000000 THEN quantity
                     WHEN ai.name LIKE '%cod%' AND ail.price_unit >= 1000000 THEN quantity ELSE 0 END) AS Qty_gt_1_jt, 
-                 SUM(CASE WHEN ai.name LIKE '%COD%' AND ail.price_unit < 1000000 THEN quantity 
-					WHEN ai.name LIKE '%cod%' AND ail.price_unit < 1000000 THEN quantity ELSE 0 END) AS Qty_lt_1_jt
+                 SUM(CASE WHEN ai.name LIKE '%COD%' AND ail.price_unit < 1000000 AND ail.price_unit > 0 THEN quantity 
+					WHEN ai.name LIKE '%cod%' AND ail.price_unit < 1000000 AND ail.price_unit > 0 THEN quantity ELSE 0 END) AS Qty_lt_1_jt
                 FROM account_invoice ai 
                 JOIN account_invoice_line ail ON ail.invoice_id = ai.id
                 JOIN res_partner rp ON ai.partner_id = rp.id
                 JOIN res_users ru ON ai.user_id = ru.id
+                JOIN product_product pp ON ail.product_id = pp.id
+                JOIN product_template pt ON pp.product_tmpl_id = pt.id
                 WHERE ai.type = 'out_invoice'
                 AND ai.state IN ('open','paid')
                 AND ai.name NOT IN ('COD DESY','cod desy','COD ENGKO','cod engko','COD NGKO','cod ngko','COD ENCI','cod enci','COD NCI','cod nci','COD HENRI','cod henri')
                 AND ail.product_id NOT IN (6416, 6604)
+                AND pt.type IN ('product','consu')
                 AND ai.user_id = """ + str(self.user_id.id) + """
                 AND ai.date BETWEEN '""" + self.date_from + """' AND '""" + self.date_to + """'
                 GROUP BY ai.id, rp.name, ai.date, ai.number, 
