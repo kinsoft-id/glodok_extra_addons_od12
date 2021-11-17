@@ -36,8 +36,12 @@ class export_customer_invoice_wizard(models.TransientModel):
         jawir = """(CASE WHEN ai.name NOT LIKE '%COD%' AND ai.name NOT LIKE '%cod%' 
                     THEN 1 ELSE 0 END) AS Jawir,"""
         if self.is_shopee25:
-            sh = "(CASE WHEN ai.name LIKE 'SH%' THEN 2.5 WHEN ai.name LIKE 'sh%' THEN 2.5 ELSE 0 END) AS Shopee,";
-            jawir = """(CASE WHEN ai.name NOT LIKE 'SH%' AND ai.name NOT LIKE 'sh%'
+            sh = "(CASE WHEN ai.name LIKE 'SH%' THEN 2.5 " \
+                 "WHEN ai.name LIKE 'sh%' THEN 2.5 " \
+                 "WHEN ai.name LIKE 'toped best%' THEN 2.5 ELSE 0 END) AS Shopee,";
+            jawir = """(CASE WHEN ai.name NOT LIKE 'SH%' 
+                    AND ai.name NOT LIKE 'sh%'
+                    AND ai.name NOT LIKE 'toped best%'
                     AND ai.name NOT LIKE '%COD%' 
                     AND ai.name NOT LIKE '%cod%' 
                     THEN 1 ELSE 0 END) AS Jawir,"""
