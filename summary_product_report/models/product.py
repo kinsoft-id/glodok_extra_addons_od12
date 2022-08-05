@@ -56,7 +56,8 @@ class ProductTemplate(models.Model):
 	@api.depends('product_variant_ids.qty_external')
 	def _compute_quantities_ext(self):
 		for rec in self:
-			rec.qty_external = rec.product_variant_ids[0].qty_external
+			if len(rec.product_variant_ids):
+				rec.qty_external = rec.product_variant_ids[0].qty_external
 
 	def _compute_last(self):
 		for rec in self:
