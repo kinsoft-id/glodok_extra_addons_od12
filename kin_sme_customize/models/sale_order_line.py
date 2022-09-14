@@ -8,6 +8,10 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     margin = fields.Float(compute='_compute_margin', inverse="_inverse_margin", readonly=False, string='Margin', store=True)
+    
+    order_ref = fields.Char('Customer Reference', related='order_id.client_order_ref')
+    customer_id = fields.Many2one('res.partner', related='order_id.partner_id')
+    order_date = fields.Datetime('Order Date', related='order_id.confirmation_date')
 
     @api.depends('price_unit')
     def _compute_margin(self):
