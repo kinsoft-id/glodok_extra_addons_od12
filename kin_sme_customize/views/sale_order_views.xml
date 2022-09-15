@@ -35,9 +35,7 @@
           <field name="name" string="Description"/>
           <field name="price_unit" string="Unit Price"/>
           <field name="product_uom_qty" string="Qty"/>
-          <field name="qty_delivered" string="Delivered"/>
-          <field name="qty_invoiced" string="Invoiced"/>
-          <field name="tax_id" string="Taxes"/>
+          <field name="margin"/>
           <field name="price_subtotal" string="Subtotal"/>
         </tree>
       </field>
