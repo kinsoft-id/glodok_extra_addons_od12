@@ -5,18 +5,12 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
-<!--        <xpath expr="//field[@name='partner_id']" position="after">-->
-<!--            <field name="warning_below_cost"/>-->
-<!--        </xpath>-->
         <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='tax_id']" position="before">
             <field name="margin" readonly="0" groups="kin_sme_customize.group_owner"/>
         </xpath>
         <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
             <field name="margin" readonly="0" groups="kin_sme_customize.group_owner"/>
         </xpath>
-<!--        <xpath expr="//field[@name='order_line']/tree" position="attributes">-->
-<!--          <attribute name="text-danger">(price_below_cost)</attribute>-->
-<!--        </xpath>-->
       </field>
     </record>
 
@@ -35,8 +29,8 @@
           <field name="name" string="Description"/>
           <field name="price_unit" string="Unit Price"/>
           <field name="product_uom_qty" string="Qty"/>
-          <field name="margin"/>
-          <field name="price_subtotal" string="Subtotal"/>
+          <field name="margin_subtotal" sum="Total Margin"/>
+          <field name="price_subtotal" string="Subtotal" sum="Total Omset"/>
         </tree>
       </field>
     </record>
@@ -53,6 +47,7 @@
 
 	  <menuitem id="action_sale_lines_menu_id" name="Sales Order Lines"
 		  action="action_sale_lines_menu" parent="sale.sale_order_menu"
+       groups="kin_sme_customize.group_owner"
 		  sequence="3"/>
   </data>
 </odoo>
