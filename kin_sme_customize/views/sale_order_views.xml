@@ -5,6 +5,10 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
+        <field name="client_order_ref" position="after">
+          <field name="is_cancel"/>
+        </field>
+
         <xpath expr="//page/field[@name='order_line']/form/group/group/field[@name='tax_id']" position="before">
             <field name="margin" readonly="0" groups="kin_sme_customize.group_owner"/>
         </xpath>
@@ -42,7 +46,7 @@
       <field name="res_model">sale.order.line</field>
       <field name="view_id" ref="view_sale_order_line_tree"/>
       <field name="view_mode">tree,form</field>
-      <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+      <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel')),('is_cancel','=',False)]</field>
     </record>
 
 	  <menuitem id="action_sale_lines_menu_id" name="Sales Order Lines"

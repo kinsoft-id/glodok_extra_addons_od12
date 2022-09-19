@@ -7,6 +7,8 @@ from odoo.exceptions import UserError, AccessError
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
+    is_cancel = fields.Boolean('Is Cancel')
+
     @api.model
     def create(self, vals):
         for line in vals['order_line']:

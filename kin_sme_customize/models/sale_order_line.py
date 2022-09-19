@@ -13,6 +13,7 @@ class SaleOrderLine(models.Model):
     order_ref = fields.Char('Customer Reference', related='order_id.client_order_ref')
     customer_id = fields.Many2one('res.partner', related='order_id.partner_id')
     order_date = fields.Datetime('Order Date', related='order_id.confirmation_date')
+    is_cancel = fields.Boolean('Is Cancel', related='order_id.is_cancel')
 
     @api.depends('price_unit')
     def _compute_margin(self):
