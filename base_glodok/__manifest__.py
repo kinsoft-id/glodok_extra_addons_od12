@@ -22,7 +22,9 @@
         'region','sale_stock'
     ],
     "data": [
-        
+    
+        # belum dipakai, utk nanti siapa tau akan dipakai
+        # 'views/report_templates.xml',
 
         'views/paper_format.xml',
         'views/external_layout.xml',

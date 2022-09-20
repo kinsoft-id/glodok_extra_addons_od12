@@ -191,11 +191,11 @@
         </t>
         <div class="header">
             <div class="row">
-                <div class="col-xs-3 mb4">
-                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 45px;"/>
+                <div class="col-xs-2 mb4 text-center" style="">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 75px;"/>
                 </div>
 
-                <div class="col-xs-6" name="moto">
+                <div class="col-xs-7" name="moto">
                     <div class="text-center">
                         <!-- <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style="display:inline-block;"/> -->
 
