@@ -15,7 +15,7 @@ class SaleOrderLine(models.Model):
     order_date = fields.Datetime('Order Date', related='order_id.confirmation_date')
     is_cancel = fields.Boolean('Is Cancel', related='order_id.is_cancel')
 
-    @api.depends('price_unit')
+    @api.depends('product_id','product_uom_qty','price_unit')
     def _compute_margin(self):
         for record in self:
             std_price = record.product_id.standard_price
