@@ -82,7 +82,7 @@
 												<ul>
 													<t t-foreach="o.order_line" t-as="l">
 														<li>
-															<span t-field="l.product_id"/> - <span t-field="l.product_uom_qty"/> (<span t-field="l.product_uom"/>)
+															<span t-field="l.product_uom_qty"/> (<span t-field="l.product_uom"/>) - <span t-field="l.product_id"/>
 														</li>
 													</t>
 												</ul>
