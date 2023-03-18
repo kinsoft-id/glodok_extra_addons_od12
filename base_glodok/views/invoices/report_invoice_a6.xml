@@ -62,7 +62,7 @@
               <tr>
                 <td colspan="3">
                   <span class="small">Jakarta <span
-                      t-field="date_invoice"
+                      t-field="o.date_invoice"
                       t-options='{"widget": "date"}' /></span>
                 </td>
               </tr>
