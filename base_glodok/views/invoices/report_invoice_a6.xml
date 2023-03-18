@@ -1,74 +1,186 @@
 <odoo>
-    <report
-        string="Invoice(A6)" 
-        id="action_report_invoice_a6" 
-        model="account.invoice" 
-        report_type="qweb-pdf"
-        name="base_glodok.report_invoice_a6" 
-        file="base_glodok.report_invoice_a6"
-        print_report_name="'INVOICE - %s' % (object.number)"
-        paperformat="paper_format_a6_landscape" 
-    />
+  <report
+    string="Invoice(A6)"
+    id="action_report_invoice_a6"
+    model="account.invoice"
+    report_type="qweb-pdf"
+    name="base_glodok.report_invoice_a6"
+    file="base_glodok.report_invoice_a6"
+    print_report_name="'INVOICE - %s' % (object.number)"
+    paperformat="paper_format_a6_landscape"
+  />
 
-	<template id="report_invoice_a6">
-        <t t-foreach="docs" t-as="o">
-            <t t-call="base_glodok.report_invoice_a6_document" t-lang="o.partner_id.lang"/>
-        </t>
-    </template>
+  <template id="report_invoice_a6">
+    <t t-foreach="docs" t-as="o">
+      <t t-call="base_glodok.report_invoice_a6_document" t-lang="o.partner_id.lang" />
+    </t>
+  </template>
 
 
+  <template id="report_invoice_a6_document">
+    <t t-call="web.html_container"> inv_external_layout_2<t t-if="not o and doc">
+        <t t-set="o" t-value="doc" />
+      </t>
 
-    <template id="report_invoice_a6_document">
-        <t t-call="web.html_container">
-            <t t-call="base_glodok.inv_external_layout_2">
-            	<table class="table table-condensed">
-                    <tbody>
-                        <th>
-                            <strong>NOTA FAKTUR. #</strong>
-                            &amp;nbsp;
-                            <span t-esc="o.number" />
-                        </th>
-                    </tbody>
-                </table>
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th style="width:15%;" class="text-center"><strong>Banyaknya</strong></th>
-                            <th class="text-center"><strong>Nama Barang</strong></th>
-                            <th class="text-center"><strong>Harga Satuan</strong></th>
-                            <th class="text-center"><strong>Jumlah</strong></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr t-foreach="o.invoice_line_ids" t-as="line">
-                            <td class="text-center">
-                                <span t-field="line.quantity"/>
-                                <span t-field="line.uom_id"/>
-                            </td>
-                            <td>
-                                <span t-field="line.name"/>
-                            </td>
-                            <td>
-                                <span t-field="line.price_unit"/>
-                            </td>
-                            <td>
-                                <span t-field="line.price_total"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Terbilang: <span t-esc="o.get_words(o.amount_total)"/></td>
-                            <td class="text-right">TOTAL:</td>
-                            <td class="text-left"><span t-field="o.amount_total"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Catatan: <span t-esc="o.comment"/></td>
-                            <td class="text-right">&amp;nbsp;</td>
-                            <td class="text-left">&amp;nbsp;</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-            </t>
-         </t>
-    </template>
+        <t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id.sudo()" />
+      </t>
+        <t
+        t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company" />
+      </t>
+        <div class="header">
+        <div class="row">
+          <div class="col-xs-2 mb4">
+            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"
+              style="max-height: 45px;" />
+          </div>
+
+          <div class="col-xs-6" name="moto">
+            <div class="text-center">
+              <!-- <span t-field="company.partner_id" t-field-options="{&quot;widget&quot;:
+              &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;],
+              &quot;no_marker&quot;: true}" style="display:inline-block;"/> -->
+
+              <h5>
+                <span t-esc="company.partner_id.name" />
+              </h5>
+              <div class="small">
+                <span t-esc="company.partner_id.street" />
+                <span t-esc="company.partner_id.street2" />
+                <span t-esc="company.partner_id.city" />
+                <t t-if="company.partner_id.state_id.name">- <span
+                    t-esc="company.partner_id.state_id.name" /></t>
+                <span t-if="company.partner_id.phone" t-esc="company.partner_id.phone" />
+                <span t-if="company.partner_id.email" t-esc="company.partner_id.email" />
+                <span t-if="company.partner_id.website" t-esc="company.partner_id.website" />
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <table>
+              <tr>
+                <td colspan="3">
+                  <span class="small">Jakarta <span
+                      t-field="date_invoice"
+                      t-options='{"widget": "date"}' /></span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <span class="small">Kepada Yth,</span>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <!-- <span t-field="o.partner_id" t-field-options="{&quot;widget&quot;:
+                  &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;],
+                  &quot;no_marker&quot;: true}" /> -->
+                  <strong>
+                    <span t-esc="o.partner_id.name" />
+                  </strong>
+                  <div class="small">
+                    <span t-esc="o.partner_id.street" /><t t-if="o.partner_id.street2">,<span
+                        t-esc="o.partner_id.street2" /></t>
+                                    <br /><span
+                      t-esc="o.partner_id.region_district_id.name" /> - <span
+                      t-esc="o.partner_id.region_city_id.name" />
+                                    <br />
+                                    <span>Hp: <span
+                        t-esc="o.partner_id.mobile" /></span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+        <div
+        class="article o_report_layout_standard">
+        <table class="table table-condensed">
+          <tbody>
+            <th>
+              <strong>NOTA FAKTUR. #</strong> &amp;nbsp; <span t-esc="o.number" />
+            </th>
+          </tbody>
+        </table>
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th style="width:15%;" class="text-center">
+                <strong>Banyaknya</strong>
+              </th>
+              <th class="text-center">
+                <strong>Nama Barang</strong>
+              </th>
+              <th class="text-center">
+                <strong>Harga Satuan</strong>
+              </th>
+              <th class="text-center">
+                <strong>Jumlah</strong>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr t-foreach="o.invoice_line_ids" t-as="line">
+              <td class="text-center">
+                <span t-field="line.quantity" />
+                <span t-field="line.uom_id" />
+              </td>
+              <td>
+                <span t-field="line.name" />
+              </td>
+              <td>
+                <span t-field="line.price_unit" />
+              </td>
+              <td>
+                <span t-field="line.price_total" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">Terbilang: <span t-esc="o.get_words(o.amount_total)" /></td>
+              <td class="text-right">TOTAL:</td>
+              <td class="text-left">
+                <span t-field="o.amount_total" />
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">Catatan: <span t-esc="o.comment" /></td>
+              <td class="text-right">&amp;nbsp;</td>
+              <td class="text-left">&amp;nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+        <div
+        class="footer">
+        <div class="text-center" style="border-top: 1px solid black;">
+          <!-- <ul class="list-inline mb4">
+                    <li t-if="company.phone">Phone: <span t-field="company.phone"/></li>
+                    <li t-if="company.email">Email: <span t-field="company.email"/></li>
+                    <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                    <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span
+          t-field="company.vat"/></li>
+                </ul> -->
+          <div class="col-xs-3"> Tanda Terima <br />
+                    <br />
+                    <br /> (.............................) </div>
+          <div class="col-xs-6">
+            <div name="financial_infos">
+              <span class="small" t-field="company.report_footer" />
+            </div>
+            <div class="text-muted"> Halaman: <span class="page" /> / <span class="topage" />
+            </div>
+          </div>
+          <div class="col-xs-3"> Hormat Kami: <br />
+                    <br />
+                    <br /> (................) </div>
+
+        </div>
+      </div>
+    </t>
+  </template>
 </odoo>
