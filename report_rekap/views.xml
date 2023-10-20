@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="report_rekap_form" model="ir.ui.view">
+            <field name="name">report.rekap.form</field>
+            <field name="model">report.rekap</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="no_order"/>
+                                <field name="customer_id"/>
+                                <field name="logistic_id"/>
+                                <field name="sku"/>
+                                <field name="quantity"/>
+                                <field name="location_id"/>
+                                <field name="no_resi"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="report_rekap_tree" model="ir.ui.view">
+            <field name="name">report.rekap.tree</field>
+            <field name="model">report.rekap</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="no_order"/>
+                    <field name="customer_id"/>
+                    <field name="logistic_id"/>
+                    <field name="sku"/>
+                    <field name="quantity"/>
+                    <field name="location_id"/>
+                    <field name="no_resi"/>
+                </tree>
+            </field>
+        </record>
+        <record id="report_rekap_search" model="ir.ui.view">
+            <field name="name">report.rekap.search</field>
+            <field name="model">report.rekap</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="no_order"/>
+                    <field name="customer_id"/>
+                    <field name="logistic_id"/>
+                    <field name="sku"/>
+                    <field name="location_id"/>
+                    <field name="no_resi"/>
+                </search>
+            </field>
+        </record>
+        <record id="report_rekap_action" model="ir.actions.act_window">
+            <field name="name">Report Rekap</field>
+            <field name="res_model">report.rekap</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <record id="report_rekap_wizard_form" model="ir.ui.view">
+            <field name="name">report.rekap.wizard.form</field>
+            <field name="model">report.rekap.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="logistic_id"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_open_view" string="View" type="object" class="btn-primary"/>
+                        <button name="action_print" string="Print" type="object" class="btn-primary"/>
+                        <button name="cancel" string="Cancel" spesial="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="report_rekap_wizard_action" model="ir.actions.act_window">
+            <field name="name">Report Rekap Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">report.rekap.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_rekap_wizard" name="Report Rekap" parent="sale.menu_sale_report" action="report_rekap_wizard_action" sequence="1"/>
+
+
+    </data>
+</odoo>

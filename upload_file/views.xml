@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- VIEW UPLOAD -->
+        <record id="upload_attachment_wizard" model="ir.ui.view">
+            <field name="name">upload.attachment.wizard</field>
+            <field name="model">upload.attachment.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="attachment" required="1"/>
+                    <field name="attachment_ids" required="1" widget="many2many_binary"/>
+                    <footer>
+                        <button name="process_wizard" string="Process" type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- BUTTON UPLOAD TREE -->
+        <record model="ir.ui.view" id="upload_attachment_view_order_tree">
+            <field name="name">upload attachment tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="is_upload" invisible="1"/>
+                    <button name="upload_attachment_wizard" type="object" string="Upload Attachment" class="oe_highlight" attrs="{'invisible':[('is_upload', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- BUTTON UPLOAD KANBAN -->
+        <record model="ir.ui.view" id="upload_attachment_view_sale_order_kanban">
+            <field name="name">upload attachment kanban</field>
+            <field name="model">sale.order</field>
+            <!-- <field name="inherit_id" ref="sale.view_sale_order_kanban"/> -->
+            <field name="inherit_id" ref="tokopedia_connector.view_tracking_view_sale_order_kanban"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="after">
+                    <br/>
+                    <div class="container o_kanban_card_content">
+                        <div class="row">
+                            <div class="col-xs-6 o_kanban_primary_left">
+                                <field name="is_upload" invisible="1"/>
+                                <button name="upload_attachment_wizard" type="object" class="btn btn-primary" attrs="{'invisible':[('is_upload', '=', True)]}">
+                                    <span>Upload Attachment</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </xpath> -->
+                <xpath expr="//button[@name='action_download_label']" position="replace">
+                    <field name="is_upload" invisible="1"/>
+                    <button name="upload_attachment_wizard" type="object" class="btn btn-primary" attrs="{'invisible':[('is_upload', '=', True)]}">
+                        <span>Upload Attachment</span>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="upload_view_sales_order_filter">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='client_order_ref']" position="after">
+                    <filter string="Belum Upload" domain="[('is_upload','=',False)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- UPLOAD ACTION TREE -->
+        <record id="action_upload" model="ir.actions.act_window">
+            <field name="name">Upload Attachment</field>
+            <field name="res_model">upload.attachment.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!-- <field name="context">{'check_availability': 1, 'transfer': 1,}</field> -->
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+        </record>
+    </data>
+</odoo>
