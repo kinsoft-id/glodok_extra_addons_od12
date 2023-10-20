@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="tokopedia_shop_detail_tree" model="ir.ui.view">
+            <field name="name">tokopedia.shop.detail.tree</field>
+            <field name="model">tokopedia.shop.detail</field>
+            <field name="arch" type="xml">
+                <tree string="" create="false" edit="false">
+                    <!-- <field name="tp_conn_id"/> -->
+                    <field name="partner_id"/>
+                    <field name="invoice_number"/>
+                    <field name="date_order"/>
+                    <field name="logistic"/>
+                    <field name="tp_order_status"/>
+                    <!-- <field name="invoice_url"/> -->
+                    <!-- <field name="sale_id"/> -->
+                </tree>
+            </field>
+        </record>
+
+        <record id="tokopedia_shop_detail_search" model="ir.ui.view">
+            <field name="name">tokopedia.shop.detail.search</field>
+            <field name="model">tokopedia.shop.detail</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="tp_conn_id"/>
+                    <field name="invoice_number"/>
+                    <field name="invoice_url"/>
+                    <field name="buyer_fullname"/>
+                    <field name="date_order"/>
+                    <field name="sale_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="tokopedia_shop_detail_action" model="ir.actions.act_window">
+            <field name="name">List Order Tokopedia</field>
+            <field name="res_model">tokopedia.shop.detail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="tokopedia_list_order_menu"
+            name="List Order"
+            sequence="20"
+            action="tokopedia_shop_detail_action"
+            parent="tokopedia_connector.tokopedia_root_menu"
+            groups="tokopedia_connector.group_access_tokopedia"/>
+
+    </data>
+</odoo>

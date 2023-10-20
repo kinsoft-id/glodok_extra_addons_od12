@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="tokopedia_connector_form" model="ir.ui.view">
+            <field name="name">tokopedia.connector.form</field>
+            <field name="model">tokopedia.connector</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                        <button name="get_token" type="object" string="Get Token" class="oe_highlight" attrs="{'invisible': [('is_connected', '=', True)]}"/>
+                        <button name="button_sync_shop" type="object" string="Get Shops" class="oe_highlight"/>
+                        <button name="get_ip_whitelist" type="object" string="Get Ip Whitelist" class="oe_highlight"/>
+                        <button name="get_courier" type="object" string="Get Logistic" class="oe_highlight"/>
+                        <button name="action_disconnect" type="object" string="Disconect" class="btn-danger" attrs="{'invisible':[('is_connected', '=', False)]}"/>
+                    </header>
+                    <field name="is_connected" invisible="1"/>
+                    <sheet>
+                        <div style="float: right;" attrs="{'invisible': [('is_connected', '=', False)]}">
+                            <h4 style="background-color: #35AD0E; padding: 0.5rem; color: white; border-radius: 10px;">
+                                Connected
+                            </h4>
+                        </div>
+                        <div style="float: right;" attrs="{'invisible': [('is_connected', '=', True)]}">
+                            <h4 style="background-color: red; padding: 0.5rem; color: white; border-radius: 10px;">
+                                Not Connected
+                            </h4>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" attrs="{'readonly': [('is_connected', '=', True)]}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="app_id" attrs="{'readonly': [('is_connected', '=', True)]}"/>
+                                <field name="client_id" attrs="{'readonly': [('is_connected', '=', True)]}"/>
+                                <field name="client_secret" attrs="{'readonly': [('is_connected', '=', True)]}"/>
+                                <field name="access_token" readonly="1"/>
+                            </group>
+
+                            <group>
+                                <field name="expires_at"/>
+                                <field name="expires_in" invisible="1"/>
+                                <field name="token_type"/>
+                                <field name="order_from_date"/>
+                                <field name="order_to_date"/>
+                                <field name="state_order" required="1" attrs="{'readonly': [('is_connected', '=', True)]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="shop" string="Shop">
+                                <field name="shop_ids" readonly="1">
+                                    <tree>
+                                        <field name="shop_id" invisible="1"/>
+                                        <field name="tp_user_id" invisible="1"/>
+                                        <field name="shop_name"/>
+                                        <field name="date_shop_created"/>
+                                        <field name="province_name"/>
+                                        <field name="shop_url"/>
+                                        <field name="total_inv"/>
+                                        <!-- <button name="action_open_detail" type="object" string="Details" class="oe_highlight" /> -->
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="ip_whitelist" string="Ip Whitelist">
+                                <field name="whitelist_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="tokopedia_connector_tree" model="ir.ui.view">
+            <field name="name">tokopedia.connector.tree</field>
+            <field name="model">tokopedia.connector</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="app_id"/>
+                    <field name="expires_at"/>
+                    <field name="is_connected"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="tokopedia_connector_action" model="ir.actions.act_window">
+            <field name="name">Tokopedia Connector</field>
+            <field name="res_model">tokopedia.connector</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="tokopedia_root_menu"
+            name="Tokopedia"
+            sequence="100"
+            groups="tokopedia_connector.group_access_tokopedia"
+            web_icon="tokopedia_connector,static/src/img/tokopedia_favicon.png"/>
+
+        <menuitem
+            id="tokopedia_connector_menu"
+            name="Tokopedia"
+            sequence="10"
+            action="tokopedia_connector_action"
+            parent="tokopedia_connector.tokopedia_root_menu"
+            groups="tokopedia_connector.group_access_tokopedia"/>
+    
+    </data>
+    
+
+</odoo>

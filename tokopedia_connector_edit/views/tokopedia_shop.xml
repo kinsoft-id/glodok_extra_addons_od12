@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="tokopedia_shop_form" model="ir.ui.view">
+            <field name="name">tokopedia.shop.form</field>
+            <field name="model">tokopedia.shop</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>                            
+                            <field name="tokopedia_shop_line_ids" nolabel="1">
+                                <tree>
+                                    <field name="invoice_number"/>
+                                    <field name="buyer_fullname"/>
+                                    <field name="invoice_url"/>
+                                    <field name="comment"/>
+                                    <field name="sale_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tokopedia_shop_action" model="ir.actions.act_window">
+            <field name="name">Shop Detail</field>
+            <field name="res_model">tokopedia.shop</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    
+    </data>
+    
+
+</odoo>

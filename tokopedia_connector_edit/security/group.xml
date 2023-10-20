@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_access_tokopedia" model="res.groups">
+        <field name="name">Access Tokopedia</field>
+        <field name="comment">The user will have access to Tokopedia.</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sale_order_inherit_tokopedia_connector_form">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Tokopedia Info" name="tokopedia" groups="tokopedia_connector.group_access_tokopedia">
+                        <group>
+                            <group string="General Information">
+                                <field name="tp_id" string="Odoo Tokopedia" options="{'no_create_edit': True, 'no_quick_create': True}" invisible="1"/>
+                                <field name="tp_invoice_number" string="Invoice Number"/>
+                                <field name="tp_order_id" string="Order ID"/>
+                                <field name="tp_fs_id" string="APP" invisible="1"/>
+                                <field name="tp_order_status" string="Order Status"/>
+                                <!-- <field name="logistic_id" options="{'no_open': True, 'no_create': True}"/> -->
+                                <!-- <field name="logistic"/> -->
+                            </group>
+                            <group string="Seller Information">
+                                <field name="tp_shop_id" string="Shop ID"/>
+                                <field name="tp_seller_id" string="Seller ID" invisible="1"/>
+                                <field name="tp_shop_name" string="Shop Name"/>
+                                <field name="tp_shop_domain" string="Shop Domain"/>
+                                <field name="tp_shop_owner_email" string="Shop Email" invisible="1"/>
+                                <field name="tp_shop_owner_phone" string="Shop Phone" invisible="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Payment Info">
+                                <field name="tp_gateway_name" string="Gateway"/>
+                                <field name="tp_payment_number" string="Payment Number"/>
+                                <field name="tp_voucher_code" string="Voucher Code"/>
+                                <!-- <field name="tp_discount_amount" string="Discount Amount"/> -->
+                                <field name="tp_payment_date" string="Payment Date"/>
+                            </group>
+                            <group string="Cancellation Request">
+                                <field name="tp_cancel_request_create_time"/>
+                                <field name="tp_cancel_request_reason"/>
+                                <field name="tp_cancel_request_status"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Label">
+                                <field name="tp_text_shipping_html" invisible="1"/>
+                                <field name="shipping_label_data"/>
+                                <field name="shipping_label_text"/>
+                                <button name="shipping_label_download" type="object" string="Get Label" class="oe_highlight"/>
+                                <button name="show_ship_label" type="object" string="Show Label" class="oe_highlight"/>
+                            </group>
+                            <group string="Buyer Information">
+                                <field name="tp_buyer_id" string="Buyer ID"/>
+                                <field name="tp_buyer_fullname" string="Buyer Name"/>
+                                <field name="tp_buyer_email" string="Buyer Email"/>
+                                <field name="tp_buyer_phone" string="Buyer Phone"/>
+                                <button name="get_buyer_info" type="object" string="Get Buyer Info" class="oe_highlight"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Bundling">
+                                <field name="text_bundling"/>
+                                <button name="get_bundling" type="object" string="Get Bundling" class="oe_highlight"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="logistic_id" options="{'no_open': True, 'no_create': True}"/>
+                </xpath>
+                <!-- <xpath expr="//field[@name='amount_tax']" position="after">
+                    <field name="tp_discount_amount" widget='monetary' options="{'currency_field': 'currency_id'}" string="Discount Tokopedia" readonly="1" groups="tokopedia_connector.group_access_tokopedia"/>
+                </xpath> -->
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quotation_tokopedia_tree">
+            <field name="name">quotation tokopedia tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="replace">
+                    <field name="tp_invoice_number" string="Tokopedia Invoice"/>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="tp_logistic" invisible="1"/>
+                    <field name="logistic_id"/>
+                    <field name="tp_order_status" string="Tokopedia Order Status"/>
+                    <button name="action_view_tracking" type="object" string="View Tracking" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_order_tokopedia_tree">
+            <field name="name">sale order tokopedia tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//field[@name='partner_id']" position="replace">
+                    <field name="tp_invoice_number" string="Tokopedia Invoice"/>
+                </xpath> -->
+                <xpath expr="//field[@name='partner_id']" position="replace">
+                    <field name="name" string="Order Number"/>
+                    <field name="partner_id" string="Nama Konsumen"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoice_status']" position="replace">
+                    <field name="tp_logistic" invisible="1"/>
+                    <field name="logistic_id"/>
+                    <field name="tp_order_status" string="Order Status"/>
+                    <!-- <button name="action_view_tracking" type="object" string="View Tracking" class="oe_highlight"/>
+                    <field name="download_label" invisible="1"/> -->
+                    <!-- <button name="action_download_label" type="object" string="Download Label" class="oe_highlight"/>
+                    <button name="show_ship_label" type="object" string="Show Label" class="oe_highlight"/> -->
+                    <!-- <button name="show_ship_label" type="object" string="Download Label" class="oe_highlight"/> -->
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_tracking_view_sale_order_kanban">
+            <field name="name">View Tracking kanban</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sale_order_kanban"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//div[hasclass('o_kanban_record_bottom')]" position="after"> -->
+                <xpath expr="templates" position="replace">
+                    <field name="client_order_ref"/>
+                    <field name="product_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <strong>
+                                            <field name="date_order"/>
+                                        </strong>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <strong>
+                                            <field name="partner_id"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <strong>
+                                            <field name="client_order_ref"/>
+                                        </strong>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <strong>
+                                            <field name="amount_total" widget="monetary"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <button name="action_view_tracking" type="object" class="btn btn-primary">
+                                            <span>View Tracking</span>
+                                        </button>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="download_label" invisible="1"/>
+                                        <button name="action_download_label" type="object" class="btn btn-primary">
+                                            <span>Download Label</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_tracking_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="tokopedia_tracking_ids" nolabel="1" readonly="1">
+                                <tree editable="bottom" default_order="date asc">
+                                    <field name="date"/>
+                                    <field name="action_by"/>
+                                    <field name="message"/>
+                                    <field name="comment"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <footer>
+                            <button name="cancel" type="special" special="cancel" string="Close"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="tokopedia_view_sales_order_filter">
+            <field name="name">sale.order.filter</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='client_order_ref']" position="after">
+                    <filter name="filter_today_date" string="Today" domain="[('date_order','&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))),('date_order','&lt;=', datetime.datetime.combine(context_today(), datetime.time(23,59,59)))]" />
+                    <filter name="gosend" string="GoSend" domain="[('logistic','=', 'GoSend')]" />
+                    <filter name="sicepat" string="SiCepat" domain="[('logistic','=', 'SiCepat')]" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_tracking_action" model="ir.actions.act_window">
+            <field name="name">Tracking</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="sale_order_tracking_form"/>
+        </record>
+
+        <!-- DOWNLOAD ACTION TREE -->
+        <!-- <record id="action_download_label" model="ir.actions.act_window">
+            <field name="name">Download Label</field>
+            <field name="res_model">download.label.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+        </record> -->
+
+        <record id="ir_action_download_label" model="ir.actions.server">
+            <field name="name">Download Label</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">
+            if records:
+            action = records.action_multi_download_label()
+            </field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+        </record>
+
+    </data>
+</odoo>

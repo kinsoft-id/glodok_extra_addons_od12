@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="tp_conn_wizard_form" model="ir.ui.view">
+            <field name="name">tp.conn.wizard.form</field>
+            <field name="model">tp.conn.wizard</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="tp_conn_id" options="{'no_open': True, 'no_create': True, 'no_edit': True}"/>
+                            <field name="order_from_date"/>
+                            <field name="order_to_date"/>
+                            <!-- <field name="state_order" /> -->
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_sync" type="object" string="Sync" class="oe_highlight"/>
+                        <button name="cancel" type="special" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="tp_conn_wizard_action" model="ir.actions.act_window">
+            <field name="name">Sync Order (Period)</field>
+            <field name="res_model">tp.conn.wizard</field>
+            <field name="view_move">form</field>
+            <field name="view_type">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="tp_conn_wizard_form"/>
+        </record>
+
+        <menuitem
+            id="tp_conn_wizard_menu"
+            name="Sync Data (Period)"
+            sequence="30"
+            action="tp_conn_wizard_action"
+            parent="tokopedia_connector.tokopedia_root_menu"
+            groups="tokopedia_connector.group_access_tokopedia"/>
+        />
+    
+    </data>
+    
+
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_tokopedia_generate_routine_token" model="ir.cron">
+            <field name="name">Generate Routine Token</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_tokopedia_connector"/>
+            <field name="code">model._cron_generate_token()</field>
+            <field name="state">code</field>
+        </record>
+
+        <record id="ir_cron_get_tokopedia_order" model="ir.cron">
+            <field name="name">Sync Order Tokopedia Account</field>
+            <!-- <field name="interval_number">1</field>
+            <field name="interval_type">hours</field> -->
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_tokopedia_connector"/>
+            <field name="code">model._cron_tokopedia_order()</field>
+            <field name="state">code</field>
+        </record>
+    </data>
+</odoo>
