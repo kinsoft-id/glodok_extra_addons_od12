@@ -7,7 +7,7 @@
 			<xpath expr="//form/header/button[@name='action_invoice_open']" position="replace">
 				<button name="action_invoice_open" type="object" states="draft" string="Validate" class="oe_highlight o_invoice_validate" groups="sales_team.group_sale_salesman,account.group_account_invoice"/>
 
-				<button type="object" name="action_invoice_cancel" atrrs="{'invisible':[('state','not in', ['open','cancel'])]}" string="Cancel Invoice" confirm="Cancel ?" class="oe_danger" />
+				<!-- <button type="object" name="action_invoice_cancel" atrrs="{'invisible':[('state','not in', ['open','cancel'])]}" string="Cancel Invoice" confirm="Cancel ?" class="oe_danger" /> -->
 			</xpath>
 		</field>
 	</record>

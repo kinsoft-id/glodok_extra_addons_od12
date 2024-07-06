@@ -10,7 +10,7 @@
 		<field name="inherit_id" ref="sale.view_order_form"/>
 		<field name="arch" type="xml">
 			<button name="action_cancel" position="replace">
-				<button name="action_cancel" states="draft,sent,sale,done" type="object" string="Cancel" confirm="Cancel??"/>
+				<button name="action_cancel" states="draft,sent,sale" type="object" string="Cancel" confirm="Cancel??"/>
 				<button name="action_print_envelope" states="sale,done" type='object' string="Print Env" class="oe_highlight" />
 			</button>
 			
