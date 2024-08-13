@@ -208,7 +208,12 @@ class StockPickingBatch(models.Model):
 			raise UserError(_('Nothing to print.'))
 		pickings.write({'printed':True})
 
-		autodone = ['JNE', 'J&T', 'GRAB', 'grab', 'gojek', 'sicepat', 'beli2', 'Selfpickup', 'Lion Parcel', 'Ninja Express', 'BEST', 'Anteraja','LEX','IDEXPRESS','shopeeexpress']
+		autodone = [
+			'JNE', 'J&T', 'GRAB', 'grab', 'gojek', 
+			'sicepat', 'beli2', 'Selfpickup', 'Lion Parcel', 'Ninja Express', 
+			'BEST', 'Anteraja','LEX','IDEXPRESS','shopeeexpress',
+			'JNE AGEN', 'JNE Lazada', 'LEX-Lazada'
+		]
 		if self.user_id.name in autodone:
 			if self.state == 'draft':
 				self.write({'state': 'done', 'send_time': fields.Datetime.now()})
