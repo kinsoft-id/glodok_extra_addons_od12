@@ -1,0 +1,7 @@
+1. Install flask and flask-cors module:
+    pip install flask
+    pip install flask-core
+
+2. Run the script:
+
+    sh start.sh

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-name="xPrintDirectMain">
+        
+            <button type="button" class="oe_edit_only btn btn-danger btn_reset">Reset</button>
+            
+    </t>
+
+	<div t-name="some.template">
+	    <span class="val"><t t-esc="widget.count"/></span>
+	    <button>Increment</button>
+	</div>
+
+</templates>

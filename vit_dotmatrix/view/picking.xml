@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_picking_form_dot" model="ir.ui.view">
+            <field name="name">view_picking_form_dot</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <header position="inside">
+                    <button type="object" name="dummy" string="Dot Matrix" icon="fa-print" custom="print"/>
+                </header>
+
+                <notebook position="inside">
+                    <page string="Dot Matrix">
+                        <button string="Refresh Printer Data" icon="fa-print" type="object" name="generate_printer_data"/>
+                        <pre>
+                            <field name="printer_data"/>
+                        </pre>
+                    </page>
+                </notebook>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

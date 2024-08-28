@@ -1,0 +1,10 @@
+<openerp>
+    <data>
+
+        <record model="ir.config_parameter" id="dotmatrix_column_width">
+        	<field name="key">dotmatrix_column_width</field>
+        	<field name="value">80</field>
+        </record>
+
+    </data>
+</openerp>

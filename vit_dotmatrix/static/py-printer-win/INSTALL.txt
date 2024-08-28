@@ -1,0 +1,12 @@
+1. install python on your windows computer by downloading the executable from http://python.org
+
+2. Install flask and flask-cors module:
+
+    pip install flask
+    pip install flask-core
+
+3. install py32win from https://github.com/mhammond/pywin32/releases
+
+3. Run the script:
+
+    start.bat
