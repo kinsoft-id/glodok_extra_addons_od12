@@ -147,7 +147,9 @@
               </td>
             </tr>
             <tr>
-              <td colspan="2">Catatan: <span t-esc="o.note" /></td>
+              <td colspan="2">Catatan: 
+                <!-- <span t-esc="o.note" /> -->
+            </td>
               <td class="text-right">&amp;nbsp;</td>
               <td class="text-left">&amp;nbsp;</td>
             </tr>
