@@ -258,6 +258,13 @@
                                     </t>
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="3">
+                                <strong>Dibuat pada:</strong>
+                                    &amp;nbsp;
+                                    <span t-esc="data['create_date']" style="font-size:9px;" />
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
