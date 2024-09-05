@@ -262,7 +262,7 @@
                             <td colspan="3" style="font-size:9px;">
                                 <strong>Dibuat pada:</strong>
                                     &amp;nbsp;
-                                    <span t-esc="data['create_date']"/>
+                                    <span t-field="o.create_date"/>
                             </td>
                         </tr>
                     </table>
